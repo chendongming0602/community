@@ -13,6 +13,7 @@ var app = getApp(), http = require("../../util/http.js"), _require = require("..
 
 Page({
     data: (_data = {
+        check:false,
         tabbar:app.globalData.tabbar,
         user_info: {},
         plaza_current: "plaza",
@@ -83,6 +84,14 @@ Page({
             isPopping: !1,
             copyright: app.globalData.copyright
         }), 0 != this.data.is_show && this.authority();
+        //审核判断
+        app.checkEvent().then(res=>{
+            let {check,is}=res;
+            this.setData({check});
+            if(is===2) return  wx.navigateTo({
+                url: '/yl_welore/pages/author/index?type=0',
+            });
+        });
     },
     authority: function() {
         var t = app.api_root + "User/get_authority", e = this, a = app.getCache("userinfo"), i = new Object();

@@ -39,6 +39,7 @@ var app = getApp(), http = require("../../../util/http.js"), _require = require(
 
 Page({
     data: {
+        check:false,
         check_img: "",
         set_img_quan: !1,
         visible: !1,
@@ -814,6 +815,14 @@ Page({
     },
     onShow: function() {
         if (0 != this.data.show) {
+            //审核判断
+            app.checkEvent().then(res=>{
+                let {check,is}=res;
+                this.setData({check});
+                if(is===2) return  wx.navigateTo({
+                    url: '/yl_welore/pages/author/index?type=0',
+                });
+            });
             page = 1, show_type = "all";
             var t = app.getCache("userinfo");
             this.setData({

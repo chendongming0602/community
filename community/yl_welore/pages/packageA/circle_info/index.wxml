@@ -163,7 +163,7 @@
                 </view>
             </view>
             <view style="clear:both;height:0"></view>
-            <view class="weui-flex" style="padding-bottom:10px;padding-top:10px;">
+            <view wx:if="{{check}}" class="weui-flex" style="padding-bottom:10px;padding-top:10px;">
                 <view class="weui-flex__item">
                     <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=0">
                         <button hoverClass="none">
@@ -457,7 +457,7 @@
         <image src="{{add['video']['images']}}" style="width:100%;height:100%;"></image>
         <view style="text-align:center;font-size:12px;margin-top:-5px;">{{add['video']['title']}}</view>
     </view>
-    <image animation="{{animPlus}}" bindtap="plus" class="img-plus-style" src="{{diy.pattern_data['release']['images']['img']}}"></image>
+    <image  animation="{{animPlus}}" bindtap="plus" class="img-plus-style" src="{{diy.pattern_data['release']['images']['img']}}"></image>
 </view>
 <view animation="{{animBack}}" class="weui-tabbar_boo" style="height:55px;" wx:if="{{getInfo.attention==0}}">
     <view animation="{{animCollect}}" bindtap="nav_add" class="img-style" data-k="tuya">
@@ -479,7 +479,7 @@
         <image src="{{add['video']['images']}}" style="width:100%;height:100%;"></image>
         <view style="text-align:center;font-size:12px;margin-top:-5px;">{{add['video']['title']}}</view>
     </view>
-    <image animation="{{animPlus}}" bindtap="plus" class="img-plus-style" src="{{diy.pattern_data['release']['images']['img']}}"></image>
+    <image wx:if="{{check}}" animation="{{animPlus}}" bindtap="plus" class="img-plus-style" src="{{diy.pattern_data['release']['images']['img']}}"></image>
 </view>
 <i-toast id="toast"></i-toast>
 <view catchtouchmove="preventTouchMove" class="modal-mask" wx:if="{{guanzhu}}"></view>

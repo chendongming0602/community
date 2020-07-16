@@ -73,7 +73,7 @@
         </view>
     </view>
     <view style="padding-bottom:10px;margin-top:15px;">
-        <view class="weui-flex">
+        <view  wx:if="{{check}}">
             <block wx:if="{{version==0&&info.is_buy==0}}">
                 <view class="weui-flex__item" wx:if="{{info.is_open==1||info.user_id==uid}}">
                     <button bindgetuserinfo="zhuanfa" hoverClass="none" openType="getUserInfo">
@@ -105,7 +105,7 @@
         </view>
     </view>
     <view style="height:1px;width:100%;background-color:#F4F4F4"></view>
-    <view style="min-height:120px;" wx:if="{{version==0}}">
+    <view style="min-height:120px;" wx:if="{{version==0&&check}}">
         <view style="padding:10px 20px;font-size:14px;float:left;">
       礼物榜</view>
         <view style="padding:10px 20px;font-size:14px;float:left;">
@@ -160,14 +160,14 @@
         </view>
     </navigator>
     <view style="height:1px;width:100%;background-color:#F4F4F4"></view>
-    <view style="width:100%;">
+    <view style="width:100%;" wx:if="{{check}}">
         <i-tabs bindchange="handleChange_h" color="#000000" current="{{current_h}}" iClass="yes_pos">
             <i-tab key="h1" title="全部回复"></i-tab>
             <i-tab key="h2" title="只看楼主"></i-tab>
             <i-tab key="h3" title="我的回复"></i-tab>
         </i-tabs>
     </view>
-    <view style="padding-bottom:3em;">
+    <view wx:if="{{check}}" style="padding-bottom:3em;">
         <view style="margin-top:10px;" wx:if="{{ad_info.adsper==1}}">
             <ad unitId="{{ad_info.adunit_id}}"></ad>
         </view>

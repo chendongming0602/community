@@ -2,9 +2,9 @@
   "pages": [
     "yl_welore/pages/index/index",
     "yl_welore/pages/user/index",
+    "yl_welore/pages/circle/index",
     "yl_welore/pages/author/index",
     "yl_welore/pages/inspect/index",
-    "yl_welore/pages/circle/index",
     "yl_welore/pages/square/index",
     "yl_welore/pages/black_house/index",
     "yl_welore/pages/shell_mall/index",

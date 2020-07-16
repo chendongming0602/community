@@ -100,17 +100,31 @@ App({
     siteInfo: require("siteinfo.js"),
     //新加审核判断版本
     newVersion:"1.0.1",
+    //为true是在审核，
+    isCheck:true,
     //新加审核判断
     checkEvent(){
-        let url=this.api_root + "login/checkin",that=this;
+        let url=this.api_root + "login/checkin",that=this,
+        t=that.getCache("userinfo");
         return new Promise((resolve,reject)=>{
+            //确定在不审核的情况下，不再重新请求
+            if(!that.isCheck) {
+                if(!t&&!that.isCheck) return resolve({check:!is,is:2});
+                if(!t&&that.isCheck) return resolve({check:!is,is:3});
+                return resolve({check:!that.isCheck,is:1});
+            }
             http.POST(url,{
                 params:{
                     version:that.newVersion
                 },
                 success(res){
-                    resolve(res.data.data)
-                    return ;
+                    //为true是在审核，
+                    that.isCheck=res.data.data;
+                    if(!t&&!that.isCheck) return resolve({check:!that.isCheck,is:2});
+                    if(!t&&that.isCheck) return resolve({check:!that.isCheck,is:3});
+                    return resolve({check:!that.isCheck,is:1});
+                    //1正常情况，2跳到授权，3弹出授权框
+                    //(返回的is未false在审核)
                 }
             });
         });

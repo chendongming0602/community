@@ -14,8 +14,8 @@
 <view style="padding-left:26rpx;color:#AFAFAF;margin-top:40rpx;margin-top:{{height*2+30}}px;">
     <image src="../../style/icon/my_jia.png" style="width:60rpx;height:60rpx;vertical-align:middle;"></image>
     <text style="font-size:34rpx;color:#000000;font-weight:600;">我加入的{{design.landgrave}}</text>
-    <navigator hoverClass="none" style="display:inline;" url="/yl_welore/pages/packageB/set_territory/index">
-        <view class="" style="float:right;background-color:#2e77ed;color:#ffffff;border-radius:40rpx;padding:10rpx;width:135rpx;text-align:center;font-size:11px;margin-right:24rpx;">
+    <navigator wx:if="{{check}}" hoverClass="none" style="display:inline;" url="/yl_welore/pages/packageB/set_territory/index">
+        <view  class="" style="float:right;background-color:#2e77ed;color:#ffffff;border-radius:40rpx;padding:10rpx;width:135rpx;text-align:center;font-size:11px;margin-right:24rpx;">
             <i-icon type="add"></i-icon> 创建{{design.landgrave}}
     </view>
     </navigator>

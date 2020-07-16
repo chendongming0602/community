@@ -10,6 +10,8 @@ function _defineProperty(t, e, a) {
 var app = getApp(), http = require("../../util/http.js"), index_page = 1, index_my_page = 1, _require = require("../../dist/base/index"), $Toast = _require.$Toast, innerAudioContext = wx.createInnerAudioContext();
 Page({
     data: {
+        //判断审核
+        check:false,
         tabbar:app.globalData.tabbar,
         copyright: {},
         isIpx: app.globalData.isIpx,
@@ -25,7 +27,40 @@ Page({
             name: "按最后回帖时间",
             type: "huifu"
         } ],
-        new_list: [],
+        new_list: [
+            {
+                study_type:0,
+                top_time:1,
+                adapter_time: "2天前",
+                gender: 1,
+                huifu_time: "2天前",
+                id: 7,
+                image_length: "31.5",
+                info_zan_count: "1",
+                info_zan_count_this: 1,
+                is_buy: 0,
+                is_info_zan: false,
+                is_open: 1,
+                is_voice: false,
+                much_id: 2,
+                prove_time: 1594722510,
+                purchase: 0,
+                realm_icon: "https://sl.tpapi.cn/addons/yl_welore/web/static/uploads/968bda4cac84ad886d373d94168aa576.jpeg",
+                realm_name: "广州大学",
+                study_content: "哈哈/::> ",
+                study_heat: "4",
+                study_laud: "1",
+                study_repount: "1",
+                study_status: 1,
+                study_title: "一起",
+                study_title_color: "#000000",
+                tory_id: 2,
+                user_head_sculpture: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIAYHSxN2tFEQe3XoBk4GqP1icvhNq44V2cC4KJewpHjEibxK4YSxgy64TAIWVWUEyytcNOHnmoSrhA/132",
+                user_id: 4,
+                user_nick_name: "wx_1f5944BxZ609222",
+                user_wechat_open_id: "oq2Qt5FXdTZgd31nnyDPm_5sK_p8",
+            }
+        ],
         show: !0,
         inputShowed: !1,
         inputVal: "",
@@ -290,25 +325,38 @@ Page({
         }) : ((e = new Object()).type = "fatie", e.name = "按发帖时间", app.setCache("order_actions", e));
         index_page = 1, "tab1" == this.data.current && this.get_index_list_one(), "tab2" == this.data.current && this.get_my_index_list();
         //新审核
-        app.checkEvent().then(check=>{
-            console.log(check)
-        })
+        
     },
     onShow: function() {
         wx.hideTabBar(), this.authority(), app.check_user_status();
         var t = app.getCache("userinfo");
-        if(!t) return this.selectComponent("#login").showEvent();
-        this.setData({
-            design: app.globalData.design,
-            uid: t.uid
-        }), 0 != this.data.show && ($Toast({
-            duration: 0,
-            content: "加载中",
-            type: "loading",
-            mask: !1
-        }), this.get_ad(), this.get_diy({res(res){
-            let {version}=res.data;//是1为在审核
-        }}), this.get_user_info(), $Toast.hide());
+        app.checkEvent().then(res=>{
+            let {check,is}=res;
+            this.setData({check});
+            if(is===3) return this.selectComponent("#login").showEvent();
+            if(is===2) return  wx.navigateTo({
+                url: '/yl_welore/pages/author/index?type=0',
+            });
+            // //在审核并且未授权
+            // if(!check&&!t) return this.selectComponent("#login").showEvent();
+            // if(!t) return wx.navigateTo({
+            //   url: '/yl_welore/pages/author/index',
+            // })
+            this.setData({
+                design: app.globalData.design,
+                uid: t.uid
+            }), 0 != this.data.show && ($Toast({
+                duration: 0,
+                content: "加载中",
+                type: "loading",
+                mask: !1
+            }), this.get_ad(), this.get_diy({res(res){
+                //废除旧的
+                let {version}=res.data;//是1为在审核
+            }}), this.get_user_info(), $Toast.hide());
+            
+        })
+       
     },
     authority: function() {
         var t = app.api_root + "User/get_authority", e = this, a = app.getCache("userinfo"), n = new Object();

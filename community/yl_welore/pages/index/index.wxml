@@ -171,7 +171,7 @@
                 </view>
             </view>
             <view style="clear:both;height:0"></view>
-            <view class="weui-flex" style="padding-bottom:10px;">
+            <view class="weui-flex" style="padding-bottom:10px;" wx:if="{{check}}">
                 <view class="weui-flex__item">
                     <button hoverClass="none">
                         <image src="../../style/icon/kan.png" style="width: 30px;vertical-align:middle;height:30px;"></image>

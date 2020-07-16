@@ -10,6 +10,11 @@ Component({
     lifetimes: {
         attached: function() {
             this.get_user_info(), this.get_diy(), this.check_login();
+            //审核判断
+            app.checkEvent().then(res=>{
+                let {check,is}=res;
+                this.setData({check});
+            });    
         }
     },
     pageLifetimes: {
@@ -20,6 +25,7 @@ Component({
         }
     },
     data: {
+        check:false,
         isIphoneX: app.globalData.isIpx,
         isPopping: !1,
         animPlus: {},

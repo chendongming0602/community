@@ -11,6 +11,7 @@ var app = getApp(), http = require("../../../util/http.js"), _require = require(
 
 Page({
     data: {
+        check:false,
         show: !0,
         sex: 1,
         user_info: {},
@@ -46,6 +47,14 @@ Page({
         }), this.get_user_info(), this.get_liwu_all(), this.get_my_list();
     },
     onShow: function() {
+        //审核判断
+        app.checkEvent().then(res=>{
+            let {check,is}=res;
+            this.setData({check});
+            if(is===2) return  wx.navigateTo({
+                url: '/yl_welore/pages/author/index?type=0',
+            });
+        });
         var t = app.getCache("userinfo");
         this.setData({
             uid: t.uid

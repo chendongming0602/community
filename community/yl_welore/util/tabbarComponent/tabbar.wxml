@@ -22,7 +22,7 @@
 <form bindsubmit="get_aa_dd" reportSubmit="true">
     <view class="tabbar_box {{isIphoneX?'iphoneX-height':''}}" style="background-color:{{tabbar.backgroundColor}}">
         <block wx:for="{{tabbar.list}}" wx:key="{{item.pagePath}}">
-            <view class="tabbar_nav" style="color:{{isPopping?tabbar.selectedColor:tabbar.color}}" wx:if="{{item.isSpecial==true&&tabbar.version==0}}">
+            <view class="tabbar_nav" style="color:{{isPopping?tabbar.selectedColor:tabbar.color}}" wx:if="{{item.isSpecial==true&&tabbar.version==0&&check}}">
                 <view bindtap="plus" class="special-wrapper">
                     <image class="tabbar_icon" src="{{item.iconPath}}"></image>
                 </view>

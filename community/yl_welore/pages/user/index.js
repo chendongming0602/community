@@ -2,6 +2,7 @@ var app = getApp(), http = require("../../util/http.js"), _require = require("..
 
 Page({
     data: {
+        check:false,
         tabbar:app.globalData.tabbar,
         user_current: "user",
         user_info: {},
@@ -117,6 +118,14 @@ Page({
         });
     },
     onShow: function() {
+        //审核判断
+        app.checkEvent().then(res=>{
+            let {check,is}=res;
+            this.setData({check});
+            if(is===2) return  wx.navigateTo({
+                url: '/yl_welore/pages/author/index?type=0',
+            });
+        });
         wx.hideTabBar(), app.editTabbar(), app.check_user_status(), this.get_user_info(), 
         this.get_diy(), this.authority();
     },
