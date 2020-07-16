@@ -553,12 +553,7 @@ Page({
         this.get_my_index_list()), this.get_ad();
     },
     onReachBottom: function() {
-        $Toast({
-            duration: 0,
-            content: "加载中",
-            type: "loading",
-            mask: !1
-        }), "tab1" == this.data.current && (index_page++, this.get_index_list()), "tab2" == this.data.current && (index_my_page++, 
+        "tab1" == this.data.current && (index_page++, this.get_index_list()), "tab2" == this.data.current && (index_my_page++, 
         this.get_my_index_list()), $Toast.hide();
     },
     onShareAppMessage: function() {

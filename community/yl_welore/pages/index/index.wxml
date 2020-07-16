@@ -171,10 +171,10 @@
                 </view>
             </view>
             <view style="clear:both;height:0"></view>
-            <view class="weui-flex" style="padding-bottom:10px;" wx:if="{{check}}">
+            <view class="weui-flex" style="padding-bottom:10rpx;" wx:if="{{check}}">
                 <view class="weui-flex__item">
                     <button hoverClass="none">
-                        <image src="../../style/icon/kan.png" style="width: 30px;vertical-align:middle;height:30px;"></image>
+                        <image src="../../style/icon/kan.png" style="width: 30px;vertical-align:middle;height:25px;"></image>
                         <text class="index_nav_name" style="color:#999999;font-size:13px;margin-left:15rpx;vertical-align:middle;">{{item.study_heat}}</text>
                     </button>
                 </view>
@@ -544,7 +544,7 @@
             </view>
             <view style="clear:both;height:0"></view>
             <view style="clear:both;height:0"></view>
-            <view class="weui-flex" style="padding-bottom:10px;">
+            <view class="weui-flex" style="padding-bottom:10rpx;">
                 <view class="weui-flex__item">
                     <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=0">
                         <button hoverClass="none">
@@ -683,7 +683,7 @@
                 </view>
             </view>
             <view style="clear:both;height:0"></view>
-            <view class="weui-flex" style="padding-bottom:10px;padding-top:10px;">
+            <view class="weui-flex" style="padding-bottom:10rpx;padding-top:10px;">
                 <view class="weui-flex__item">
                     <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=1">
                         <button hoverClass="none">
@@ -778,7 +778,7 @@
                 </view>
             </view>
             <view style="clear:both;height:0"></view>
-            <view class="weui-flex" style="padding-bottom:10px;padding-top:10px;">
+            <view class="weui-flex" style="padding-bottom:10rpx;padding-top:10px;">
                 <view class="weui-flex__item">
                     <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2">
                         <button hoverClass="none">

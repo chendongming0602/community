@@ -1,3 +1,6 @@
+.weui-flex{
+    padding-top: 20rpx;
+}
 ._this {
     font-weight: 700;
     font-size: 25px;

@@ -92,7 +92,7 @@ App({
                 text: "",
                 isSpecial: !1
             } ]
-        }
+        } 
     },
     version: "1.0.39",
     api_root: "",
