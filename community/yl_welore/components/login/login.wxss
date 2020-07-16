@@ -1,0 +1,49 @@
+.login-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(1, 1, 1, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-content{
+  width: 550rpx;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  background: #fff;
+  text-align: center;
+  position: relative;
+}
+.login-content image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.login-content .close{
+  width: 50rpx;
+  height: 50rpx;
+  top: 10rpx;
+  right: 20rpx;
+  position: absolute;
+}
+.login-title{
+  font-size: 36rpx;
+}
+.login-bt{
+  font-size: 24rpx;
+  color: #666;
+}
+.login-content navigator{
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: var(--color);
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  font-weight: bold;
+  letter-spacing: 3px;
+}

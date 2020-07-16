@@ -1,0 +1,9 @@
+<view class="login-box" wx:if="{{show}}">
+  <view class="login-content">
+    <image class="close" src="/yl_welore/style/icon/cuo.png" catchtap="closeEvent"></image>
+    <view class="login-title">微信授权</view>
+    <image src="/yl_welore/style/icon/kx.png"></image>
+    <view class="login-bt">需授权才可继续操作</view>
+    <navigator url="/yl_welore/pages/author/index?type=0">去授权</navigator>
+  </view>
+</view>
