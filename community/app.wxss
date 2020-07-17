@@ -2,6 +2,7 @@ page {
     line-height: 1.6;
     font-family: -apple-system-font,Helvetica Neue,sans-serif;
     --color:#61c7ff;
+    --shallow:rgba(97,199,225,0.1);
 }
 
 icon {

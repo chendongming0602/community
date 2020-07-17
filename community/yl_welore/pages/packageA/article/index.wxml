@@ -31,8 +31,8 @@
         </view>
         <image bindtap="handleCancel2" mode="widthFix" src="../../../style/icon/bqd.png" style="width:40px;"></image>
     </view>
-    <view style="margin:35rpx 35rpx 0rpx 35rpx;word-break:break-all;font-size:14px;">
-        <text selectable="true">{{info.study_content}}</text>
+    <view  style="margin:35rpx 30rpx 0rpx 30rpx;word-break:break-all;font-size:14px;">
+        <view selectable="true" class="contentText">{{info.study_content}}111</view>
         <view style="margin:20px;">
             <view class="weui-cell" style="padding-left:20px;" wx:if="{{info_type==1}}">
                 <image src="{{info.user_head_sculpture}}" style="width: 35px; height: 35px; display: block;border-radius:50rpx;"></image>
@@ -72,8 +72,8 @@
             </view>
         </view>
     </view>
-    <view style="padding-bottom:10px;margin-top:15px;">
-        <view  wx:if="{{check}}">
+    <view  style="padding-bottom:10px;margin-top:15px;">
+        <view  wx:if="{{check}}" class="list-flex">
             <block wx:if="{{version==0&&info.is_buy==0}}">
                 <view class="weui-flex__item" wx:if="{{info.is_open==1||info.user_id==uid}}">
                     <button bindgetuserinfo="zhuanfa" hoverClass="none" openType="getUserInfo">

@@ -65,6 +65,13 @@
 					"pathName": "yl_welore/pages/author/index",
 					"query": "type=0",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "评论",
+					"pathName": "yl_welore/pages/packageA/article/index",
+					"query": "type=0&id=7",
+					"scene": null
 				}
 			]
 		}

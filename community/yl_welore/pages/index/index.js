@@ -464,9 +464,9 @@ Page({
             params: n,
             success: function(t) {
                 if (console.log(t), "success" == t.data.status) {
-                    for (var e = 0; e < t.data.info.length; e++) i.push(t.data.info[e]);
+                    // for (var e = 0; e < t.data.info.length; e++) i.push(t.data.info[e]);
                     a.setData({
-                        new_list: i
+                        new_list: t.data.info
                     }), 0 == t.data.info.length && a.setData({
                         di_msg: !0
                     }), $Toast.hide();

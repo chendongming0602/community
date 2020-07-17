@@ -1337,12 +1337,7 @@ Page({
         });
     },
     onReachBottom: function() {
-        console.log(page), $Toast({
-            duration: 0,
-            content: "加载中",
-            type: "loading",
-            mask: !1
-        }), page += 1, this.hui_fu_page(), $Toast.hide();
+        console.log(page),  page += 1, this.hui_fu_page(), $Toast.hide();
     },
     play: function(t) {
         var a = this, e = this.data.info;

@@ -230,3 +230,16 @@ input-holder {
     color: #CC3333;
     text-align: center;
 }
+.list-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contentText{
+    padding: 20rpx;
+    background: var(--shallow);
+    width: 100%;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    color: #333;
+}

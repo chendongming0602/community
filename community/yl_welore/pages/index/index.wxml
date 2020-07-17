@@ -98,8 +98,8 @@
                 </view>
             </view>
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
             {{item.study_title}}
           </view>
                 </view>
@@ -112,9 +112,10 @@
                     </view>
                 </view>
             </view>
+            <!-- 首页列表文字 -->
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=0" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
             {{item.study_title==''?item.study_content:item.study_title}}
           </view>
                 </view>
@@ -174,7 +175,7 @@
             <view class="weui-flex" style="padding-bottom:10rpx;" wx:if="{{check}}">
                 <view class="weui-flex__item">
                     <button hoverClass="none">
-                        <image src="../../style/icon/kan.png" style="width: 30px;vertical-align:middle;height:25px;"></image>
+                        <image src="../../style/icon/kan.png" style="width: 30px;vertical-align:middle;height:30px;"></image>
                         <text class="index_nav_name" style="color:#999999;font-size:13px;margin-left:15rpx;vertical-align:middle;">{{item.study_heat}}</text>
                     </button>
                 </view>
@@ -224,8 +225,8 @@
                 </view>
             </view>
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
             {{item.study_title}}
           </view>
                 </view>
@@ -239,8 +240,8 @@
                 </view>
             </view>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=1" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
             {{item.study_title==''?item.study_content:item.study_title}}
           </view>
                 </view>
@@ -366,8 +367,8 @@
                 </view>
             </view>
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
             {{item.study_title}}
           </view>
                 </view>
@@ -381,8 +382,8 @@
                 </view>
             </view>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
             {{item.study_title==''?item.study_content:item.study_title}}
           </view>
                 </view>
@@ -470,8 +471,8 @@
                 </view>
             </view>
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
             {{item.study_title}}
           </view>
                 </view>
@@ -485,8 +486,8 @@
                 </view>
             </view>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=0" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
             {{item.study_title==''?item.study_content:item.study_title}}
           </view>
                 </view>
@@ -544,7 +545,7 @@
             </view>
             <view style="clear:both;height:0"></view>
             <view style="clear:both;height:0"></view>
-            <view class="weui-flex" style="padding-bottom:10rpx;">
+            <view class="weui-flex" style="padding-bottom:10rpx;" wx:if="{{check}}">
                 <view class="weui-flex__item">
                     <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=0">
                         <button hoverClass="none">
@@ -596,8 +597,8 @@
                 </view>
             </view>
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
             {{item.study_title}}
           </view>
                 </view>
@@ -611,8 +612,8 @@
                 </view>
             </view>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=1" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
             {{item.study_title==''?item.study_content:item.study_title}}
           </view>
                 </view>
@@ -735,8 +736,8 @@
                 </view>
             </view>
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
             {{item.study_title}}
           </view>
                 </view>
@@ -750,8 +751,8 @@
                 </view>
             </view>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1}}">
-                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
-                    <view class="weui-cell__hd text_num" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
+                <view class="weui-cell" style="padding:10px;">
+                    <view class="weui-cell__hd text_num newText" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
             {{item.study_title==''?item.study_content:item.study_title}}
           </view>
                 </view>

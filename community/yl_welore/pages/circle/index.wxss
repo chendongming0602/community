@@ -109,7 +109,7 @@ page {
     height: 46rpx;
     border-radius: 34rpx;
     background-color: #f8f8f8;
-    color: #2e77ed;
+    color: var(--color);
     font-size: 24rpx;
     font-weight: 600;
     line-height: 47rpx;
@@ -236,4 +236,7 @@ input-holder {
     width: 50%;
     color: #CC3333;
     text-align: center;
+}
+.chanjian{
+    background: var(--color) !important;
 }
