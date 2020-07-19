@@ -21,14 +21,14 @@ Page({
         }), 1 == t.type && this.setData({
             nvabarData: {
                 showCapsule: 0,
-                title: "关注的人",
+                title: "的关注",
                 height: 2 * app.globalData.height + 20
             },
             msg: "没有关注任何人"
         }), 2 == t.type && this.setData({
             nvabarData: {
                 showCapsule: 0,
-                title: "粉丝",
+                title: "的粉丝",
                 height: 2 * app.globalData.height + 20
             },
             msg: "一个粉丝也没有"

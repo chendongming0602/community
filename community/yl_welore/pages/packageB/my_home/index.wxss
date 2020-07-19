@@ -81,6 +81,9 @@ button {
     white-space: normal!important;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    padding: 10rpx;
+    border-radius: 8rpx;
+    background: var(--shallow);
 }
 
 .liwu_col {

@@ -93,6 +93,12 @@
 					"pathName": "yl_welore/pages/square/index",
 					"query": "type=0&id=6",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "yl_welore/pages/packageC/user_collection/index",
+					"scene": null
 				}
 			]
 		}

@@ -42,6 +42,10 @@ button {
     font-size: 14px;
     margin-left: 10px;
     float: left;
+    padding: 10rpx 15rpx;
+    background: var(--shallow);
+    border-radius: 8rpx;
+    width: 100%;
 }
 
 .guanzhu {

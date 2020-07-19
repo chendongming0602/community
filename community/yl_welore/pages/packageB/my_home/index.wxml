@@ -72,7 +72,7 @@
     </view>
     </view>
     <view wx:if="{{check}}" style="{{li_index!=0?'padding-left:82px;':''}}border-bottom:1px solid #F6F8F8;" wx:for="{{item.list}}" wx:for-index="li_index" wx:for-item="li" wx:key="l_key">
-        <view style="margin:24px 20px;float:left;width:230px;">
+        <view style="margin:24px 0px 24px 20px;float:left;width:500rpx;">
             <view style="font-size:12px;color:#9D9D9D">
         {{li.realm_name}}
       </view>
@@ -163,7 +163,7 @@
     </view>
     </view>
     <view style="{{li_index!=0?'padding-left:82px;':''}}border-bottom:1px solid #F6F8F8;" wx:for="{{item.list}}" wx:for-index="li_index" wx:for-item="li" wx:key="l_key">
-        <view style="margin:24px 20px;float:left;width:230px;">
+        <view style="margin:24px 0px 24px 20px;float:left;width:500rpx;">
             <view style="font-size:12px;color:#9D9D9D">
         {{li.realm_name}}
       </view>

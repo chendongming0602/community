@@ -33,8 +33,8 @@
         </i-radio-group>
     </i-panel>
     <i-panel title="个人签名">
-        <textarea autoHeight bindinput="get_text" maxlength="140" placeholder="个性签名140个字" style="min-height:4em;padding:20px;width:90%;" value="{{autograph}}"></textarea>
+        <textarea class="shallow" autoHeight bindinput="get_text" maxlength="140" placeholder="个性签名140个字" style="min-height:4em;padding:15px;width:90%;border-radius:8rpx" value="{{autograph}}"></textarea>
     </i-panel>
-    <button bindtap="edit_submit" class="add_submit" style="width:150px;height:45px;line-height:45px;">提交保存</button>
+    <button bindtap="edit_submit" class="add_submit" style="width:150px;height:45px;line-height:45px;margin-top:50rpx">提交保存</button>
 </view>
 <i-toast id="toast"></i-toast>
