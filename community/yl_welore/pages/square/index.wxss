@@ -79,8 +79,8 @@
 }
 
 .select {
-    border-left: 4px solid #2E77ED;
-    color: #2E77ED;
+    border-left: 4px solid var(--color);
+    color:  var(--color);
 }
 
 .nav_right {
