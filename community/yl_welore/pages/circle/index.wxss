@@ -79,7 +79,7 @@ page {
 .classify_nex {
     margin: 25rpx;
     text-align: center;
-    background-color: #fff;
+    background-color: var(--shallow);
     border-radius: 25rpx;
     display: inline-block;
 }
@@ -93,7 +93,7 @@ page {
 .chang_img {
     min-width: 288rpx;
     height: 150rpx;
-    border-radius: 25rpx;
+    border-radius: 25rpx 25rpx 0 0;
 }
 
 .class_border {

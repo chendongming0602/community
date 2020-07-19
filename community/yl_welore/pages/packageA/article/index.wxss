@@ -243,3 +243,7 @@ input-holder {
     box-sizing: border-box;
     color: #333;
 }
+.bgs{
+    background: var(--shallow);
+    border-radius: 8rpx;
+}

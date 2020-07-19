@@ -4,7 +4,15 @@ page {
     --color:#61c7ff;
     --shallow:rgba(97,199,225,0.1);
 }
-
+.bgs{
+    background: var(--color);
+}
+.shallow{
+    background: var(--shallow);
+}
+.colors{
+    color: var(--color);
+}
 icon {
     vertical-align: middle;
 }

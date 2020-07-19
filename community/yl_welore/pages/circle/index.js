@@ -113,12 +113,7 @@ Page({
         });
     },
     onReachBottom: function() {
-        $Toast({
-            duration: 0,
-            content: "加载中",
-            type: "loading",
-            mask: !1
-        }), this.setData({
+        this.setData({
             tj_page: this.data.tj_page + 1
         }), this.get_tj_list(), $Toast.hide();
     },

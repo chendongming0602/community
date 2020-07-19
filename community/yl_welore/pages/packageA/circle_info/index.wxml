@@ -1,4 +1,4 @@
-<view class="nav-wrap" style="position:relative;background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);">
+<view class="nav-wrap" style="position:relative;">
     <view class="nav-title" style="line-height: {{height*2+44}}px;">
         <image src="../../../style/icon/mi.png" style="width:22px;height:22px;vertical-align:sub;" wx:if="{{getInfo.attention==1}}"></image>
     首页
@@ -23,7 +23,7 @@
                 <view style="font-size: 12px;color: #000;">已加入 {{getInfo.concern}}　|　帖子 {{getInfo.is_paper_count}}</view>
             </navigator>
         </view>
-        <view bindtap="{{getInfo.attention==1?'set_trailing':'add_trailing'}}" style="float:right;color:#000;font-size:12px;background-color:#ffffff;padding:10rpx;width:100rpx;text-align:center;border-radius:5px;" wx:if="{{getInfo.is_trailing==false}}">加入</view>
+        <view class="colors" bindtap="{{getInfo.attention==1?'set_trailing':'add_trailing'}}" style="float:right;font-size:12px;background-color:#ffffff;padding:10rpx;width:100rpx;text-align:center;border-radius:5px;" wx:if="{{getInfo.is_trailing==false}}">加入</view>
         <view bindtap="add_trailing" style="float:right;color:#ffffff;font-size:12px;background-color:#C3C3C3;padding:10rpx;width:100rpx;text-align:center;border-radius:5px;" wx:if="{{getInfo.is_trailing==true}}">退出{{design.landgrave}}</view>
     </view>
     <block wx:if="{{getInfo.attention==1}}">

@@ -41,7 +41,7 @@
     </view>
 </scroll-view>
 <view style="padding-left:26rpx;color:#AFAFAF;margin-top:20rpx;height:30px;">
-    <image src="../../style/icon/my_chang.png" style="width:60rpx;height:60rpx;vertical-align:middle;float:left;"></image>
+    <image src="../../style/icon/my_chang.png" style="width:60rpx;height:60rpx;vertical-align:middle;float:left;margin-right:5px"></image>
     <view style="font-size:34rpx;color:#000000;font-weight:600;float:left;">{{design.landgrave}}广场</view>
     <navigator hoverClass="none" url="/yl_welore/pages/square/index">
         <image src="../../style/icon/you.png" style="width:35rpx;height:35rpx;vertical-align:middle;float:right;margin-left:20rpx;margin-right:30rpx;margin-top:7rpx;"></image>
@@ -49,7 +49,7 @@
     </navigator>
 </view>
 <scroll-view scrollX="true" style="width:100%;white-space:nowrap;height:20em;overflow:hidden;">
-    <view class="classify_nex" style="background-color:#F9FAFB;vertical-align:top;" wx:for="{{needle}}" wx:key="n_index">
+    <view class="classify_nex" style="vertical-align:top;" wx:for="{{needle}}" wx:key="n_index">
         <view class="chang_img" style="width:100%;background-image:url({{item.icon}}); background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;text-align:left;line-height:76rpx;">
             <text style="font-size:32rpx;font-weight:600;color:#ffffff;margin-left:30rpx;">{{item.name}}</text>
         </view>
@@ -95,7 +95,7 @@
         </view>
     </view>
     <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.id}}">
-        <view class="" style="float:right;background-color:#2e77ed;color:#ffffff;border-radius:40rpx;padding:10rpx;width:135rpx;text-align:center;font-size:22rpx;margin-top:20px;margin-right:24rpx;">
+        <view class="bgs" style="float:right;color:#ffffff;border-radius:40rpx;padding:10rpx;width:135rpx;text-align:center;font-size:22rpx;margin-top:20px;margin-right:24rpx;">
       去{{design.landgrave}}
     </view>
     </navigator>

@@ -11,7 +11,7 @@
 <view style="clear:both;height:0"></view>
 <form bindreset="formReset" bindsubmit="formSubmit">
     <view style="padding:30rpx;">
-        <input class="weui-input" maxlength="14" name="qq_name" placeholder="填写名称" style="font-size:16px;width:95%;font-weight:600;color:#000;"></input>
+        <input class="weui-input" maxlength="14" name="qq_name" placeholder="填写名称" style="font-size:16px;width:100%;font-weight:600;"></input>
         <view class="weui-cells__tips" style="padding-right:0px;font-size:13px;">1. 名称不超过14个汉字，限汉字、字母、数字和下划线。</view>
         <view class="weui-cells__tips" style="padding-right:0px;font-size:13px;">2. 名称不能与已有名称重复。</view>
         <view class="weui-cells__tips" style="padding-right:0px;font-size:13px;">3. 名称不能包含“医疗机构、具有药用性产品名、股票期货彩票”等金融信息。</view>
@@ -35,7 +35,7 @@
                             </view>
                             <view class="" style="width:190rpx;height:190rpx;float:left;position:relative;margin-right:9px;margin-bottom:9px;" wx:if="{{img_botton}}">
                                 <view bindtap="previewOneImage" class="weui-uploader__input"></view>
-                                <image mode="widthFix" src="../../../style/icon/bpj.png" style="width:104px;"></image>
+                                <image mode="widthFix" src="../../../style/icon/bpj2.png" style="width:104px;"></image>
                             </view>
                         </view>
                     </view>

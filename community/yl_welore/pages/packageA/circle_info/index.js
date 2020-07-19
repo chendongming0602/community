@@ -665,12 +665,7 @@ Page({
         }), this.add_trailing_list();
     },
     onReachBottom: function() {
-        $Toast({
-            duration: 0,
-            content: "加载中",
-            type: "loading",
-            mask: !1
-        }), this.setData({
+        this.setData({
             page: this.data.page + 1
         }), this.add_trailing_list(), $Toast.hide();
     },

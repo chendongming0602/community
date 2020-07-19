@@ -67,10 +67,24 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "评论",
 					"pathName": "yl_welore/pages/packageA/article/index",
-					"query": "type=0&id=7",
+					"query": "type=0&id=6",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "大学圈子",
+					"pathName": "yl_welore/pages/packageA/circle_info/index",
+					"query": "id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "创建圈子",
+					"pathName": "yl_welore/pages/packageB/set_territory/index",
+					"query": "type=0&id=6",
 					"scene": null
 				}
 			]

@@ -108,3 +108,16 @@
     border: 1px #666666 solid;
     box-shadow: -3px 5px 10rpx 5rpx#666666;
 }
+.weui-input{
+    border: 2rpx solid var(--shallow);
+    padding: 5rpx 20rpx;
+    border-radius: 8rpx;
+    box-shadow: 0px 1px 1px 1px var(--shallow);
+    color: var(--color);
+    box-sizing: border-box;
+}
+.weui-textarea{
+    background: var(--shallow);
+    box-sizing: border-box;
+    width: 100%;
+}

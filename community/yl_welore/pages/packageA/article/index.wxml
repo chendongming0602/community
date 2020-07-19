@@ -199,7 +199,7 @@
             <view style="margin:0rpx 35rpx 0rpx 100rpx;position:relative;" wx:if="{{hui.reply_type==0}}">
                 <view style="word-break:break-all;font-size:14px;">{{hui.reply_content}}</view>
                 <image bindtap="previewHuiImage" data-index="{{hui_list_index}}" data-src="{{hui.image_part[0]}}" mode="widthFix" src="{{hui.image_part[0]}}" style="width:100px;" wx:if="{{hui.image_part[0]}}"></image>
-                <view style="font-size:14px;min-height:23px;padding:10px;background-color:#F4F4F4;" wx:if="{{hui.huifu_huifu.length>0}}">
+                <view class="bgs" style="font-size:14px;min-height:23px;padding:10px" wx:if="{{hui.huifu_huifu.length>0}}">
                     <view wx:for="{{hui.huifu_huifu}}" wx:for-item="hhh" wx:key="hhh_key">
                         <text style="color:#4A6598;">{{hhh.user_nick_name}}</text>
                         <text>：{{hhh.duplex_content}}</text>
