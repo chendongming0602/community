@@ -98,6 +98,21 @@
 					"id": -1,
 					"name": "我的收藏",
 					"pathName": "yl_welore/pages/packageC/user_collection/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "我的",
+					"pathName": "yl_welore/pages/packageB/my_home/index",
+					"query": "id=4",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "零钱明细",
+					"pathName": "yl_welore/pages/packageC/user_details/index",
+					"query": "id=4",
 					"scene": null
 				}
 			]

@@ -237,7 +237,7 @@
         </block>
         <i-load-more loading="{{false}}" tip="没有更多了" wx:if="{{di_msg}}"></i-load-more>
     </view>
-    <view class="weui-tabbar" style="height:2.5em;z-index:10001;" wx:if="{{select}}">
+    <view class="weui-tabbar" style="height:2.5em;z-index:10001;" wx:if="{{select&&check}}">
         <view bindtap="huifu" style="height:3em;color:#999999;width:100%;padding-left:42rpx;line-height:3em;font-size:14px;">
       说说你的想法...
     </view>
