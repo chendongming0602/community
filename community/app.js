@@ -99,7 +99,7 @@ App({
     http_root: "",
     siteInfo: require("siteinfo.js"),
     //新加审核判断版本
-    newVersion:"1.0.2",
+    newVersion:"1.0.1",
     //为true是在审核，
     isCheck:true,
     //新加审核判断
@@ -124,7 +124,7 @@ App({
                     if(!t&&that.isCheck) return resolve({check:!that.isCheck,is:3});
                     return resolve({check:!that.isCheck,is:1});
                     //1正常情况，2跳到授权，3弹出授权框
-                    //(返回的is未false在审核)
+                    //(返回的check未false在审核)
                 }
             });
         });
