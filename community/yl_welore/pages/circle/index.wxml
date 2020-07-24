@@ -54,9 +54,9 @@
             <text style="font-size:32rpx;font-weight:600;color:#ffffff;margin-left:30rpx;">{{item.name}}</text>
         </view>
         <view style="">
-            <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{c_item.id}}" wx:for="{{item.children}}" wx:for-item="c_item" wx:key="c_index">
+            <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{c_item.id}}" wx:for="{{item.children}}" wx:for-item="c_item" wx:key="c_index" style="padding:0px 20rpx">
                 <view class="weui-cell" style="padding:20rpx 0rpx 10rpx 0rpx;">
-                    <view class="weui-cell__hd" style="position: relative;margin-right: 10rpx;margin-left:20rpx;">
+                    <view class="weui-cell__hd" style="position: relative;margin-right: 10rpx;margin-left:0rpx;">
                         <image src="{{c_item.realm_icon}}" style="width: 45px; height: 45px;border-radius:50rpx;vertical-align:text-top;"></image>
                     </view>
                     <view class="course-name" style="text-align:left;">

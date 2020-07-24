@@ -180,11 +180,14 @@ Page({
         index_page = 1, this.get_index_list_one();
     },
     home_pl: function(t) {
-        console.log(t), this.setData({
-            home_pl_check: !0,
-            pl_id: t.currentTarget.dataset.id,
-            pl_key: t.currentTarget.dataset.key
-        });
+        wx.navigateTo({
+          url: `/yl_welore/pages/packageA/article/index?id=${t.currentTarget.dataset.id}&type=${t.currentTarget.dataset.type}`,
+        })
+        // console.log(t), this.setData({
+        //     home_pl_check: !0,
+        //     pl_id: t.currentTarget.dataset.id,
+        //     pl_key: t.currentTarget.dataset.key
+        // });
     },
     hideModal: function() {
         this.setData({
@@ -464,9 +467,9 @@ Page({
             params: n,
             success: function(t) {
                 if (console.log(t), "success" == t.data.status) {
-                    // for (var e = 0; e < t.data.info.length; e++) i.push(t.data.info[e]);
+                    for (var e = 0; e < t.data.info.length; e++) i.push(t.data.info[e]);
                     a.setData({
-                        new_list: t.data.info
+                        new_list:a._my?i:t.data.info
                     }), 0 == t.data.info.length && a.setData({
                         di_msg: !0
                     }), $Toast.hide();
@@ -549,11 +552,11 @@ Page({
             mask: !1
         }), setTimeout(function() {
             wx.hideNavigationBarLoading(), wx.stopPullDownRefresh();
-        }, 1500), "tab1" == this.data.current && this.get_index_list_one(), "tab2" == this.data.current && (index_my_page = 1, 
+        }, 1500), "tab1" == this.data.current && this.get_index_list_one(), "tab2" == this.data.current && (this._my=false,index_my_page = 1, 
         this.get_my_index_list()), this.get_ad();
     },
     onReachBottom: function() {
-        "tab1" == this.data.current && (index_page++, this.get_index_list()), "tab2" == this.data.current && (index_my_page++, 
+        "tab1" == this.data.current && (index_page++, this.get_index_list()), "tab2" == this.data.current && (this._my=true,index_my_page++, 
         this.get_my_index_list()), $Toast.hide();
     },
     onShareAppMessage: function() {

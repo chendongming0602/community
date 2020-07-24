@@ -119,6 +119,13 @@
 					"pathName": "yl_welore/pages/packageC/user_details/index",
 					"query": "id=4",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "圈子详情",
+					"pathName": "yl_welore/pages/packageB/circle_info/index",
+					"query": "id=4",
+					"scene": null
 				}
 			]
 		}
