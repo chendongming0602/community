@@ -59,6 +59,7 @@ Page({
         });
     },
     up_user_smail: function(t) {
+        if( t.currentTarget.dataset.status==1) return;
         var e = this, a = app.getCache("userinfo"), n = new Object();
         n.token = a.token, n.openid = a.openid, n.much_id = app.siteInfo.uniacid, n.id = t.currentTarget.dataset.id;
         var s = app.api_root + "User/up_user_smail";

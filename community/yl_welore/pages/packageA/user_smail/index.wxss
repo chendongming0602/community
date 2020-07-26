@@ -149,3 +149,23 @@ input-holder {
     color: #CC3333;
     text-align: center;
 }
+.lists{
+    border-bottom: 1px solid var(--shallow);
+}
+.du{
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+}
+.du>view{
+    font-size: 22rpx;
+    padding: 5rpx 10rpx;
+    border-radius: 8rpx;
+    background: #ddd;
+    color: #fff;
+}
+.du .yidu{
+    color: var(--color);
+    background: var(--shallow);
+    font-weight: bold;
+}

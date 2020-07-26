@@ -178,12 +178,7 @@ Page({
         });
     },
     nex_my_qq: function() {
-        $Toast({
-            duration: 0,
-            content: "加载中",
-            type: "loading",
-            mask: !1
-        }), this.setData({
+        this.setData({
             page: this.data.page + 1
         }), this.get_my_trailing(), $Toast.hide();
     },

@@ -240,3 +240,7 @@ input-holder {
 .chanjian{
     background: var(--color) !important;
 }
+.guanchang{
+    border-top: 4rpx solid #fff;
+    padding: 0rpx 20rpx 20rpx;
+}

@@ -126,6 +126,19 @@
 					"pathName": "yl_welore/pages/packageB/circle_info/index",
 					"query": "id=4",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "圈子广场",
+					"pathName": "yl_welore/pages/circle/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "yl_welore/pages/packageA/user_smail/index",
+					"scene": null
 				}
 			]
 		}
