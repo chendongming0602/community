@@ -30,7 +30,7 @@ Page({
         new_list: [
             {
                 study_type:0,
-                top_time:1,
+                top_time:0,
                 adapter_time: "2天前",
                 gender: 1,
                 huifu_time: "2天前",
@@ -578,6 +578,37 @@ Page({
         } : {
             title: "您的好友给您发了一条信息",
             path: "/yl_welore/pages/index/index",
+            success: function(t) {
+                $Toast({
+                    content: "转发成功"
+                });
+            },
+            fail: function(t) {
+                $Toast({
+                    content: "转发失败"
+                });
+            }
+        };
+    },
+    onShareTimeline(){
+        var t = app.globalData.forward;
+        return console.log(t), t ? {
+            title: t.title,
+            query: "/yl_welore/pages/index/index",
+            imageUrl: t.reis_img,
+            success: function(t) {
+                $Toast({
+                    content: "转发成功"
+                });
+            },
+            fail: function(t) {
+                $Toast({
+                    content: "转发失败"
+                });
+            }
+        } : {
+            title: "您的好友给您发了一条信息",
+            query: "/yl_welore/pages/index/index",
             success: function(t) {
                 $Toast({
                     content: "转发成功"

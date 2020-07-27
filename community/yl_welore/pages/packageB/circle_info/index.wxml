@@ -10,12 +10,14 @@
 </view>
 <view style="clear:both;height:0"></view>
 <view style="padding:30rpx;position:relative;">
+    <view bindtap="ts_admin" data-id="{{id}}" data-qq="" data-type="0" style="font-size:24rpx;color:#FF9732;" wx:if="{{info.this_da_qq==0&&info.this_xiao_qq==0}}" class="ts">投诉{{design.landgrave}}</view>
+
+
     <view style="text-align:center;position:relative;">
         <image src="{{info.realm_icon}}" style="width:100px;height:100px;border-radius:50%;"></image>
     </view>
     <view style="padding-right:0px;font-size:14px;color:#000;text-align:center;">{{info.realm_name}}</view>
     <view style="padding-right:0px;font-size:13px;color:#999;text-align:center;">{{info.realm_synopsis}}</view>
-    <view bindtap="ts_admin" data-id="{{id}}" data-qq="" data-type="0" style="font-size:24rpx;color:#FF9732;position:absolute;right:8%;top:37%;" wx:if="{{info.this_da_qq==0&&info.this_xiao_qq==0}}">投诉{{design.landgrave}}</view>
     <navigator hoverClass="none" url="/yl_welore/pages/packageA/user_banned/index?id={{id}}">
         <view data-id="{{id}}" data-qq="" data-type="0" style="font-size:13px;color:#fff;position:absolute;right:8%;top:22%;background-color:#FF9732;border-radius:20px;padding:3px 10px;" wx:if="{{info.this_da_qq==1||info.this_xiao_qq==1}}">禁言列表</view>
     </navigator>
@@ -40,7 +42,7 @@
     <view>
         <image src="../../../style/icon/quanzhu.png" style="width:20px;height:20px;float:left;"></image>
         <view style="float:left;font-size:14px;margin-left:10px;">{{design.qq_name}}主</view>
-        <image class="xwcms" src="../../../style/icon/fanhui.png" style="width:15px;height:15px;float:right;opacity:0.4;margin-top:4px;"></image>
+        <image bindtap="da_mod" class="xwcms" src="../../../style/icon/fanhui.png" style="width:15px;height:15px;float:right;opacity:0.4;margin-top:4px;"></image>
         <view bindtap="da_mod" style="float:right;font-size:14px;margin-right:10px;">{{design.qq_name}}主权益与规范</view>
     </view>
     <view style="clear:both;height:0"></view>
@@ -58,14 +60,14 @@
         </view>
         <view bindtap="ts_admin" data-id="{{item.id}}" data-qq="0" data-type="1" style="font-size:24rpx;color:#FF9732;" wx:if="{{da_qq.length!=0&&item.id!=uid}}">投诉{{design.qq_name}}主</view>
     </view>
-    <view bindtap="shenqing_da_qq" data-key="da" style="font-size:13px;background-color:#03C900;float:right;margin:20px 10px;border-radius:20px;padding:4px 10px;color:#ffffff;" wx:if="{{da_qq.length<3&&info.this_da_qq==0}}">申请{{design.qq_name}}主</view>
+    <view bindtap="shenqing_da_qq" data-key="da" style="font-size:13px;float:right;margin:20px 10px;border-radius:20px;padding:4px 10px;color:#ffffff;" wx:if="{{da_qq.length<3&&info.this_da_qq==0}}" class="bgs">申请{{design.qq_name}}主</view>
 </view>
 <view style="clear:both;height:0"></view>
 <view style="padding:30rpx;">
     <view>
         <image src="../../../style/icon/guanliyuan.png" style="width:20px;height:20px;float:left;"></image>
         <view style="float:left;font-size:14px;margin-left:10px;">管理员</view>
-        <image class="xwcms" src="../../../style/icon/fanhui.png" style="width:15px;height:15px;float:right;opacity:0.4;margin-top:4px;"></image>
+        <image bindtap="xiao_mod" class="xwcms" src="../../../style/icon/fanhui.png" style="width:15px;height:15px;float:right;opacity:0.4;margin-top:4px;"></image>
         <view bindtap="xiao_mod" style="float:right;font-size:14px;margin-right:10px;">管理员权益与规范</view>
     </view>
     <view style="clear:both;height:0"></view>
@@ -97,7 +99,7 @@
     <view class="weui-cell__bd" style="margin:20px;background-color:#ffffff;border-radius:6px;padding:10px;">
         <textarea autoHeight="true" bindinput="get_shenqing_text" class="weui-textarea" maxlength="300" placeholder="请说明申请理由" style="min-height:4em;" value=""></textarea>
     </view>
-    <button bindtap="shenqing_submit" style="background: #ffffff;color:#666666;border-radius: 2rem;border: 1px #666666 solid;box-shadow:-3px 5px  10rpx 5rpx#666666;width:150px;">提交申请</button>
+    <button bindtap="shenqing_submit" style="background: #ffffff;color:#666666;border-radius: 2rem;border: 1px #666666 solid;box-shadow:-0px 3px  3rpx 0rpx#666666;width:150px;">提交申请</button>
 </view>
 <view animation="{{animationJbData}}" style="width:100%;height:230px;background-color:#F7F7F7;position:fixed;bottom:0px;border-top-left-radius:20rpx;border-top-right-radius:20rpx;z-index:10000;" wx:if="{{tousu}}">
     <view style="text-align:center;">
@@ -106,7 +108,7 @@
     </view>
     <view style="clear:both;height:0"></view>
     <view class="weui-cell__bd" style="margin:20px;background-color:#ffffff;border-radius:6px;padding:10px;">
-        <textarea autoHeight="true" bindinput="get_tc_text" class="weui-textarea" maxlength="300" placeholder="请说明投诉理由" style="min-height:4em;" value=""></textarea>
+        <textarea autoHeight="true" bindinput="get_tc_text" class="weui-textarea " maxlength="300" placeholder="请说明投诉理由" style="min-height:4em;" value=""></textarea>
     </view>
     <button bindtap="tc_submit" style="background: #ffffff;color:#666666;border-radius: 2rem;border: 1px #666666 solid;box-shadow:-3px 5px  10rpx 5rpx#666666;width:150px;">提交投诉</button>
 </view>

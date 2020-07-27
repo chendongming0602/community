@@ -40,6 +40,7 @@
     bottom: 0;
     width: 100%;
     background-color: #f7f7fa;
+    border-top: 2px solid var(--shallow);
 }
 
 .liwu_col {
@@ -49,11 +50,12 @@
     display: inline-block;
     width: 20%;
     height: 6.8em;
+    margin-left: 20rpx;
 }
 
 .liwu_border {
-    border: 2px solid #CC99FF;
-    box-shadow: 0px 0px 10px 0px #CC99FF;
+    border: 2px solid var(--color);
+    box-shadow: 0px 0px 10px 0px rgba(97,199,225,0.5);
     border-radius: 10px;
 }
 
@@ -72,11 +74,13 @@
 .input_number_red {
     float: right;
     border: 1px solid #F759AB;
+    border-radius: 8rpx;
 }
 
 .input_number_blue {
     float: right;
     border: 1px solid #2E77ED;
+    border-radius: 8rpx;
 }
 
 .nav-title {

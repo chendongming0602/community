@@ -202,3 +202,8 @@ input-holder {
     text-align: center;
     border-right: 1px solid #dedede;
 }
+.ts{
+    position: absolute;
+    top: 50rpx;
+    right: 20rpx;
+}

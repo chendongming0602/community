@@ -250,5 +250,36 @@ Page({
                 });
             }
         };
+    },
+    onShareTimeline: function() {
+        var t = app.globalData.forward;
+        return console.log(t), t ? {
+            title: t.title,
+            query: "/yl_welore/pages/index/index",
+            imageUrl: t.reis_img,
+            success: function(t) {
+                $Toast({
+                    content: "转发成功"
+                });
+            },
+            fail: function(t) {
+                $Toast({
+                    content: "转发失败"
+                });
+            }
+        } : {
+            title: "您的好友给您发了一条信息",
+            query: "/yl_welore/pages/index/index",
+            success: function(t) {
+                $Toast({
+                    content: "转发成功"
+                });
+            },
+            fail: function(t) {
+                $Toast({
+                    content: "转发失败"
+                });
+            }
+        };
     }
 });

@@ -314,9 +314,9 @@
                 <i-input-number bindchange="handleChange1" iClass="{{sex==1||sex==0?'input_number_blue':'input_number_red'}}" max="99" min="1" value="{{li_number}}"></i-input-number>
             </view>
             <view style="clear:both;height:0"></view>
-            <button bindtap="reward" class="wx_liwu" size="default" style="color: #{{sex==1||sex==0?'2E77ED':'f759ab'}};border-radius: 2rem;border: 1px #{{sex==1||sex==0?'2E77ED':'f759ab'}} solid;box-shadow: -3px 5px 10rpx 5rpx #{{sex==1||sex==0?'2E77ED':'f759ab'}};">立即打赏</button>
+            <button bindtap="reward" class="wx_liwu" size="default" style="color: #{{sex==1||sex==0?'2E77ED':'f759ab'}};border-radius: 2rem;border: 1px #{{sex==1||sex==0?'2E77ED':'f759ab'}} solid;box-shadow: -0px 3px 3rpx 0rpx #{{sex==1||sex==0?'2E77ED':'f759ab'}};">立即打赏</button>
         </view>
-        <button bindtap="submit" style="background: #ffffff;color:#666666;border-radius: 2rem;border: 1px #666666 solid;box-shadow:-3px 5px  10rpx 5rpx#666666;width:150px;margin-bottom:20px;padding:0.5em;" wx:if="{{current!='tab3'}}">发布</button>
+        <button bindtap="submit" style="background: #ffffff;color:#666666;border-radius: 2rem;border: 1px #666666 solid;box-shadow:-0px 3px  3rpx 0rpx#666666;width:150px;margin-bottom:20px;padding:0.5em;" wx:if="{{current!='tab3'}}">发布</button>
     </view>
     <view animation="{{animationData}}" catchtouchmove="ture" style="width:100%;height:550px;background-color:#ffffff;position:fixed;bottom:0px;border-top-left-radius:20rpx;border-top-right-radius:20rpx;z-index:10000;" wx:if="{{reply_and_hui}}">
         <view style="text-align:center;">
