@@ -26,7 +26,7 @@
                     <view style="float:left;text-align:left;position:relative;left:12px;top:13px;line-height:32px;">
                         <view style="color:#ffffff;font-size:25px;float:left;">{{user_info.conch}}</view>
                         <image src="../../../style/icon/jinbi.png" style="width:30px;height:30px;border-radius:100rpx;margin-left:10px;"></image>
-                        <view bindtap="get_pay" style="width:60px;border-radius:50px;text-align:center;color:#fff;background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);font-size:12px;height:26px;line-height:26px;margin-left:20px;" wx:if="{{copyright.recharge_arbor==1}}">
+                        <view bindtap="get_pay" style="width:60px;border-radius:50px;text-align:center;color:#fff;background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);font-size:12px;height:26px;line-height:26px;margin-left:20px;" wx:if="{{copyright.recharge_arbor==1&&check}}">
               充值
             </view>
                     </view>

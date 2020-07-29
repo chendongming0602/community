@@ -93,11 +93,12 @@ button {
     display: inline-block;
     width: 20%;
     height: 6.8em;
+    margin-left: 20rpx;
 }
 
 .liwu_border {
-    border: 2px solid #CC99FF;
-    box-shadow: 0px 0px 10px 0px #CC99FF;
+    border: 2px solid var(--color);
+    box-shadow: 0px 0px 10px 0px rgba(97,199,225,0.5);
     border-radius: 10px;
 }
 

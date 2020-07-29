@@ -2,6 +2,7 @@ var app = getApp(), http = require("../../../util/http.js"), md5 = require("../.
 
 Page({
     data: {
+        check:false,
         user_info: {},
         nvabarData: {
             showCapsule: 0,
@@ -38,6 +39,14 @@ Page({
         }), console.log(this.data.copyright);
     },
     onShow: function() {
+        //审核判断
+        app.checkEvent().then(res=>{
+            let {check,is}=res;
+            this.setData({check});
+            if(is===2) return  wx.navigateTo({
+                url: '/yl_welore/pages/author/index?type=0',
+            });
+        });
         this.get_user_hon(), this.get_user_info();
     },
     get_pay: function() {

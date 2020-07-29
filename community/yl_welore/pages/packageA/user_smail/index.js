@@ -79,6 +79,10 @@ Page({
                 });
             }
         });
+        let {paper_id,type}=t.currentTarget.dataset;
+        wx.navigateTo({
+          url: `/yl_welore/pages/packageA/article/index?id=${paper_id}&type=${type}`,
+        });
     },
     del_do: function() {
         var e = this, t = app.getCache("userinfo"), a = new Object();

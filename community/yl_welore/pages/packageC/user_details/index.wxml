@@ -19,7 +19,7 @@
     <view style="width:100%;height:50px;margin-top:15px;">
         <view style="font-size:14px;float:left;margin-left:20px;">
             <text style="font-size:28px;">{{user_info.conch}}</text>{{design.currency}}</view>
-        <view bindtap="get_pay" style="margin-top:5px;line-height:37px;float:right;width:90px;border-radius:50px;text-align:center;color:#f794a4;font-size:12px;margin-right:20px;background-color:#fff;" wx:if="{{copyright.recharge_arbor==1}}">
+        <view bindtap="get_pay" style="margin-top:5px;line-height:37px;float:right;width:90px;border-radius:50px;text-align:center;color:#f794a4;font-size:12px;margin-right:20px;background-color:#fff;" wx:if="{{copyright.recharge_arbor==1&&check}}">
       {{design.currency}}充值
     </view>
         <navigator hoverClass="none" url="/yl_welore/pages/packageC/withdrawal/index" wx:if="{{setting.open_withdrawals==1}}">

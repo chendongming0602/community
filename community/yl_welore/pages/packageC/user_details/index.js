@@ -2,6 +2,7 @@ var app = getApp(), http = require("../../../util/http.js"), md5 = require("../.
 
 Page({
     data: {
+        check:false,
         current: "tab1",
         user_info: {},
         nvabarData: {
@@ -52,7 +53,16 @@ Page({
             copyright: app.globalData.copyright
         }), console.log(this.data.copyright), this.get_user_info(), this.get_user_amount();
     },
-    onShow: function() {},
+    onShow: function() {
+        //审核判断
+        app.checkEvent().then(res=>{
+            let {check,is}=res;
+            this.setData({check});
+            if(is===2) return  wx.navigateTo({
+                url: '/yl_welore/pages/author/index?type=0',
+            });
+        });
+    },
     dh_confer: function() {
         this.setData({
             dh_confer_t: !0

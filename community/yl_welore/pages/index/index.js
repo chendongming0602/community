@@ -335,6 +335,7 @@ Page({
         var t = app.getCache("userinfo");
         app.checkEvent().then(res=>{
             let {check,is}=res;
+            console.log(check,is)
             this.setData({check});
             if(is===3) return this.selectComponent("#login").showEvent();
             if(is===2) return  wx.navigateTo({

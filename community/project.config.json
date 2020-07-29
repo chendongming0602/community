@@ -138,6 +138,13 @@
 					"id": -1,
 					"name": "消息",
 					"pathName": "yl_welore/pages/packageA/user_smail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员开通",
+					"pathName": "yl_welore/pages/packageB/user_vip/index",
 					"scene": null
 				}
 			]
