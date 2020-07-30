@@ -57,7 +57,7 @@
         </view>
     </view>
     <view style="clear:both;height:0"></view>
-    <view style="padding-bottom:10px;margin-top:15px;text-align:center;" wx:if="{{info.red&&version==0}}">
+    <view style="padding-bottom:10px;margin-top:15px;text-align:center;" wx:if="{{info.red&&version==0&&check}}">
         <view class="weui-flex">
             <view class="weui-flex__item" style="color:#FF9966;">
                 <view>
@@ -255,7 +255,7 @@
         </i-tabs>
         <view style="width:100%;height:60%;" wx:if="{{current=='tab1'}}">
             <view class="weui-cell__bd" style="margin-top:20rpx;margin-left:10px;">
-                <textarea autoHeight="true" bindinput="get_text" class="weui-textarea" maxlength="140" placeholder="来吧，畅所欲言..." style="min-height:4em;" value=""></textarea>
+                <textarea show-confirm-bar="{{false}}" autoHeight="true" bindinput="get_text" class="weui-textarea" maxlength="140" placeholder="来吧，畅所欲言..." style="min-height:4em;" value=""></textarea>
             </view>
             <view class="weui-cells" style="margin-left:10px;">
                 <view class="weui-cell" style="padding:10px 0px 15px 0px;">
@@ -405,7 +405,7 @@
     <view class="modal-dialog" wx:if="{{del_msg}}">
         <view class="modal-title" style="font-size:15px;">删除原因</view>
         <view class="modal-content">
-            <textarea bindinput="is_qq_text" placeholder="请填写删除原因" style="height:5em;width:90%;padding:10px;font-size:13px;"></textarea>
+            <textarea show-confirm-bar="{{false}}" bindinput="is_qq_text" placeholder="请填写删除原因" style="height:5em;width:90%;padding:10px;font-size:13px;"></textarea>
         </view>
         <view class="modal-footer">
             <view bindtap="hideModal" class="btn-cancel" data-status="cancel" style="font-size:15px;">取消</view>
@@ -416,7 +416,7 @@
     <view class="modal-dialog" wx:if="{{tz_del_msg}}">
         <view class="modal-title" style="font-size:15px;">删除原因</view>
         <view class="modal-content">
-            <textarea bindinput="is_qq_text" placeholder="请填写删除原因" style="height:5em;width:90%;padding:10px;font-size:13px;"></textarea>
+            <textarea show-confirm-bar="{{false}}" bindinput="is_qq_text" placeholder="请填写删除原因" style="height:5em;width:90%;padding:10px;font-size:13px;"></textarea>
         </view>
         <view class="modal-footer">
             <view bindtap="hideModal" class="btn-cancel" data-status="cancel" style="font-size:15px;">取消</view>
@@ -427,7 +427,7 @@
     <view class="modal-dialog" wx:if="{{tz_jin_msg}}">
         <view class="modal-title" style="font-size:15px;">禁言理由</view>
         <view class="modal-content">
-            <textarea bindinput="is_qq_text" placeholder="请填写禁言理由" style="height:5em;width:90%;padding:10px;font-size:13px;"></textarea>
+            <textarea show-confirm-bar="{{false}}" bindinput="is_qq_text" placeholder="请填写禁言理由" style="height:5em;width:90%;padding:10px;font-size:13px;"></textarea>
         </view>
         <view class="modal-footer">
             <view bindtap="hideModal" class="btn-cancel" data-status="cancel" style="font-size:15px;">取消</view>
@@ -468,7 +468,7 @@
         <image class="ju-img" bindtap="no_jubao" src="../../../style/icon/cuo.png"></image>
         <view class="ju-title">我要吐槽</view>
         <view class="ju-text">
-            <textarea autoHeight="true" bindinput="get_jubao_text"  maxlength="300" placeholder="请具体说明问题，我们将尽快处理" value="" style="height=300rpx"></textarea>
+            <textarea show-confirm-bar="{{false}}" autoHeight="true" bindinput="get_jubao_text"  maxlength="300" placeholder="请具体说明问题，我们将尽快处理" value="" style="height=300rpx"></textarea>
         </view>
         <view bindtap="jubao_submit" class="ju-but" style="background: #ffffff;color:#666666;border-radius: 2rem;border: 1px #666666 solid;box-shadow:-0px 3px  3rpx 0rpx#666666;width:150px;margin-bottom:20px;padding:0.5em;">确定</view>
     </view>

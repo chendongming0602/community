@@ -8,7 +8,8 @@ Page({
         },
         title: "",
         page: 1,
-        info: []
+        info: [],
+        empty:false
     },
     onLoad: function(t) {
         var a = app.getCache("userinfo");
@@ -35,6 +36,7 @@ Page({
         http.POST(i, {
             params: a,
             success: function(t) {
+                if(t.data.info.length===0) e.setData({empty:true})
                 if (console.log(t), "success" == t.data.status) {
                     for (var a = 0; a < t.data.info.length; a++) n.push(t.data.info[a]);
                     e.setData({

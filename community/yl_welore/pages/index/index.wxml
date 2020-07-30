@@ -159,7 +159,7 @@
             </navigator>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.tory_id}}">
                 <view style="padding-left:10px">
-                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:#eacda3;">
+                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:{{item.colors? item.colors:'#eacda3'}};">
                         <image lazyLoad="true" src="{{item.realm_icon}}" style="margin-left:7px;margin-bottom:2px;vertical-align:middle;width:20px;height:20px;border-radius:50px;"></image>
                         <text style="font-size:11px;padding-left:5px;vertical-align:middle;color:#fff;">{{item.realm_name}}</text>
                     </view>
@@ -299,7 +299,7 @@
             </navigator>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.tory_id}}">
                 <view style="padding-left:10px">
-                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:#eacda3;">
+                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:{{item.colors? item.colors:'#eacda3'}};">
                         <image lazyLoad="true" src="{{item.realm_icon}}" style="margin-left:7px;margin-bottom:2px;vertical-align:middle;width:20px;height:20px;border-radius:50px;"></image>
                         <text style="font-size:11px;padding-left:5px;vertical-align:middle;color:#fff;">{{item.realm_name}}</text>
                     </view>
@@ -397,7 +397,7 @@
             </navigator>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.tory_id}}">
                 <view style="padding-left:10px">
-                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:#eacda3;">
+                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:{{item.colors? item.colors:'#eacda3'}};">
                         <image lazyLoad="true" src="{{item.realm_icon}}" style="margin-left:7px;margin-bottom:2px;vertical-align:middle;width:20px;height:20px;border-radius:50px;"></image>
                         <text style="font-size:11px;padding-left:5px;vertical-align:middle;color:#fff;">{{item.realm_name}}</text>
                     </view>
@@ -410,7 +410,7 @@
                 </view>
             </view>
             <view style="clear:both;height:0"></view>
-            <view class="weui-flex" style="padding-bottom:10px;padding-top:10px;">
+            <view class="weui-flex" style="padding-bottom:10px;padding-top:10px;" wx:if="{{check}}">
                 <view class="weui-flex__item">
                     <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2">
                         <button hoverClass="none">
@@ -531,7 +531,7 @@
             </navigator>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.tory_id}}">
                 <view style="padding-left:10px">
-                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:#eacda3;">
+                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:{{item.colors? item.colors:'#eacda3'}};">
                         <image lazyLoad="true" src="{{item.realm_icon}}" style="margin-left:7px;margin-bottom:2px;vertical-align:middle;width:20px;height:20px;border-radius:50px;"></image>
                         <text style="font-size:11px;padding-left:5px;vertical-align:middle;color:#fff;">{{item.realm_name}}</text>
                     </view>
@@ -671,7 +671,7 @@
             </navigator>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.tory_id}}">
                 <view style="padding-left:10px">
-                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:#eacda3;">
+                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:{{item.colors? item.colors:'#eacda3'}};">
                         <image lazyLoad="true" src="{{item.realm_icon}}" style="margin-left:7px;margin-bottom:2px;vertical-align:middle;width:20px;height:20px;border-radius:50px;"></image>
                         <text style="font-size:11px;padding-left:5px;vertical-align:middle;color:#fff;">{{item.realm_name}}</text>
                     </view>
@@ -766,7 +766,7 @@
             </navigator>
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.tory_id}}">
                 <view style="padding-left:10px">
-                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:#eacda3;">
+                    <view style="margin-top:10px;padding-top:1px;padding-bottom:1px;padding-right:10px;border-radius:20px;float:left;background-color:{{item.colors? item.colors:'#eacda3'}};">
                         <image lazyLoad="true" src="{{item.realm_icon}}" style="margin-left:7px;margin-bottom:2px;vertical-align:middle;width:20px;height:20px;border-radius:50px;"></image>
                         <text style="font-size:11px;padding-left:5px;vertical-align:middle;color:#fff;">{{item.realm_name}}</text>
                     </view>
@@ -779,7 +779,7 @@
                 </view>
             </view>
             <view style="clear:both;height:0"></view>
-            <view class="weui-flex" style="padding-bottom:10rpx;padding-top:10px;">
+            <view class="weui-flex" style="padding-bottom:10rpx;padding-top:10px;" wx:if="{{check}}">
                 <view class="weui-flex__item">
                     <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2">
                         <button hoverClass="none">

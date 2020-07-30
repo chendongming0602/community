@@ -11,6 +11,7 @@ var app = getApp(), http = require("../../../util/http.js"), _require = require(
 
 Page({
     data: {
+        empty:false,
         check:false,
         uid: 0,
         user_info: {},
@@ -390,6 +391,7 @@ Page({
         http.POST(n, {
             params: a,
             success: function(t) {
+                if(t.data.info.length===0) e.setData({empty:true})
                 if (console.log(t), "success" == t.data.status) {
                     0 == t.data.info.length && e.setData({
                         load: !0

@@ -413,7 +413,7 @@
         </view>
     </block>
 </view>
-<view class="classify" style="left:28%;" wx:if="{{tory_list.length==0&&getInfo.attention==0&&top_list.length==0}}">
+<view class="classify" style="left:28%;" wx:if="{{tory_list.length==0&&getInfo.attention==0&&top_list.length==0&&empty}}">
     <view class="class_border" style="border:0rpx;">
         <image src="../../../style/icon/zanwu.png" style=" width: 130rpx;  height: 130rpx;  border-radius: 100%;"></image>
     </view>

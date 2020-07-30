@@ -8,6 +8,7 @@ function _defineProperty(t, e, a) {
 }
 
 var app = getApp(), http = require("../../util/http.js"), index_page = 1, index_my_page = 1, _require = require("../../dist/base/index"), $Toast = _require.$Toast, innerAudioContext = wx.createInnerAudioContext();
+import {titleColor} from "../../util/color";
 Page({
     data: {
         //判断审核
@@ -28,38 +29,38 @@ Page({
             type: "huifu"
         } ],
         new_list: [
-            {
-                study_type:0,
-                top_time:0,
-                adapter_time: "2天前",
-                gender: 1,
-                huifu_time: "2天前",
-                id: 7,
-                image_length: "31.5",
-                info_zan_count: "1",
-                info_zan_count_this: 1,
-                is_buy: 0,
-                is_info_zan: false,
-                is_open: 1,
-                is_voice: false,
-                much_id: 2,
-                prove_time: 1594722510,
-                purchase: 0,
-                realm_icon: "https://sl.tpapi.cn/addons/yl_welore/web/static/uploads/968bda4cac84ad886d373d94168aa576.jpeg",
-                realm_name: "广州大学",
-                study_content: "哈哈/::> ",
-                study_heat: "4",
-                study_laud: "1",
-                study_repount: "1",
-                study_status: 1,
-                study_title: "一起",
-                study_title_color: "#000000",
-                tory_id: 2,
-                user_head_sculpture: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIAYHSxN2tFEQe3XoBk4GqP1icvhNq44V2cC4KJewpHjEibxK4YSxgy64TAIWVWUEyytcNOHnmoSrhA/132",
-                user_id: 4,
-                user_nick_name: "wx_1f5944BxZ609222",
-                user_wechat_open_id: "oq2Qt5FXdTZgd31nnyDPm_5sK_p8",
-            }
+            // {
+            //     study_type:0,
+            //     top_time:0,
+            //     adapter_time: "2天前",
+            //     gender: 1,
+            //     huifu_time: "2天前",
+            //     id: 7,
+            //     image_length: "31.5",
+            //     info_zan_count: "1",
+            //     info_zan_count_this: 1,
+            //     is_buy: 0,
+            //     is_info_zan: false,
+            //     is_open: 1,
+            //     is_voice: false,
+            //     much_id: 2,
+            //     prove_time: 1594722510,
+            //     purchase: 0,
+            //     realm_icon: "https://sl.tpapi.cn/addons/yl_welore/web/static/uploads/968bda4cac84ad886d373d94168aa576.jpeg",
+            //     realm_name: "广州大学",
+            //     study_content: "哈哈/::> ",
+            //     study_heat: "4",
+            //     study_laud: "1",
+            //     study_repount: "1",
+            //     study_status: 1,
+            //     study_title: "一起",
+            //     study_title_color: "#000000",
+            //     tory_id: 2,
+            //     user_head_sculpture: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIAYHSxN2tFEQe3XoBk4GqP1icvhNq44V2cC4KJewpHjEibxK4YSxgy64TAIWVWUEyytcNOHnmoSrhA/132",
+            //     user_id: 4,
+            //     user_nick_name: "wx_1f5944BxZ609222",
+            //     user_wechat_open_id: "oq2Qt5FXdTZgd31nnyDPm_5sK_p8",
+            // }
         ],
         show: !0,
         inputShowed: !1,
@@ -446,8 +447,12 @@ Page({
         n.order_time = i ? i.type : this.data.order_time, n.index_page = 1, http.POST(t, {
             params: n,
             success: function(t) {
+                let list=t.data.info;
+                list.map(t=>{
+                    t.colors=titleColor(t.tory_id)
+                })
                 console.log(t), "success" == t.data.status ? (e.setData({
-                    new_list: t.data.info,
+                    new_list: list,
                     home_list: t.data.home_list
                 }), $Toast.hide()) : $Toast({
                     content: t.data.msg
@@ -472,7 +477,10 @@ Page({
             params: n,
             success: function(t) {
                 if (console.log(t), "success" == t.data.status) {
-                    for (var e = 0; e < t.data.info.length; e++) i.push(t.data.info[e]);
+                    for (var e = 0; e < t.data.info.length; e++){
+                        t.data.info[e].colors=titleColor(t.data.info[e].tory_id)
+                        i.push(t.data.info[e]);
+                    } 
                     a.setData({
                         new_list:a._my?i:t.data.info
                     }), 0 == t.data.info.length && a.setData({
@@ -501,7 +509,11 @@ Page({
             params: n,
             success: function(t) {
                 if (console.log(t), "success" == t.data.status) {
-                    for (var e = 0; e < t.data.info.length; e++) o.push(t.data.info[e]);
+
+                    for (var e = 0; e < t.data.info.length; e++) {
+                        t.data.info[e].colors=titleColor(t.data.info[e].tory_id)
+                        o.push(t.data.info[e]);
+                    }
                     a.setData({
                         new_list: o
                     }), 0 == t.data.info.length && a.setData({

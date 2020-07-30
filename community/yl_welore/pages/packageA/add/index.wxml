@@ -16,7 +16,7 @@
     </view>
     <view style="clear:both;height:0"></view>
     <view class="weui-cell__bd" style="margin-top:20rpx;">
-        <textarea bindinput="get_text_len" class="weui-textarea" maxlength="-1" placeholder="来吧，畅所欲言..." style="height:150px;" value="{{text}}" wx:if="{{get_hidden}}"></textarea>
+        <textarea show-confirm-bar="{{false}}" bindinput="get_text_len" class="weui-textarea" maxlength="-1" placeholder="来吧，畅所欲言..." style="height:150px;" value="{{text}}" wx:if="{{get_hidden}}"></textarea>
     </view>
     <view class="weui-cells" wx:if="{{fa_type==1||fa_type==0}}">
         <view class="weui-cell" style="padding:10px 0px 15px 0px;">
