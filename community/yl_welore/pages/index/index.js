@@ -267,9 +267,13 @@ Page({
         http.POST(n, {
             params: a,
             success: function(t) {
-                // console.log(t), "账户未授权!" == t.data.msg && wx.navigateTo({
-                //     url: "/yl_welore/pages/author/index?type=0"
-                // }), 
+                app.checkEvent().then(res=>{
+                    let {check,is}=res;
+                    ("账户未授权!" == t.data.msg&&check)&& wx.navigateTo({
+                        url: '/yl_welore/pages/author/index?type=0',
+                    });
+                    ("账户未授权!" == t.data.msg&&!check)&&e.selectComponent("#login").showEvent();
+                });
                 "success" == t.data.status ? e.setData({
                     ad_info: t.data.info,
                     sw_info: t.data.info_sw

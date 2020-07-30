@@ -82,6 +82,7 @@ page {
     background-color: var(--shallow);
     border-radius: 25rpx;
     display: inline-block;
+    overflow: hidden;
 }
 
 .class_img {

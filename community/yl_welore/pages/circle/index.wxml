@@ -51,7 +51,7 @@
 <scroll-view scrollX="true" style="width:100%;white-space:nowrap;height:20em;overflow:hidden;">
     <view class="classify_nex" style="vertical-align:top;" wx:for="{{needle}}" wx:key="n_index">
         <view class="chang_img" style="width:100%;background-image:url({{item.icon}}); background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;text-align:left;line-height:76rpx;">
-            <text style="font-size:32rpx;font-weight:600;color:#ffffff;margin-left:30rpx;">{{item.name}}</text>
+            <text style="font-size:32rpx;font-weight:600;color:#fff;margin-left:30rpx;">{{item.name}}</text>
         </view>
         <view style="">
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{c_item.id}}" wx:for="{{item.children}}" wx:for-item="c_item" wx:key="c_index"  class="guanchang">
