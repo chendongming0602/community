@@ -521,11 +521,13 @@ Page({
             duration: 500,
             timingFunction: "ease-out"
         });
-        t.rotateZ(225).step(), a.translate(90, -105).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
-        e.translate(-10, -105).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
-        i.translate(-110, -105).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
-        0 == this.data.version && o.translate(180, -105).rotateZ(360).opacity(1).height("65px").width("65px").step(), 
-        n.backgroundColor("#F7F9FA").height(190).step(), this.setData({
+        let items=this.data.isIpx?-125:-108;
+        let hieghts=this.data.isIpx?200:190;
+        t.rotateZ(225).step(), a.translate(90, items).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
+        e.translate(-10, items).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
+        i.translate(-110, items).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
+        0 == this.data.version && o.translate(180, items).rotateZ(360).opacity(1).height("65px").width("65px").step(), 
+        n.backgroundColor("#F7F9FA").height(hieghts).step(), this.setData({
             animPlus: t.export(),
             animCollect: a.export(),
             animTranspond: e.export(),

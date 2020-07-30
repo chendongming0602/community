@@ -14,7 +14,15 @@ Component({
             app.checkEvent().then(res=>{
                 let {check,is}=res;
                 this.setData({check});
-            });    
+            }); 
+        wx.getSystemInfo({//自定义导航
+            success: e => {
+              -1 < e.model.indexOf("iPhone X") && this.setData({
+                isIphoneX:!0
+              });
+              // console.log(this.nav)
+            }
+          })   
         }
     },
     pageLifetimes: {
@@ -26,7 +34,7 @@ Component({
     },
     data: {
         check:false,
-        isIphoneX: app.globalData.isIpx,
+        isIphoneX: false,
         isPopping: !1,
         animPlus: {},
         animCollect1: {},
@@ -205,11 +213,14 @@ Component({
                 duration: 500,
                 timingFunction: "ease-out"
             });
-            t.rotateZ(225).step(), e.translate(90, -105).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
-            a.translate(90, -105).rotateZ(360).opacity(1).width("60px").step(), i.translate(-10, -105).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
-            n.translate(-110, -105).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
-            s.translate(180, -105).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
-            o.backgroundColor("#F7F9FA").height(190).step(), this.setData({
+            let items=this.data.isIphoneX?-125:-108;
+            let hieghts=this.data.isIphoneX?200:190;
+            console.log(items,hieghts)
+            t.rotateZ(225).step(), e.translate(90, items).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
+            a.translate(90, items).rotateZ(360).opacity(1).width("60px").step(), i.translate(-10, items).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
+            n.translate(-110, items).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
+            s.translate(180, items).rotateZ(360).opacity(1).height("60px").width("60px").step(), 
+            o.backgroundColor("#F7F9FA").height(hieghts).step(), this.setData({
                 animPlus: t.export(),
                 animCollect1: a.export(),
                 animCollect: e.export(),

@@ -10,8 +10,8 @@
 </view>
 <view style="width:100%;height:auto;margin-top:{{height*2+40}}px;background-color:#ffffff;">
     <view style="padding-left:26rpx;color:#AFAFAF;background-color:#F1F1F1;border-top-left-radius:33px;border-bottom-left-radius:33px;width:66%;height:70rpx;;float:left;margin-left:36px;position:relative;">
-        <input bindinput="get_search" confirmType="done" maxlength="20" placeholder="搜索" style="height:35px;line-height:35px;text-align:center;color:#000000;" value="{{get_search}}"></input>
-        <view bindtap="col_search" style="z-index:99999999;position:absolute;top:8px;right:11px;width:23px;height:23px;text-align:center;line-height:23px;border-radius:50%;background-color:#CBCBCB;" wx:if="{{get_search!=''}}">
+        <input bindinput="get_search" confirmType="done" maxlength="20" placeholder="搜索" style="height:35px;line-height:35px;text-align:center;color:#000000;" class="inputs" value="{{get_search}}"></input>
+        <view bindtap="col_search" style="z-index:99999999;position:absolute;top:6px;right:10px;width:23px;height:23px;text-align:center;line-height:23px;border-radius:50%;background-color:#CBCBCB;" wx:if="{{get_search!=''}}">
             <i-icon color="#ffffff" type="close"></i-icon>
         </view>
     </view>

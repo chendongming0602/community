@@ -957,7 +957,7 @@ Page({
             duration: 150,
             timingFunction: "linear"
         });
-        (i.animation = n).translateY(230).step(), i.setData({
+        (i.animation = n).translateY(230).backgroundColor("#f0f").step(), i.setData({
             animationJbData: n.export(),
             jubao: !0,
             kkk: a,
@@ -989,11 +989,11 @@ Page({
         http.POST(n, {
             params: i,
             success: function(t) {
-                console.log(t), "success" == t.data.status ? ($Toast({
+                ($Toast({
                     content: t.data.msg
                 }), e.setData({
                     jubao: !1
-                })) : $Toast({
+                })), $Toast({
                     content: t.data.msg
                 });
             },
@@ -1115,7 +1115,8 @@ Page({
                     img_arr: [],
                     di_msg: !1,
                     select: !0,
-                    img_botton: !0
+                    img_botton: !0,
+                    text:""
                 }), e.get_article_info(1)) : $Toast({
                     content: t.data.msg
                 }), wx.hideLoading();

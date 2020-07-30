@@ -251,3 +251,51 @@ input-holder {
     background: var(--shallow);
     border-radius: 8rpx;
 }
+.ju-box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(1,1,1,0.6);
+    z-index: 999999;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ju-c{
+    width: 650rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    position: relative;
+}
+.ju-title{
+    text-align: center;
+    padding: 20rpx;
+    font-weight: bold;
+}
+.ju-text{
+    height: 300rpx;
+    padding: 0 30rpx;
+    position: relative;
+}
+.ju-text textarea{
+    width: 100%;
+    min-height: 300rpx;
+    background: #f7f7f7;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    box-sizing: border-box;
+}
+.ju-but{
+    margin: 30rpx auto 10rpx;
+    text-align: center;
+}
+.ju-img{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 25rpx;
+    right: 25rpx;
+}
