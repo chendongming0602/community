@@ -32,7 +32,7 @@
         <image bindtap="handleCancel2" mode="widthFix" src="../../../style/icon/bqd.png" style="width:40px;"></image>
     </view>
     <view  style="margin:35rpx 30rpx 0rpx 30rpx;word-break:break-all;font-size:14px;">
-        <view selectable="true" class="contentText">{{info.study_content}}111</view>
+        <view selectable="true" class="contentText">{{info.study_content}}</view>
         <view style="margin:20px;">
             <view class="weui-cell" style="padding-left:20px;" wx:if="{{info_type==1}}">
                 <image src="{{info.user_head_sculpture}}" style="width: 35px; height: 35px; display: block;border-radius:50rpx;"></image>

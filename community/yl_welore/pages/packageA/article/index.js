@@ -1506,6 +1506,38 @@ Page({
             }
         };
     },
+    onShareTimeline(){
+        var t = app.globalData.forward;
+        return console.log("/yl_welore/pages/packageA/article/index?id=" + this.data.id + "&type=" + this.data.info_type), 
+        t ? {
+            title: t.title,
+            query: "/yl_welore/pages/packageA/article/index?id=" + this.data.id + "&type=" + this.data.info_type,
+            imageUrl: t.reis_img,
+            success: function(t) {
+                $Toast({
+                    content: "转发成功"
+                });
+            },
+            fail: function(t) {
+                $Toast({
+                    content: "转发失败"
+                });
+            }
+        } : {
+            title: this.data.info.study_title,
+            query: "/yl_welore/pages/packageA/article/index?id=" + this.data.id + "&type=" + this.data.info_type,
+            success: function(t) {
+                $Toast({
+                    content: "转发成功"
+                });
+            },
+            fail: function(t) {
+                $Toast({
+                    content: "转发失败"
+                });
+            }
+        };
+    },
     _navback: function() {
         var t = getCurrentPages(), a = (t[t.length - 1], t[t.length - 2]);
         1 != t.length ? (a.setData({

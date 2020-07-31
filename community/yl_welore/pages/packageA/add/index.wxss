@@ -159,6 +159,8 @@ input-holder {
     box-sizing: border-box;
     background: #fff;
     overflow-y: scroll;
+    box-sizing: border-box;
+    padding-bottom: 100rpx;
 }
 
 .nav_right .nav_right_items {

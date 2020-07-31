@@ -10,7 +10,8 @@ Page({
         },
         my_list: [],
         del_mod: !1,
-        bj_mod: !1
+        bj_mod: !1,
+        empty:false,
     },
     onLoad: function(t) {
         this.setData({
@@ -116,6 +117,7 @@ Page({
         http.POST(n, {
             params: a,
             success: function(t) {
+                if(t.data.info.length==0) e.setData({empty:true})
                 console.log(t), "success" == t.data.status ? e.setData({
                     my_list: t.data.info
                 }) : $Toast({

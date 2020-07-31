@@ -4,6 +4,7 @@
     background: #fff;
     color: #000;
     z-index: 9999999;
+    
 }
 
 .i-modal-actions {
@@ -79,6 +80,7 @@
     box-shadow: 1px 1px 1px 1px #cfcfcf;
     border-radius: 8px;
     height: 10.5em;
+    box-sizing: border-box;
 }
 
 .weui-flex__item {

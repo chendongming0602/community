@@ -354,12 +354,7 @@ Page({
             this.setData({
                 design: app.globalData.design,
                 uid: t.uid
-            }), 0 != this.data.show && ($Toast({
-                duration: 0,
-                content: "加载中",
-                type: "loading",
-                mask: !1
-            }), this.get_ad(), this.get_diy({res(res){
+            }), 0 != this.data.show && (this.get_ad(), this.get_diy({res(res){
                 //废除旧的
                 let {version}=res.data;//是1为在审核
             }}), this.get_user_info(), $Toast.hide());
