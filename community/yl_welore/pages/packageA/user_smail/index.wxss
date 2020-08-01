@@ -176,3 +176,6 @@ input-holder {
 .admins{
     border: 4rpx solid var(--shallow2);
 }
+.regPic{
+    border: 4rpx solid #eb5648;
+}

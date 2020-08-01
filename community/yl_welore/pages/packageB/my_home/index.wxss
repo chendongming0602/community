@@ -210,3 +210,6 @@ input-holder {
     color: #CC3333;
     text-align: center;
 }
+.avatar{
+    border: 4rpx solid #fff;
+}

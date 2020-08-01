@@ -52,7 +52,6 @@ Component({
             }, {});
         },
         get_aa_dd: function(t) {
-            console.log(t);
             var e = app.getCache("userinfo"), a = new Object();
             a.token = e.token, a.openid = e.openid, a.uid = e.uid, a.much_id = app.siteInfo.uniacid, 
             a.form_id = t.detail.formId;
@@ -110,6 +109,7 @@ Component({
             });
         },
         get_diy: function() {
+            //会员判断数据
             app.setCache("is_diy", "");
             var t = app.api_root + "User/get_diy", e = this, a = app.getCache("userinfo"), i = new Object();
             i.uid = a.uid, i.token = a.token, i.openid = a.openid, i.much_id = app.siteInfo.uniacid, 
@@ -181,6 +181,7 @@ Component({
         },
         preventTouchMove: function() {},
         plus: function() {
+            this.get_diy();
             var t = this;
             console.log(t.data.isPopping), 0 == t.data.isPopping ? (t.popp(), t.setData({
                 isPopping: !0,

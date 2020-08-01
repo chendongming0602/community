@@ -359,8 +359,7 @@ Page({
                 let {version}=res.data;//是1为在审核
             }}), this.get_user_info(), $Toast.hide());
             
-        })
-       
+        });
     },
     authority: function() {
         var t = app.api_root + "User/get_authority", e = this, a = app.getCache("userinfo"), n = new Object();

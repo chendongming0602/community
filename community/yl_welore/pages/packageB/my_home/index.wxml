@@ -7,7 +7,7 @@
         </view>
     </view>
     <view style="text-align:center;">
-        <image src="{{user_info.user_head_sculpture}}" style="width:110rpx;height:110rpx;border-radius:100rpx;"></image>
+        <image class="avatar" src="{{user_info.user_head_sculpture}}" style="width:120rpx;height:120rpx;border-radius:50%;"></image>
         <view style="color:#ffffff;font-size:34rpx;">{{user_info.user_nick_name}}
       <image src="../../../style/icon/vip.png" style="width:35rpx;height:35rpx;vertical-align:sub;" wx:if="{{user_info.is_vip==1}}"></image>
             <image src="../../../style/icon/man.png" style="width:35rpx;height:35rpx;vertical-align:sub;" wx:if="{{user_info.gender==1||user_info.gender==0}}"></image>
