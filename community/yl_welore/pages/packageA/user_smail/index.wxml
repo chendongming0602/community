@@ -14,8 +14,8 @@
     <!-- 循环 -->
     <view style="padding:10px 20px 5px 20px" wx:for="{{my_list}}" wx:key="m_key" class="lists" bindtap="up_user_smail" data-id="{{item.id}}" data-status="{{item.status}}" data-paper_id="{{item.paper_id}}" data-type="{{item.paper_type}}">
         <view style=";line-height:20px;position: relative;" >
-            <image src="../../../style/icon/admin.png" style="width:40px;height:40px;border-radius:50%;float:left;margin-right:10px;"></image>
-            <view style="font-size:14px;">系统消息</view>
+            <image src="../../../style/icon/admin.png" style="width:40px;height:40px;border-radius:50%;float:left;margin-right:10px;" class="admins"></image>
+            <view style="font-size:14px;" class="colors {{item.paper_id===0?'regs':''}}">系统消息</view>
             <view style="font-size:13px;color:#999;">{{item.clue_time}}</view>
             <view class="du">
                 <view class="{{item.status==1?'':'yidu'}}">{{item.status==1?'已读':'未读'}}</view>

@@ -13,7 +13,7 @@
     <view style="padding:20px 15px 10px 15px;height:{{top_list_style.height}}px;margin-bottom:{{top_list_style.bottom}}px;">
         <navigator hoverClass="none" url="/yl_welore/pages/packageB/circle_info/index?id={{getInfo.id}}">
             <view class="" style="margin-right: 10px;float:left;">
-                <image src="{{getInfo.realm_icon}}" style="width: 100rpx; height: 100rpx; display: block;border-radius:50%;"></image>
+                <image mode="aspectFill" src="{{getInfo.realm_icon}}" style="width: 100rpx; height: 100rpx; display: block;border-radius:50%;"></image>
             </view>
         </navigator>
         <view class="weui-cell__bd" style="float:left;">

@@ -10,7 +10,8 @@ Page({
         },
         page: 1,
         my_list: [],
-        di_msg: !1
+        di_msg: !1,
+        empty:false
     },
     onLoad: function(t) {
         this.setData({
@@ -34,6 +35,7 @@ Page({
                     }), 0 == t.data.info.length && a.setData({
                         di_msg: !0
                     });
+                    a.setData({empty:true})
                 } else $Toast({
                     content: t.data.msg
                 });

@@ -14,7 +14,7 @@
 
 
     <view style="text-align:center;position:relative;">
-        <image src="{{info.realm_icon}}" style="width:100px;height:100px;border-radius:50%;"></image>
+        <image mode="aspectFill"  src="{{info.realm_icon}}" style="width:100px;height:100px;border-radius:50%;"></image>
     </view>
     <view style="padding-right:0px;font-size:14px;color:#000;text-align:center;">{{info.realm_name}}</view>
     <view style="padding-right:0px;font-size:13px;color:#999;text-align:center;">{{info.realm_synopsis}}</view>

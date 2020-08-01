@@ -159,7 +159,7 @@ input-holder {
 }
 .du>view{
     font-size: 22rpx;
-    padding: 5rpx 10rpx;
+    padding: 3rpx 10rpx;
     border-radius: 8rpx;
     background: #ddd;
     color: #fff;
@@ -168,4 +168,11 @@ input-holder {
     color: var(--color);
     background: var(--shallow);
     font-weight: bold;
+}
+.regs{
+    color: #eb5648;
+    font-weight: bold;
+}
+.admins{
+    border: 4rpx solid var(--shallow2);
 }

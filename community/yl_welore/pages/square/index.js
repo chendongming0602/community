@@ -11,7 +11,7 @@ Page({
         navLeftItems: [],
         navRightItems: [],
         curNav: -1,
-        di_msg: !0,
+        di_msg: false,
         page: 1
     },
     lower: function() {
@@ -87,7 +87,9 @@ Page({
         });
     },
     get_right_item: function() {
+        
         var e = this, t = app.getCache("userinfo"), a = new Object();
+        e.setData({di_msg:false});
         a.token = t.token, a.openid = t.openid, a.uid = t.uid, a.much_id = app.siteInfo.uniacid, 
         a.get_id = e.data.curNav, a.page = e.data.page;
         var n = app.api_root + "User/get_right_needle", i = e.data.navRightItems;
@@ -97,7 +99,8 @@ Page({
                 if (console.log(t), "success" == t.data.status) {
                     for (var a = 0; a < t.data.info.length; a++) i.push(t.data.info[a]);
                     e.setData({
-                        navRightItems: i
+                        navRightItems: i,
+                        di_msg:true
                     });
                 } else $Toast({
                     content: t.data.msg

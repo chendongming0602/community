@@ -60,7 +60,14 @@ Page({
         });
     },
     up_user_smail: function(t) {
-        if( t.currentTarget.dataset.status==1) return;
+        if( t.currentTarget.dataset.status==1) {
+            let {paper_id,type}=t.currentTarget.dataset;
+            if(paper_id===0) return;
+            wx.navigateTo({
+              url: `/yl_welore/pages/packageA/article/index?id=${paper_id}&type=${type}`,
+            });
+            return;
+        };
         var e = this, a = app.getCache("userinfo"), n = new Object();
         n.token = a.token, n.openid = a.openid, n.much_id = app.siteInfo.uniacid, n.id = t.currentTarget.dataset.id;
         var s = app.api_root + "User/up_user_smail";
@@ -81,6 +88,7 @@ Page({
             }
         });
         let {paper_id,type}=t.currentTarget.dataset;
+        if(paper_id===0) return;
         wx.navigateTo({
           url: `/yl_welore/pages/packageA/article/index?id=${paper_id}&type=${type}`,
         });

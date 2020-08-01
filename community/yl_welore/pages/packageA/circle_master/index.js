@@ -2,7 +2,8 @@ var app = getApp(), http = require("../../../util/http.js"), _require = require(
 
 Page({
     data: {
-        user_list: []
+        user_list: [],
+        empty:false
     },
     onLoad: function(t) {
         var a = app.getCache("userinfo");
@@ -21,10 +22,12 @@ Page({
             success: function(t) {
                 console.log(t), "success" == t.data.status ? a.setData({
                     user_list: t.data.info,
-                    user_info: t.data.user_info
+                    user_info: t.data.user_info,
+                    empty:true
                 }) : $Toast({
                     content: t.data.msg
                 });
+                
             },
             fail: function() {
                 wx.showModal({

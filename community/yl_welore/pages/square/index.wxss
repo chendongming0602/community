@@ -69,6 +69,8 @@
     overflow-y: scroll;
     color: #000000;
     border-right: 1px solid #F4F4F4;
+    box-sizing: border-box;
+    padding-bottom: 100rpx;
 }
 
 .nav_left .nav_left_items {

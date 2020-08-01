@@ -160,7 +160,7 @@
                 <view wx:for="{{navRightItems}}" wx:for-index="rightIndex" wx:key="r_index">
                     <view bindtap="select_qq_id" class="weui-cell" data-id="{{item.id}}" data-name="{{item.realm_name}}" style="padding:0;margin:10px 0 25px 0;">
                         <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                            <image src="{{item.realm_icon}}" style="width:45px;height:45px; display: block;border-radius:50%;"></image>
+                            <image mode="aspectFill" src="{{item.realm_icon}}" style="width:45px;height:45px; display: block;border-radius:50%;"></image>
                         </view>
                         <view class="weui-cell__bd">
                             <view style="font-size:28rpx;color:#000000;">

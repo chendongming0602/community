@@ -24,7 +24,7 @@
     <view class="classify" wx:for="{{info}}" wx:key="i_key">
         <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.id}}">
             <view class="class_border">
-                <image class="class_img" src="{{item.realm_icon}}"></image>
+                <image class="class_img" mode="aspectFill" src="{{item.realm_icon}}"></image>
             </view>
             <view style="font-size:12px;margin-top:5px;">
                 <image src="../../style/icon/mi.png" style="width:22px;height:22px;vertical-align:sub;" wx:if="{{item.attention==1}}"></image>
@@ -57,7 +57,7 @@
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{c_item.id}}" wx:for="{{item.children}}" wx:for-item="c_item" wx:key="c_index"  class="guanchang">
                 <view class="weui-cell" style="padding:20rpx 0rpx 10rpx 0rpx;">
                     <view class="weui-cell__hd" style="position: relative;margin-right: 10rpx;margin-left:0rpx;">
-                        <image src="{{c_item.realm_icon}}" style="width: 45px; height: 45px;border-radius:50rpx;vertical-align:text-top;"></image>
+                        <image mode="aspectFill" src="{{c_item.realm_icon}}" style="width: 45px; height: 45px;border-radius:50rpx;vertical-align:text-top;"></image>
                     </view>
                     <view class="course-name" style="text-align:left;">
                         <view style="font-size:12px;">
@@ -83,7 +83,7 @@
 <view style="clear:both;height:0"></view>
 <view style="margin:20px 0px;" wx:for="{{tj_list}}" wx:for-index="t_index" wx:key="t_key">
     <view class="weui-cell" style="padding:20rpx 0rpx 10rpx 0rpx;float:left;width:75%;">
-        <view class="weui-cell__hd" style="position: relative;margin-right: 10rpx;margin-left:20rpx;">
+        <view class="weui-cell__hd" mode="aspectFill" style="position: relative;margin-right: 10rpx;margin-left:20rpx;">
             <image src="{{item.realm_icon}}" style="width: 45px; height: 45px;border-radius:50rpx;vertical-align:text-top;"></image>
         </view>
         <view style="text-align:left;float:left;">
