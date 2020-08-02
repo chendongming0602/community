@@ -61,6 +61,11 @@ Page({
         },
         admin: 0
     },
+    canvasEvent(){
+        wx.navigateTo({
+          url: '/yl_welore/pages/canvas/school/school',
+        })
+    },
     onLoad: function(t) {
         var a;
         (this.setData({

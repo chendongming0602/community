@@ -537,3 +537,4 @@
         <view bindtap="do_paper_money" class="btn-confirm" data-status="confirm" style="font-size:15px;width:90%;margin:10px auto;height:44px;background-color:#56BD69;color:#fff;border-radius:3px;">确定</view>
     </view>
 </view>
+<!-- <image catchtap="canvasEvent" class="canvas" src="https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/release.png"></image> -->

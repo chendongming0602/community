@@ -268,3 +268,12 @@ input-holder {
     color: var(--color);
     font-weight: bold;
 }
+.canvas{
+    position: fixed;
+    bottom: 5%;
+    right: 30rpx;
+    z-index: 99;
+    border: 4rpx solid var(--color);
+    width: 100rpx;
+    height: 100rpx;
+}

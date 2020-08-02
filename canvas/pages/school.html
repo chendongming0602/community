@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>分享图</title>
+    <title>长按分享</title>
     <link rel="stylesheet" href="../css/school.css">
 </head>
 <body>
@@ -25,18 +25,36 @@
                     </div>
                 </div>
             </div>
-            <div class="s-sub">长按即可保存。快分享给朋友吧！</div>
+           
+            
+
+           <div class="img-all">
+                <img class="hecheng" :src="canvasImg" alt="合成">
+                <div style="height: 90px;"></div>
+                <div class="s-but-box">
+                    <div class="s-sub">长按即可保存。快分享给朋友吧！</div>
+                    <div class="s-but">返回</div>
+                </div>
+           </div>
+
+            <div class="empty" v-if="show">正在生成分享图...</div>
         </div>
-        <img class="hecheng" :src="canvasImg" alt="合成">
     </div>
     <script src="../js/vue.min.js"></script>
     <!-- 截屏 -->
     <script src="../js/html2.js"></script>
     <script src="../js/jweixin.js"></script>
     <script>
+        // let url=window.location.href;
+        // let start=url.search("=");//查找第一个=号
+        // let list=url.substr(start+1);//截取参数
+        // list= decodeURIComponent(list);    //解决乱码问题
+        // list=JSON.parse(list);
+        // console.log(list) 
         let app=new Vue({
             el: '#app',
             data:{
+                show:true,
                 height:500,
                 count:Math.random(),
                 list:{
@@ -66,8 +84,7 @@
                     ).then(function(canvas) {
                         let imgUrl1 = canvas.toDataURL('image/png');
                         that.canvasImg=imgUrl1;
-                        console.log(that.canvasImg)
-                        that.isEg=true;
+                        that.show=false;
                         //打开返回微信
                         // wx.miniProgram.navigateBack();
                         // console.log(imgUrl1)

@@ -249,6 +249,7 @@ Page({
         });
     },
     lower: function() {
+        console.log(this.data.curNav)
         this.setData({
             page: this.data.page + 1
         }), 0 < this.data.curNav && this.get_right_item();
