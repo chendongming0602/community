@@ -41,6 +41,12 @@
   },
   "subPackages": [
     {
+      "root": "yl_welore/pages/canvas",
+      "pages":[
+        "school/school"
+      ]
+    },
+    {
       "root": "yl_welore/pages/packageA",
       "pages": [
         "add/index",

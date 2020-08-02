@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分享图</title>
+    <link rel="stylesheet" href="../css/school.css">
+</head>
+<body>
+    <div id="app">
+        <div>
+            <!-- 合成部分 -->
+            <div ref="box" class="box" :style="{backgroundImage:'url(' + list.bg+'?id='+count +'&name=头像'+')',height:height+'px'}">
+                <div>
+                    <div class="u-name">我小地方</div>
+                    <div class="s-name">时代峰峻殴打</div>
+                    <div class="s-dao">
+                        <div>你的导师：</div>
+                        <img crossorigin="anonymous" :src="list.imgDao+'?id='+count" alt="导师">
+                    </div>
+                    <div class="s-ewm">
+                        <img crossorigin="anonymous" src="../wx.jpg" alt="二维码">
+                        <div>长按识别二维码</div>
+                        <div>领取你的录取通知书</div>
+                    </div>
+                </div>
+            </div>
+            <div class="s-sub">长按即可保存。快分享给朋友吧！</div>
+        </div>
+        <img class="hecheng" :src="canvasImg" alt="合成">
+    </div>
+    <script src="../js/vue.min.js"></script>
+    <!-- 截屏 -->
+    <script src="../js/html2.js"></script>
+    <script src="../js/jweixin.js"></script>
+    <script>
+        let app=new Vue({
+            el: '#app',
+            data:{
+                height:500,
+                count:Math.random(),
+                list:{
+                    bg:"https://web-1300783623.cos.ap-shanghai.myqcloud.com/canvas/canvas.png",
+                    imgDao:"https://lovers-1300783623.cos.ap-shanghai.myqcloud.com/avatar/avatar.jpg"
+                },
+                canvasImg:""
+            },
+            mounted(){
+                let box=this.$refs.box,that=this;
+                setTimeout(()=>{
+                    html2canvas(
+                    box,
+                    {
+                        useCORS: true, // 【重要】开启跨域配置
+                        //allowTaint: false,//允许跨域图片 
+                        taintTest:false,
+                        logging:true,
+                        width:window.screen.availWidth,//显示窗口canvas的宽度
+                        // height:window.screen.availHeight,//显示canvas窗口高度
+                        windowWhidth:document.body.scrollWidth,//获取x方向滚动条内容
+                        windowHeight:box.offsetHeight,//获取y方向滚动条内容
+                        x:0,//页面滚动
+                        y:window.pageYOffset////页面滚动
+                    }
+                    
+                    ).then(function(canvas) {
+                        let imgUrl1 = canvas.toDataURL('image/png');
+                        that.canvasImg=imgUrl1;
+                        console.log(that.canvasImg)
+                        that.isEg=true;
+                        //打开返回微信
+                        // wx.miniProgram.navigateBack();
+                        // console.log(imgUrl1)
+                    }); 
+                },300);
+            }
+        });
+
+    </script>
+</body>
+</html>
