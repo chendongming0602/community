@@ -180,7 +180,8 @@
                     </button>
                 </view>
                 <view class="weui-flex__item">
-                    <button bindtap="{{item.is_buy==1?'':'home_pl'}}" data-id="{{item.id}}" data-key="{{dataListindex}}" hoverClass="none" style="padding-top:2px;">
+                    <button bindtap="{{item.is_buy==1?'':'home_pl'}}"
+                     data-id="{{item.id}}" data-type="{{item.study_type}}" data-key="{{dataListindex}}" hoverClass="none" style="padding-top:2px;">
                         <image src="../../../style/icon/info_pl.png" style="width: 25px;height:25px;vertical-align:middle;"></image>
                         <text class="index_nav_name" style="color:#999999;font-size:13px;margin-left:15rpx;vertical-align:middle;">{{item.study_repount}}</text>
                     </button>
@@ -314,7 +315,7 @@
                     </button>
                 </view>
                 <view class="weui-flex__item">
-                    <button bindtap="{{item.is_buy==1?'':'home_pl'}}" data-id="{{item.id}}" data-key="{{dataListindex}}" hoverClass="none" style="padding-top:2px;">
+                    <button bindtap="{{item.is_buy==1?'':'home_pl'}}" data-id="{{item.id}}" data-type="{{item.study_type}}" data-key="{{dataListindex}}" hoverClass="none" style="padding-top:2px;">
                         <image src="../../../style/icon/info_pl.png" style="width: 25px;height:25px;vertical-align:middle;"></image>
                         <text class="index_nav_name" style="color:#999999;font-size:13px;margin-left:15rpx;vertical-align:middle;">{{item.study_repount}}</text>
                     </button>
@@ -403,7 +404,7 @@
                     </button>
                 </view>
                 <view class="weui-flex__item">
-                    <button bindtap="{{item.is_buy==1?'':'home_pl'}}" data-id="{{item.id}}" data-key="{{dataListindex}}" hoverClass="none" style="padding-top:2px;">
+                    <button bindtap="{{item.is_buy==1?'':'home_pl'}}" data-id="{{item.id}}" data-type="{{item.study_type}}" data-key="{{dataListindex}}" hoverClass="none" style="padding-top:2px;">
                         <image src="../../../style/icon/info_pl.png" style="width: 25px;height:25px;vertical-align:middle;"></image>
                         <text class="index_nav_name" style="color:#999999;font-size:13px;margin-left:15rpx;vertical-align:middle;">{{item.study_repount}}</text>
                     </button>

@@ -730,7 +730,7 @@ Page({
             params: e,
             success: function(t) {
                 console.log(t), "账户未授权!" == t.data.msg && wx.navigateTo({
-                    url: "/yl_welore/pages/author/index?type=1&id=" + a.data.id + "&info_type=" + a.data.info_type
+                    url: "/yl_welore/pages/author/index?detail=1&type=1&id=" + a.data.id + "&info_type=" + a.data.info_type
                 }), "success" == t.data.status ? a.setData({
                     ad_info: t.data.info,
                     info_zf: t.data.info_zf
@@ -820,18 +820,19 @@ Page({
                 let {check,is}=res;
                 this.setData({check});
                 if(is===2) return  wx.navigateTo({
-                    url: '/yl_welore/pages/author/index?type=0',
+                    url: '/yl_welore/pages/author/index?detail=1&type=0',
                 });
+                page = 1, show_type = "all";
+                var t = app.getCache("userinfo");
+                this.setData({
+                    uid: t.uid,
+                    design: app.globalData.design,
+                    height: app.globalData.height,
+                    huifu_list: []
+                }), this.get_ad(), this.get_liwu_all(), this.get_article_info(), this.get_diy(), 
+                $Toast.hide();
             });
-            page = 1, show_type = "all";
-            var t = app.getCache("userinfo");
-            this.setData({
-                uid: t.uid,
-                design: app.globalData.design,
-                height: app.globalData.height,
-                huifu_list: []
-            }), this.get_ad(), this.get_liwu_all(), this.get_article_info(), this.get_diy(), 
-            $Toast.hide();
+            
         }
     },
     get_diy: function() {
@@ -1479,7 +1480,7 @@ Page({
         return console.log("/yl_welore/pages/packageA/article/index?id=" + this.data.id + "&type=" + this.data.info_type), 
         t ? {
             title: t.title,
-            path: "/yl_welore/pages/packageA/article/index?id=" + this.data.id + "&type=" + this.data.info_type,
+            path: "/yl_welore/pages/index/index?detail=1&id=" + this.data.id + "&type=" + this.data.info_type,
             imageUrl: t.reis_img,
             success: function(t) {
                 $Toast({
@@ -1493,7 +1494,7 @@ Page({
             }
         } : {
             title: this.data.info.study_title,
-            path: "/yl_welore/pages/packageA/article/index?id=" + this.data.id + "&type=" + this.data.info_type,
+            path: "/yl_welore/pages/index/index?detail=1&id=" + this.data.id + "&type=" + this.data.info_type,
             success: function(t) {
                 $Toast({
                     content: "转发成功"
@@ -1508,10 +1509,10 @@ Page({
     },
     onShareTimeline(){
         var t = app.globalData.forward;
-        return console.log("/yl_welore/pages/packageA/article/index?id=" + this.data.id + "&type=" + this.data.info_type), 
+        return console.log("/yl_welore/pages/index/index?detail=1&id=" + this.data.id + "&type=" + this.data.info_type), 
         t ? {
             title: t.title,
-            query: "/yl_welore/pages/packageA/article/index?id=" + this.data.id + "&type=" + this.data.info_type,
+            query: "/yl_welore/pages/index/index?detail=1&id=" + this.data.id + "&type=" + this.data.info_type,
             imageUrl: t.reis_img,
             success: function(t) {
                 $Toast({
@@ -1525,7 +1526,7 @@ Page({
             }
         } : {
             title: this.data.info.study_title,
-            query: "/yl_welore/pages/packageA/article/index?id=" + this.data.id + "&type=" + this.data.info_type,
+            query: "/yl_welore/pages/index/index?detail=1&id=" + this.data.id + "&type=" + this.data.info_type,
             success: function(t) {
                 $Toast({
                     content: "转发成功"

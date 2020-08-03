@@ -3,12 +3,15 @@ var app = getApp(), http = require("../../util/http.js");
 Page({
     data: {
         copyright: {},
-        type: 0
+        type: 0,
+        detail:0
     },
     onGotUserInfo: function(e) {
         app.removeCache("userinfo");
         var t = this;
         app.getCache("userinfo") || app.getUserInfo(e.detail.userInfo, function(e) {
+            //详情分享，直接返回
+            if(t.data.detail) return wx.navigateBack();
             1e3 != app && (0 == t.data.type && wx.reLaunch({
                 url: "/yl_welore/pages/index/index"
             }), 1 == t.data.type && wx.reLaunch({
@@ -22,7 +25,8 @@ Page({
         this.setData({
             type: e.type,
             info_type: e.info_type,
-            id: e.id
+            id: e.id,
+            detail:e.detail
         }), wx.hideShareMenu();
     },
     onShow: function() {

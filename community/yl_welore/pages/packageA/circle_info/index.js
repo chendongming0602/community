@@ -193,11 +193,14 @@ Page({
         console.log(n), this.add_trailing_list();
     },
     home_pl: function(t) {
-        console.log(t), this.setData({
-            home_pl_check: !0,
-            pl_id: t.currentTarget.dataset.id,
-            pl_key: t.currentTarget.dataset.key
-        });
+        wx.navigateTo({
+            url: `/yl_welore/pages/packageA/article/index?id=${t.currentTarget.dataset.id}&type=${t.currentTarget.dataset.type}`,
+        })
+        // console.log(t), this.setData({
+        //     home_pl_check: !0,
+        //     pl_id: t.currentTarget.dataset.id,
+        //     pl_key: t.currentTarget.dataset.key
+        // });
     },
     home_pl_cai: function(t) {
         this.setData({
