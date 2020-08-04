@@ -350,6 +350,10 @@ Page({
     },
     onShow: function(e) {
         wx.hideTabBar(), this.authority(), app.check_user_status();
+        app.checkEvent().then(res=>{
+            let {check,is}=res;
+            this.setData({check});
+        });
         var t = app.getCache("userinfo");
         this.setData({
             design: app.globalData.design,
@@ -358,13 +362,14 @@ Page({
             //废除旧的
             let {version}=res.data;//是1为在审核
         }}), this.get_user_info(), $Toast.hide());
+
        setTimeout(()=>{
         if(this.data.new_list.length<=0){
             console.log("防止详情分享进来后返回首页没数据")
             "tab1" == this.data.current && this.get_index_list_one(), "tab2" == this.data.current && (this._my=false,index_my_page = 1, 
             this.get_my_index_list());
         }
-       },500)
+       },300)
     },
     authority: function() {
         var t = app.api_root + "User/get_authority", e = this, a = app.getCache("userinfo"), n = new Object();

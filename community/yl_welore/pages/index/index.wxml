@@ -388,7 +388,7 @@
           </view>
                 </view>
             </navigator>
-            <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1}}">
+            <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2" wx:if="{{(item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1)&&check}}">
                 <view class="weui-cell" style="width:91%;margin:0 auto;">
                     <image src="../../style/icon/home_bf.png" style="width:50px;height:50px;position:absolute;left:44%;"></image>
                     <image mode="aspectFill" src="{{item.image_part[0]}}" style="height:190px;margin:0 auto;border-radius:10px;" wx:if="{{item.image_part.length>0}}"></image>
@@ -757,7 +757,7 @@
           </view>
                 </view>
             </navigator>
-            <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1}}">
+            <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2" wx:if="{{(item.is_buy!=1||item.purchase==1||item.user_id==uid||admin==1)&&check}}">
                 <view class="weui-cell" style="width:91%;margin:0 auto;">
                     <image src="../../style/icon/home_bf.png" style="width:50px;height:50px;position:absolute;left:44%;"></image>
                     <image mode="aspectFill" src="{{item.image_part[0]}}" style="height:190px;margin:0 auto;border-radius:10px;" wx:if="{{item.image_part.length>0}}"></image>

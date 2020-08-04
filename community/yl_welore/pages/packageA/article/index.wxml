@@ -362,7 +362,7 @@
                 回复
                 <text style="color:#5273A5">{{item.hui_nick_name}}</text>: {{item.duplex_content}}
               </view>
-                            <view bindtap="get_reply_user" data-user_id="{{item.user_id}}" data-user_name="{{item.user_nick_name}}" style="font-size:12px;margin-top:10px;">{{item.duplex_time}} · 回复</view>
+                            <view bindtap="get_reply_user" data-user_id="{{item.user_id}}" data-user_name="{{item.user_nick_name}}" style="font-size:12px;margin-top:10px;">{{item.duplex_time}} · <text class="colors">回复</text></view>
                         </view>
                     </view>
                     <view style="font-size:14px;text-align:center;padding:20px;color:#999999" wx:if="{{di_get_reply}}">暂无更多评论</view>

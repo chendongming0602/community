@@ -252,7 +252,8 @@ Page({
         console.log(this.data.curNav)
         this.setData({
             page: this.data.page + 1
-        }), 0 < this.data.curNav && this.get_right_item();
+        }),this.get_right_item();
+        //0<this.data.curNav&&this.get_right_item();//删除了这个
     },
     get_left_needle: function() {
         var e = this, t = app.getCache("userinfo"), a = new Object();
@@ -280,7 +281,8 @@ Page({
     get_right_item: function() {
         var a = this, t = app.getCache("userinfo"), e = new Object();
         e.token = t.token, e.openid = t.openid, e.uid = t.uid, e.much_id = app.siteInfo.uniacid, 
-        e.get_id = a.data.curNav, e.cat_add = 1, e.page = a.data.page;
+        e.get_id = a.data.curNav, e.page = a.data.page;
+        //e.cat_add = 1//删除了这个参数（原因是分页返回重复内容）
         var i = app.api_root + "User/get_right_needle", o = a.data.navRightItems;
         http.POST(i, {
             params: e,

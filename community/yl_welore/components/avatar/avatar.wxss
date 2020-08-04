@@ -1,1 +1,62 @@
-/* yl_welore/components/avatar/avatar.wxss */
+.a-box{
+    display: flex;
+    align-items: center;
+}
+.a-pic{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    min-width: 100rpx;
+    min-height: 100rpx;
+    margin-right: 10rpx;
+    box-sizing: border-box;
+}
+.pic-vip{
+    border: 4rpx solid #ffbb20;
+}
+.a-top{
+    display: flex;
+    align-items: center;
+}
+.a-top image{
+    margin-left: 5rpx;
+}
+.a-name{
+    font-size: 28rpx;
+    color: #333;
+    padding-bottom: 10rpx;
+    max-width: 230rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.a-sex{
+    width: 30rpx;
+    height: 30rpx;
+}
+.a-vip{
+    width: 35rpx;
+    height: 35rpx;
+}
+.a-lists{
+    display: flex;
+    align-items: center;
+    margin-left: 10rpx;
+}
+.a-lists image{
+    width: 30rpx;
+    height: 30rpx;
+}
+.a-time{
+    font-size: 20rpx;
+    color: #999;
+    padding-top: 5rpx;
+}
+.a-admin{
+    width: 60rpx;
+    height: 30rpx;
+}
+.a-master{
+    width: 50rpx;
+    height: 30rpx;
+}

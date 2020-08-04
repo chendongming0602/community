@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "测试",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationStyle": "default",
+  "usingComponents": {
+    "avatar":"../../components/avatar/avatar"
+  }
+}
