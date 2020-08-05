@@ -661,7 +661,10 @@ Page({
         }), this.placement()), "sc" == e.type && ("da" != e.is_qq && "xiao" != e.is_qq || i.user_id != this.data.uid && this.setData({
             visible1: !1,
             tz_del_msg: !0
-        }), i.user_id == this.data.uid && this.del_tz_do(), this.setData({
+        }),(this.data.admin==1&&i.user_id != this.data.uid)&&this.setData({
+            visible1: !1,
+            tz_del_msg: !0
+        }),i.user_id == this.data.uid && this.del_tz_do(), this.setData({
             visible: !1
         }));
     },
@@ -1445,6 +1448,9 @@ Page({
         });
     },
     del_tz_do: function() {
+        if(!this.data.is_qq_text&&this.data.tz_del_msg) return $Toast({
+            content: "请输入删除原因？",
+        });
         var a = this, t = app.api_root + "User/del_article", e = app.getCache("userinfo"), i = new Object();
         i.token = e.token, i.openid = e.openid, i.uid = e.uid, i.much_id = app.siteInfo.uniacid, 
         i.paper_id = this.data.info.id, i.is_qq_text = this.data.is_qq_text, http.POST(t, {

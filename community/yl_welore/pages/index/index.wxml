@@ -69,7 +69,7 @@
 <view style="background-color:#ffffff;padding-bottom:50px;" wx:if="{{current=='tab1'}}">
     <block wx:for="{{new_list}}" wx:for-index="dataListindex" wx:key="index_key">
         <view class="weui-cells weui-cells_after-title" style="" wx:if="{{item.study_type==0}}">
-            <image src="../../style/icon/home_zhang.png" style="opacity:0.8;width:110px;height:110px;position:absolute;left:53%;top:1%;z-index:200" wx:if="{{item.top_time}}"></image>
+            <image src="../../style/icon/home_zhang.png" style="opacity:0.8;width:60px;height:60px;position:absolute;right:10%;top:1%;z-index:200" wx:if="{{item.top_time}}"></image>
             <navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.user_id}}">
                 <view >
                     <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
@@ -196,7 +196,7 @@
             <view style="width:100%;height:5px;background-color:#F7F7FA;"></view>
         </view>
         <view class="weui-cells weui-cells_after-title" wx:if="{{item.study_type==1}}">
-            <image src="../../style/icon/home_zhang.png" style="opacity:0.8;width:110px;height:110px;position:absolute;left:53%;top:1%;" wx:if="{{item.top_time}}"></image>
+            <image src="../../style/icon/home_zhang.png" style="opacity:0.8;width:60px;height:60px;position:absolute;right:10%;top:1%;" wx:if="{{item.top_time}}"></image>
             <navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.user_id}}">
                 <view >
                     <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
@@ -338,7 +338,7 @@
             <view style="width:100%;height:5px;background-color:#F7F7FA;"></view>
         </view>
         <view class="weui-cells weui-cells_after-title" wx:if="{{item.study_type==2}}">
-            <image src="../../style/icon/home_zhang.png" style="opacity:0.8;width:110px;height:110px;position:absolute;left:53%;top:1%;" wx:if="{{item.top_time}}"></image>
+            <image src="../../style/icon/home_zhang.png" style="opacity:0.8;width:60px;height:60px;position:absolute;right:10%;top:1%;" wx:if="{{item.top_time}}"></image>
             <navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.user_id}}">
                 <view >
                     <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
