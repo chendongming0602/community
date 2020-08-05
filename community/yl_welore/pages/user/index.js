@@ -122,7 +122,7 @@ Page({
         app.checkEvent().then(res=>{
             let {check,is}=res;
             this.setData({check});
-            if(is===2) return  wx.navigateTo({
+            if(is===2) return  wx.reLaunch({
                 url: '/yl_welore/pages/author/index?type=0',
             });
         });

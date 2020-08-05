@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -153,6 +153,20 @@
 					"name": "合成",
 					"pathName": "yl_welore/pages/canvas/school/school",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "yl_welore/pages/index/index",
+					"query": "type=0&id=6",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "广场",
+					"pathName": "yl_welore/pages/circle/index",
+					"query": "type=0&id=6",
 					"scene": null
 				}
 			]

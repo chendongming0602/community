@@ -270,7 +270,7 @@ Page({
             success: function(t) {
                 app.checkEvent().then(res=>{
                     let {check,is}=res;
-                    ("账户未授权!" == t.data.msg&&check)&& wx.navigateTo({
+                    ("账户未授权!" == t.data.msg&&check)&& wx.reLaunch({
                         url: '/yl_welore/pages/author/index?type=0',
                     });
                     ("账户未授权!" == t.data.msg&&!check)&&e.selectComponent("#login").showEvent();
@@ -343,7 +343,7 @@ Page({
             let {check,is}=res;
             this.setData({check});
             if(is===3) return this.selectComponent("#login").showEvent();
-            if(is===2) return  wx.navigateTo({
+            if(is===2) return  wx.reLaunch({
                 url: '/yl_welore/pages/author/index?type=0',
             });
         });

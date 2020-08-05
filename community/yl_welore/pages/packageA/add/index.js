@@ -350,7 +350,8 @@ Page({
     },
     submit: function() {
         if (0 == this.data.fa_class) return $Toast({
-            content: "请选择发布的" + this.data.design.landgrave
+            content: "请选择发布的" + this.data.design.landgrave,
+            mask:false
         }), void this.setData({
             showLeft: !0,
             get_hidden: !1

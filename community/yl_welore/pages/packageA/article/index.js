@@ -819,19 +819,20 @@ Page({
             app.checkEvent().then(res=>{
                 let {check,is}=res;
                 this.setData({check});
-                if(is===2) return  wx.navigateTo({
-                    url: '/yl_welore/pages/author/index?detail=1&type=0',
-                });
-                page = 1, show_type = "all";
-                var t = app.getCache("userinfo");
-                this.setData({
-                    uid: t.uid,
-                    design: app.globalData.design,
-                    height: app.globalData.height,
-                    huifu_list: []
-                }), this.get_ad(), this.get_liwu_all(), this.get_article_info(), this.get_diy(), 
-                $Toast.hide();
+                // if(is===2) return  wx.navigateTo({
+                //     url: '/yl_welore/pages/author/index?detail=1&type=0',
+                // });
+               
             });
+            page = 1, show_type = "all";
+            var t = app.getCache("userinfo");
+            this.setData({
+                uid: t.uid,
+                design: app.globalData.design,
+                height: app.globalData.height,
+                huifu_list: []
+            }), this.get_ad(), this.get_liwu_all(), this.get_article_info(), this.get_diy(), 
+            $Toast.hide();
             
         }
     },
