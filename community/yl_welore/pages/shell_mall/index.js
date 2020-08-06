@@ -2,6 +2,7 @@ var app = getApp(), http = require("../../util/http.js"), _require = require("..
 
 Page({
     data: {
+        check:false,
         tabbar:app.globalData.tabbar,
         user_info: {},
         goods_current: "goods",
@@ -27,6 +28,12 @@ Page({
         animInput: {},
         animBack: {},
         version: 0
+    },
+    mallYl(e){
+        wx.previewImage({
+            current: e.currentTarget.dataset.url, // 当前显示图片的http链接
+            urls: [e.currentTarget.dataset.url] // 需要预览的图片http链接列表
+        })
     },
     get_user_info: function() {
         var t = app.api_root + "User/get_user_info", a = this, e = app.getCache("userinfo"), s = new Object();
@@ -96,6 +103,14 @@ Page({
             isPopping: !1,
             copyright: app.globalData.copyright
         }), this.data.show;
+        //审核判断
+        app.checkEvent().then(res=>{
+            let {check,is}=res;
+            this.setData({check});
+            if(is===2) return  wx.reLaunch({
+                url: '/yl_welore/pages/author/index?type=0',
+            });
+        });
     },
     get_shop_type: function() {
         var t = app.api_root + "User/get_shop_type", a = this, e = app.getCache("userinfo"), s = new Object();

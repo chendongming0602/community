@@ -159,7 +159,8 @@ Page({
                 params: e,
                 success: function(t) {
                     console.log(t), $Toast({
-                        content: t.data.msg
+                        content: t.data.msg,
+                        mask:false
                     }), a.setData({
                         get_reply_and_text: "",
                         get_reply_and_list: [],

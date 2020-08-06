@@ -54,7 +54,7 @@
     </view>
 </view>
 <import src="../../../util/wxParse/wxParse.wxml"></import>
-<view style="text-align:center;width:94%;padding:10px;">
+<view style="text-align:center;width:94%;padding:10px 10px 40px;">
     <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
 </view>
 <view style="height:50px;"></view>
@@ -63,8 +63,7 @@
     已抢完
   </view>
     <view style="position:relative;" wx:if="{{good_info.product_inventory>0}}">
-        <image bindtap="exchange" mode="widthFix" src="../../../style/icon/byn.png" style="width:200px;vertical-align:sub;margin:20px 0px;"></image>
-        <view bindtap="exchange" style="position:absolute;top:32%;left:41%;color:#fff;letter-spacing:1.5px;">立即兑换</view>
+        <view bindtap="exchange" class="liji">立即兑换</view>
     </view>
 </view>
 <i-toast id="toast"></i-toast>

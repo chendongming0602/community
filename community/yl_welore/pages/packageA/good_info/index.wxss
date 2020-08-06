@@ -149,3 +149,13 @@ input-holder {
     color: #CC3333;
     text-align: center;
 }
+.liji{
+    width: 600rpx;
+    line-height: 95rpx;
+    margin: 20rpx auto;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    background: var(--color);
+    border-radius: 45rpx;
+}

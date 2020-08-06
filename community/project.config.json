@@ -168,6 +168,20 @@
 					"pathName": "yl_welore/pages/circle/index",
 					"query": "type=0&id=6",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品",
+					"pathName": "yl_welore/pages/shell_mall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "yl_welore/pages/packageA/good_info/index",
+					"query": "id=3",
+					"scene": null
 				}
 			]
 		}

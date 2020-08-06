@@ -3,7 +3,10 @@
     height: 100%;
     background-image: linear-gradient(-225deg,#69eacb 0%,#eaccf8 48%,#6654f1 100%);
 }
-
+.bg-box{
+    min-height: 100vh;
+    padding: 100rpx 0;
+}
 .back {
     background-color: transparent!important;
     position: relative;
@@ -179,4 +182,14 @@ input-holder {
     width: 50%;
     color: #CC3333;
     text-align: center;
+}
+.mall-box image{
+    width: 50%;
+    height: 120rpx;
+    display: block;
+    margin: 80rpx auto;
+}
+.mall-box view{
+    text-align: center;
+    font-size: 30rpx;
 }
