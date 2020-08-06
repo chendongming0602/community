@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -75,7 +75,7 @@
 					"id": 1,
 					"name": "评论",
 					"pathName": "yl_welore/pages/packageA/article/index",
-					"query": "id=112&type=0",
+					"query": "id=22&type=0",
 					"scene": null
 				},
 				{

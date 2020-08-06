@@ -101,6 +101,8 @@ Page({
     },
     get_reply_user: function(t) {
         var a = t.currentTarget.dataset.user_id, e = t.currentTarget.dataset.user_name;
+        this._reply_duplex_id=t.currentTarget.dataset.reply_duplex_id;
+        console.log(this._reply_duplex_id)
         this.setData({
             placeholder_reply: "回复 " + e + ":",
             get_reply_and_user_id: a,
@@ -116,8 +118,12 @@ Page({
         this.setData({
             get_reply_and_hui_id: t.currentTarget.dataset.hui_id,
             get_reply_and_list: [],
-            get_reply_and_page: 1
+            get_reply_and_page: 1,
+            get_reply_and_user_id:0,
+            placeholder_reply:"写评论",
+            get_reply_and_text:""
         });
+        this._reply_duplex_id=""
         var a = this, e = wx.createAnimation({
             duration: 150,
             timingFunction: "ease"
@@ -147,6 +153,7 @@ Page({
             e.token = t.token, e.openid = t.openid, e.much_id = app.siteInfo.uniacid, e.uid = t.uid, 
             e.id = this.data.get_reply_and_hui_id, e.user_id = this.data.get_reply_and_user_id, 
             e.duplex_content = this.data.get_reply_and_text;
+            if(this._reply_duplex_id)e.reply_duplex_id=this._reply_duplex_id;
             var i = app.api_root + "User/add_paper_reply_duplex";
             http.POST(i, {
                 params: e,
@@ -157,8 +164,10 @@ Page({
                         get_reply_and_text: "",
                         get_reply_and_list: [],
                         placeholder_reply: "写评论",
-                        get_reply_and_page: 1
+                        get_reply_and_page: 1,
+                        get_reply_and_user_id:0,
                     }), a.get_reply_and_hui(), wx.hideLoading();
+                    a._reply_duplex_id="";
                 },
                 fail: function() {
                     wx.showModal({
