@@ -147,7 +147,7 @@
     </view>
     <view style="clear:both;height:0"></view>
     <view style="height:1px;width:100%;background-color:#F4F4F4"></view>
-    <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{info.realm_id}}">
+    <navigator wx:if="{{check}}" hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{info.realm_id}}">
         <view class="weui-cell">
             <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
                 <image src="{{info.realm_icon}}" style="width: 60rpx; height: 60rpx; display: block;border-radius:50rpx;"></image>

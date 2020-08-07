@@ -12,8 +12,10 @@ Page({
         del_mod: !1,
         bj_mod: !1,
         empty:false,
+        kong:false
     },
     onLoad: function(t) {
+        this._page=1;
         this.setData({
             height: app.globalData.height
         }), this.get_my_rec();
@@ -43,6 +45,9 @@ Page({
         http.POST(n, {
             params: a,
             success: function(t) {
+                let my_list=e.data.my_list;
+                my_list.forEach(t=>t.status=1);
+                e.setData({my_list})
                 console.log(t), "success" == t.data.status ? ($Toast({
                     content: t.data.msg
                 }), e.hideModal(), e.get_my_rec()) : $Toast({
@@ -120,14 +125,15 @@ Page({
     },
     get_my_rec: function() {
         var e = this, t = app.getCache("userinfo"), a = new Object();
-        a.token = t.token, a.openid = t.openid, a.much_id = app.siteInfo.uniacid, a.uid = t.uid;
+        a.token = t.token, a.openid = t.openid, a.much_id = app.siteInfo.uniacid, a.uid = t.uid,a.page=this._page||1;
         var n = app.api_root + "User/get_user_smail";
         http.POST(n, {
             params: a,
             success: function(t) {
-                if(t.data.info.length==0) e.setData({empty:true})
+                if(t.data.info.length==0) e.setData({empty:true});
+                if(t.data.info.length<20) e.setData({kong:true});
                 console.log(t), "success" == t.data.status ? e.setData({
-                    my_list: t.data.info
+                    my_list: e.data.my_list.concat(t.data.info)
                 }) : $Toast({
                     content: t.data.msg
                 });
@@ -143,12 +149,8 @@ Page({
         });
     },
     onReachBottom: function() {
-        $Toast({
-            duration: 0,
-            content: "加载中",
-            type: "loading",
-            mask: !1
-        }), this.setData({
+        this._page++;
+        this.setData({
             page: this.data.page + 1
         }), this.get_my_rec(), $Toast.hide();
     },

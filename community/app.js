@@ -35,7 +35,7 @@ App({
                     pagePath:"/yl_welore/pages/shell_mall/index",
                     iconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/goods.png",
                     selectedIconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/goods_active.png",
-                    text:"小商品",
+                    text:"园地",
                     isSpecial:false,
                     selected:false
                 },
@@ -99,9 +99,17 @@ App({
     http_root: "",
     siteInfo: require("siteinfo.js"),
     //新加审核判断版本
-    newVersion:"1.1.2",
+    newVersion:"1.1.1",
     //为true是在审核，
     isCheck:true,
+    //订阅消息
+    messageArr:[
+        [
+            "rLDcom1lZvXcofGdnP8pWw7j9qWTBRy9oUsPbgqmj-A",
+            "kqvNW-AEmqFjeKnwH342fk5lgQBacSkvEyoYYeYlyZc",
+            "PVSEZ1ni1-wq5RfyDrl7fbmGvEqZ1CX195-lK0XMep8",
+        ]
+    ],
     //新加审核判断
     checkEvent(){
         let url=this.api_root + "login/checkin",that=this,

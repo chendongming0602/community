@@ -1,7 +1,7 @@
 <view class="nav-wrap" style="height: {{height*2+20}}px;">
     <view class="nav-title" style="line-height: {{height*2+44}}px;">{{nvabarData.title}}</view>
     <view style="display: flex; justify-content: space-around;flex-direction: column;height:100%;">
-        <navigator hoverClass="none" url="/yl_welore/pages/packageA/user_smail/index">
+        <navigator catchtap="messageEvent" hoverClass="none" url="/yl_welore/pages/packageA/user_smail/index">
             <view class="nav-capsule">
                 <view>
                     <i-badge count="{{user_info.user_male}}">

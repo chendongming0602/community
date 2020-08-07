@@ -25,6 +25,17 @@ Page({
         version: 1,
         admin: 0
     },
+    messageEvent(){
+        wx.requestSubscribeMessage({
+            tmplIds: app.messageArr[0],
+            success (res) { 
+                console.log("成功")
+            },
+            fail(err){
+                console.log(err)
+            }
+        });
+    },
     get_diy: function() {
         var t = app.api_root + "User/get_diy", a = this, n = app.getCache("userinfo"), i = new Object();
         i.token = n.token, i.openid = n.openid, i.uid = n.uid, i.much_id = app.siteInfo.uniacid, 

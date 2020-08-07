@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -181,6 +181,20 @@
 					"name": "商品详情",
 					"pathName": "yl_welore/pages/packageA/good_info/index",
 					"query": "id=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "yl_welore/pages/packageA/user_smail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tab我的",
+					"pathName": "yl_welore/pages/user/index",
+					"query": "",
 					"scene": null
 				}
 			]

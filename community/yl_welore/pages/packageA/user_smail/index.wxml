@@ -34,6 +34,7 @@
         <view></view>
         <view style="clear:both;height:0"></view>
     </view>
+    <view wx:if="{{kong&&my_list.length}}" style="font-size:13px;margin:10px;color:#666;text-align: center;">人家也是有底线的啦~</view>
 </view>
 <view catchtouchmove="preventTouchMove" class="modal-mask" wx:if="{{del_mod}}"></view>
 <view class="modal-dialog" wx:if="{{del_mod}}">

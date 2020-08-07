@@ -456,6 +456,7 @@ Page({
             http.POST(n, {
                 params: e,
                 success: function(t) {
+                    
                     a.hideModal(), "success" == t.data.status && (i.is_trailing = 1 != i.is_trailing, 
                     a.setData({
                         getInfo: i
@@ -489,7 +490,7 @@ Page({
                 console.log(t), "success" == t.data.status ? a.setData({
                     getInfo: t.data.info,
                     title: t.data.info.realm_name
-                }) : $Toast({
+                },a.get_screenshot_status()) : $Toast({
                     content: t.data.msg
                 });
             },
@@ -502,6 +503,22 @@ Page({
                 });
             }
         });
+    },
+    //截图信息
+    get_screenshot_status(){
+        console.log(98952)
+        var a = this, t = app.getCache("userinfo"), e = new Object();
+        e.token = t.token, e.openid = t.openid, e.uid = t.uid, e.much_id = app.siteInfo.uniacid,e.needle_id = 2;
+        var i = app.api_root + "user/get_screenshot_status";
+        http.POST(i,{
+            params:e,
+            success(res){
+                if(res.statusCode!==200) return;
+                let data=res.data;
+                console.log(data)
+            }
+        },)
+
     },
     plus: function() {
         var t = this;
