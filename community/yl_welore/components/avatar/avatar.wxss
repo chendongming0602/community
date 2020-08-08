@@ -1,18 +1,22 @@
 .a-box{
     display: flex;
     align-items: center;
+    position: relative;
 }
 .a-pic{
-    width: 100rpx;
-    height: 100rpx;
+    width: 90rpx;
+    height: 90rpx;
     border-radius: 50%;
-    min-width: 100rpx;
-    min-height: 100rpx;
-    margin-right: 10rpx;
+    min-width: 90rpx;
+    min-height: 90rpx;
+    margin-right: 15rpx;
     box-sizing: border-box;
+    border: 4rpx solid var(--color);
+    box-shadow: 0 0 5px 0px var(--color);
 }
 .pic-vip{
-    border: 4rpx solid #ffbb20;
+    border: 4rpx solid var(--vip);
+    box-shadow: 0 0 5px 0px var(--vip);
 }
 .a-top{
     display: flex;
@@ -29,6 +33,9 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.name-vip{
+    color: var(--vip);
 }
 .a-sex{
     width: 30rpx;
@@ -50,7 +57,7 @@
 .a-time{
     font-size: 20rpx;
     color: #999;
-    padding-top: 5rpx;
+    padding-top: 10rpx;
 }
 .a-admin{
     width: 60rpx;
@@ -59,4 +66,18 @@
 .a-master{
     width: 50rpx;
     height: 30rpx;
+}
+.a-up{
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    top: 1%;
+    right: 7%;
+}
+.a-atk{
+    width: 70rpx;
+    height: 70rpx;
+    position: absolute;
+    top: 0;
+    right: -20rpx;
 }

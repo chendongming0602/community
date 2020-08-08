@@ -99,7 +99,7 @@ App({
     http_root: "",
     siteInfo: require("siteinfo.js"),
     //新加审核判断版本
-    newVersion:"1.1.3",
+    newVersion:"1.1.2",
     //为true是在审核，
     isCheck:true,
     //订阅消息

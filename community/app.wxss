@@ -4,6 +4,7 @@ page {
     --color:#61c7ff;
     --shallow:rgba(97,199,225,0.1);
     --shallow2:rgba(97,199,225,0.5);
+    --vip:#ffbb20;
 }
 .bgs{
     background: var(--color);
