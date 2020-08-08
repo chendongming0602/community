@@ -10,16 +10,17 @@
             <!-- VIP -->
             <image wx:if="{{item.user_vip==1}}" class="a-vip" src="../../style/icon/vip.png"></image>
             <!-- 圈主 -->
-            <image wx:if="{{is!=0}}" class="a-master" src="../../style/icon/pp_qz_feed_master.png"></image>
+            <!-- <image wx:if="{{is!=0&&item.check_qq=='da'}}" class="a-master" src="../../style/icon/pp_qz_feed_master.png"></image> -->
+            <view class="a-master" wx:if="{{is!=0&&item.check_qq=='da'}}">{{name}}主</view>
             <!-- 管理员 -->
-            <image wx:if="{{is!=0}}" class="a-admin" src="../../style/icon/pp_circle_admin.png"></image>
+            <image wx:if="{{is!=0&&item.check_qq=='xiao'}}" class="a-admin" src="../../style/icon/pp_circle_admin.png"></image>
             <!-- <view class="a-lists">
                 <image src="https://lovers-1300783623.cos.ap-shanghai.myqcloud.com/pic/lovers-08148677405921898.jpg"></image>
             </view>  -->
         </view>
 
         <!-- 首页时间 -->
-        <block wx:if="{{is==0}}">
+        <block wx:if="{{is==0||is==1}}">
             <view wx:if="{{!item.top_time&&actions_name=='按发帖时间'}}" class="a-time">{{item.adapter_time}}</view>
             <view wx:if="{{item.top_time}}" class="a-time">{{item.adapter_time}}</view>
             <view class="a-time" wx:if="{{!item.top_time&&actions_name=='按最后回帖时间'&&item.huifu_time!=null}}">回复于{{item.huifu_time}}</view>

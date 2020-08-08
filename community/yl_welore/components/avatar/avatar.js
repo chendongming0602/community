@@ -15,10 +15,13 @@ Component({
     },
     //发帖和回帖的切换
     actions_name:String,
+    //判断审核
     check:{
       type:Boolean,
       value:false
-    }
+    },
+    //圈主名字？
+    name:String
   },
 
   /**

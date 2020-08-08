@@ -79,10 +79,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "大学圈子",
 					"pathName": "yl_welore/pages/packageA/circle_info/index",
-					"query": "id=2",
+					"query": "id=16",
 					"scene": null
 				},
 				{

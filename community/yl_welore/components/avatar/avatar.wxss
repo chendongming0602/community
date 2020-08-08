@@ -65,7 +65,13 @@
 }
 .a-master{
     width: 50rpx;
-    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 20rpx;
+    text-align: center;
+    background: linear-gradient(to right, #ff8008, #ffc837);
+    color: #fff;
+    border-radius: 5rpx;
+    margin-left: 8rpx;
 }
 .a-up{
     position: absolute;

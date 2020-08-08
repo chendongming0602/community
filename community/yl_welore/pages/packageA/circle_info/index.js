@@ -181,15 +181,18 @@ Page({
         });
     },
     handleClickItem1: function(t) {
+        console.log("切换了")
         var a = t.detail.index, e = this.data.actions[a];
         console.log(e), this.setData({
             visible: !1,
             order_time: e.type,
-            actions_name: e.name
+            actions_name: e.name,
+            page:1
         });
         var i = new Object();
         i.type = e.type, i.name = e.name, app.setCache("order_actions_o", i);
         var n = app.getCache("order_actions_o");
+        this._qie=true;
         console.log(n), this.add_trailing_list();
     },
     home_pl: function(t) {
@@ -404,11 +407,14 @@ Page({
                     0 == t.data.info.length && e.setData({
                         load: !0
                     });
+                    if(!e._qie)
                     for (var a = 0; a < t.data.info.length; a++) o.push(t.data.info[a]);
                     e.setData({
-                        tory_list: o,
+                        tory_list: !e._qie?o:t.data.info,
                         version: t.data.version
                     });
+                    console.log(o,8888)
+                    e._qie=false
                 } else $Toast({
                     content: t.data.msg
                 });
