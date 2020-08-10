@@ -14,6 +14,12 @@
     border: 4rpx solid var(--color);
     box-shadow: 0 0 5px 0px var(--color);
 }
+.three-pic{
+    width: 70rpx;
+    height: 70rpx;
+    min-width: 70rpx;
+    min-height: 70rpx;
+}
 .pic-vip{
     border: 4rpx solid var(--vip);
     box-shadow: 0 0 5px 0px var(--vip);
@@ -33,6 +39,9 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.thress-name{
+    font-size: 26rpx;
 }
 .name-vip{
     color: var(--vip);
@@ -58,6 +67,9 @@
     font-size: 20rpx;
     color: #999;
     padding-top: 10rpx;
+}
+.three-atk{
+    padding-top: 0rpx;
 }
 .a-admin{
     width: 60rpx;

@@ -248,5 +248,5 @@ input-holder {
 }
 .new-box{
     box-sizing: border-box;
-    padding: 20rpx 20rpx 10rpx;
+    padding: 30rpx 20rpx 10rpx;
 }

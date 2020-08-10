@@ -68,11 +68,12 @@
 <view style="clear:both;height:0"></view>
 <view style="background-color:#ffffff;padding-bottom:50px;" wx:if="{{current=='tab1'}}">
     <block wx:for="{{check?new_list:new_list2}}" wx:for-index="dataListindex" wx:key="index_key">
+        <!-- 最新 -->
+        <view class="new-box">
+            <avatar check="{{check}}" is="{{0}}" actions_name="{{actions_name}}" item="{{item}}" ></avatar>
+        </view>
         <view class="weui-cells weui-cells_after-title" style="" wx:if="{{item.study_type==0}}">
-            <!-- 默认展示 -->
-            <view class="new-box">
-                <avatar check="{{check}}" is="{{0}}" actions_name="{{actions_name}}" item="{{item}}" ></avatar>
-            </view>
+           
             <!-- <image src="../../style/icon/home_zhang.png" style="opacity:0.8;width:50px;height:50px;position:absolute;right:5%;top:1%;z-index:200" wx:if="{{item.top_time}}"></image> -->
            
             <!-- <navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.user_id}}">
@@ -202,9 +203,7 @@
         </view>
         <view class="weui-cells weui-cells_after-title" wx:if="{{item.study_type==1}}">
             <!-- 语音类型 -->
-            <view class="new-box">
-                <avatar check="{{check}}" is="{{0}}" actions_name="{{actions_name}}" item="{{item}}" ></avatar>
-            </view>
+           
             
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
                 <view class="weui-cell" style="padding:10px;">
@@ -321,10 +320,6 @@
         </view>
         <view class="weui-cells weui-cells_after-title" wx:if="{{item.study_type==2}}">
             <!-- 视频类型 -->
-            <view class="new-box">
-                <avatar check="{{check}}" is="{{0}}" actions_name="{{actions_name}}" item="{{item}}" ></avatar>
-            </view>
-
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
                 <view class="weui-cell" style="padding:10px;">
                     <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
@@ -403,32 +398,12 @@
 </view>
 <view style="background-color:#ffffff;padding-bottom:50px;" wx:if="{{current=='tab2'}}">
     <block wx:for="{{check?new_list:new_list2}}" wx:for-index="my_index" wx:key="my_key">
+        <!-- 关注 -->
+        <view class="new-box">
+            <avatar check="{{check}}" is="{{0}}" actions_name="{{actions_name}}" item="{{item}}" ></avatar>
+        </view>
+
         <view class="weui-cells weui-cells_after-title" wx:if="{{item.study_type==0}}">
-            <navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.user_id}}">
-                <view >
-                    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                        <image mode="aspectFill" src="{{item.user_head_sculpture}}" style="width: 35px; height: 35px; display: block;border-radius:50rpx;"></image>
-                    </view>
-                </view>
-                <view class="weui-cell__bd">
-                    <view style="font-size:15px;">{{item.user_nick_name}}
-            <image src="../../style/icon/man.png" style="width:23px;height:23px;vertical-align:bottom;" wx:if="{{item.gender==1||item.gender==0}}"></image>
-                        <image src="../../style/icon/wuman.png" style="width:23px;height:23px;vertical-align:bottom;" wx:if="{{item.gender==2}}"></image>
-                        <image src="../../style/icon/vip.png" style="width:20px;height:20px;;vertical-align:sub;" wx:if="{{item.user_vip==1}}"></image>
-                    </view>
-                    <view style="font-size: 13px;color: #888888;">{{item.adapter_time}}</view>
-                </view>
-                <view style="position:absolute;right:7px;top:0px;" wx:if="{{item.red==1&&version==0}}">
-                    <view>
-                        <image src="../../style/icon/atk.png" style="width:50px;height:50px;"></image>
-                    </view>
-                </view>
-                <view style="position:absolute;right:7px;top:0px;" wx:if="{{item.is_buy==1&&version==0}}">
-                    <view>
-                        <image src="../../style/icon/ff.png" style="width:50px;height:50px;"></image>
-                    </view>
-                </view>
-            </navigator>
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
                 <view class="weui-cell" style="padding:10px;">
                     <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
@@ -530,31 +505,7 @@
             <view style="width:100%;height:5px;background-color:#F7F7FA;"></view>
         </view>
         <view class="weui-cells weui-cells_after-title" wx:if="{{item.study_type==1}}">
-            <navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.user_id}}">
-                <view >
-                    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                        <image mode="aspectFill" src="{{item.user_head_sculpture}}" style="width: 35px; height: 35px; display: block;border-radius:50rpx;"></image>
-                    </view>
-                </view>
-                <view class="weui-cell__bd">
-                    <view style="font-size:15px;">{{item.user_nick_name}}
-            <image src="../../style/icon/man.png" style="width:23px;height:23px;vertical-align:bottom;" wx:if="{{item.gender==1||item.gender==0}}"></image>
-                        <image src="../../style/icon/wuman.png" style="width:23px;height:23px;vertical-align:bottom;" wx:if="{{item.gender==2}}"></image>
-                        <image src="../../style/icon/vip.png" style="width:20px;height:20px;;vertical-align:sub;" wx:if="{{item.user_vip==1}}"></image>
-                    </view>
-                    <view style="font-size: 13px;color: #888888;">{{item.adapter_time}}</view>
-                </view>
-                <view style="position:absolute;right:7px;top:0px;" wx:if="{{item.red==1&&version==0}}">
-                    <view>
-                        <image src="../../style/icon/atk.png" style="width:50px;height:50px;"></image>
-                    </view>
-                </view>
-                <view style="position:absolute;right:7px;top:0px;" wx:if="{{item.is_buy==1&&version==0}}">
-                    <view>
-                        <image src="../../style/icon/ff.png" style="width:50px;height:50px;"></image>
-                    </view>
-                </view>
-            </navigator>
+          
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
                 <view class="weui-cell" style="padding:10px;">
                     <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
@@ -669,31 +620,7 @@
             <view style="width:100%;height:5px;background-color:#F7F7FA;"></view>
         </view>
         <view class="weui-cells weui-cells_after-title" wx:if="{{item.study_type==2}}">
-            <navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.user_id}}">
-                <view >
-                    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                        <image mode="aspectFill" src="{{item.user_head_sculpture}}" style="width: 35px; height: 35px; display: block;border-radius:50rpx;"></image>
-                    </view>
-                </view>
-                <view class="weui-cell__bd">
-                    <view style="font-size:15px;">{{item.user_nick_name}}
-            <image src="../../style/icon/man.png" style="width:23px;height:23px;vertical-align:bottom;" wx:if="{{item.gender==1||item.gender==0}}"></image>
-                        <image src="../../style/icon/wuman.png" style="width:23px;height:23px;vertical-align:bottom;" wx:if="{{item.gender==2}}"></image>
-                        <image src="../../style/icon/vip.png" style="width:20px;height:20px;;vertical-align:sub;" wx:if="{{item.user_vip==1}}"></image>
-                    </view>
-                    <view style="font-size: 13px;color: #888888;">{{item.adapter_time}}</view>
-                </view>
-                <view style="position:absolute;right:7px;top:0px;" wx:if="{{item.red==1&&version==0}}">
-                    <view>
-                        <image src="../../style/icon/atk.png" style="width:50px;height:50px;"></image>
-                    </view>
-                </view>
-                <view style="position:absolute;right:7px;top:0px;" wx:if="{{item.is_buy==1&&version==0}}">
-                    <view>
-                        <image src="../../style/icon/ff.png" style="width:50px;height:50px;"></image>
-                    </view>
-                </view>
-            </navigator>
+            
             <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&admin==0}}">
                 <view class="weui-cell" style="padding:10px;">
                     <view class="weui-cell__hd text_num newText" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
