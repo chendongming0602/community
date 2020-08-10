@@ -71,12 +71,13 @@ Page({
     onLoad: function(t) {
         this.setData({
             height: app.globalData.height,
-            design: app.globalData.design
+            design: app.globalData.design,
         }), this.get_guanchang(), this.setData({
             info: [],
             tj_list: [],
             page: 1,
-            not_jia: !1
+            not_jia: !1,
+            tj_page:1
         }), this.get_my_trailing(), this.get_tj_list();
     },
     onShow: function() {
@@ -159,7 +160,10 @@ Page({
                     0 == t.data.info.length && a.setData({
                         not_jia: !0
                     });
-                    for (var e = 0; e < t.data.info.length; e++) n.push(t.data.info[e]);
+                    for (var e = 0; e < t.data.info.length; e++) {
+                        if(t.data.info[e].catch_status!=2)
+                        n.push(t.data.info[e])
+                    };
                     a.setData({
                         info: n
                     });

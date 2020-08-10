@@ -157,7 +157,9 @@
                 <view style="text-align:center;color:#ffffff;background-color:#0099FF;width:25vw;margin:0 auto;margin-top:10px;">去关注</view>
             </navigator>
             <scroll-view bindscrolltolower="lower" class="nav_right" scrollY="true">
-                <view wx:for="{{navRightItems}}" wx:for-index="rightIndex" wx:key="r_index">
+                <view wx:for="{{navRightItems}}" wx:for-index="rightIndex" wx:key="r_index" class="like-but">
+                    <view bindtap="select_qq_id" class="weui-cell" data-id="{{item.id}}" data-name="{{item.realm_name}}" data-catch_status="{{item.catch_status}}" wx:if="{{item.catch_status==2}}" data-index="{{rightIndex}}" class="like">关 注</view>
+
                     <view bindtap="select_qq_id" class="weui-cell" data-id="{{item.id}}" data-name="{{item.realm_name}}" style="padding:0;margin:10px 0 25px 0;">
                         <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
                             <image mode="aspectFill" src="{{item.realm_icon}}" style="width:45px;height:45px; display: block;border-radius:50%;"></image>

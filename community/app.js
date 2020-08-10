@@ -10,16 +10,16 @@ App({
             list:[
                 {
                     pagePath:"/yl_welore/pages/index/index",
-                    iconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/home.png",
-                    selectedIconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/home_active.png",
-                    text:"首页",
+                    iconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/uploads/36abe450d9eb11c49a7e7dc1188d5abe.png",
+                    selectedIconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/uploads/36abe450d9eb11c49a7e7dc1188d5abe.png",
+                    text:"最新",
                     isSpecial:false,
                     selected:true
                 },
                 {
                     pagePath:"/yl_welore/pages/circle/index",
-                    iconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/plaza.png",
-                    selectedIconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/plaza_active.png",
+                    iconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/uploads/4ce8f49ad3acd295414722b1c13f61b3.png",
+                    selectedIconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/uploads/4ce8f49ad3acd295414722b1c13f61b3.png",
                     text:"广场",
                     isSpecial:false,
                     selected:false
@@ -33,16 +33,16 @@ App({
                 },
                 {
                     pagePath:"/yl_welore/pages/shell_mall/index",
-                    iconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/goods.png",
-                    selectedIconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/goods_active.png",
-                    text:"园地",
+                    iconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/uploads/0f29f1ca47a561f9565732fa3f0113aa.png",
+                    selectedIconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/uploads/0f29f1ca47a561f9565732fa3f0113aa.png",
+                    text:"缘园",
                     isSpecial:false,
                     selected:false
                 },
                 {
                     pagePath:"/yl_welore/pages/user/index",
                     iconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/user.png",
-                    selectedIconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/user_active.png",
+                    selectedIconPath:"https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/user.png",
                     text:"我的",
                     isSpecial:false,
                     selected:false
@@ -99,7 +99,7 @@ App({
     http_root: "",
     siteInfo: require("siteinfo.js"),
     //新加审核判断版本
-    newVersion:"1.1.3",
+    newVersion:"1.1.5",
     //为true是在审核，
     isCheck:true,
     //订阅消息

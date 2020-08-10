@@ -184,3 +184,23 @@ input-holder {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.like-but{
+    position: relative;
+}
+.like{
+    font-size: 28rpx;
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    color: #fff;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.6);
+    font-weight: bold;
+    border-radius: 10rpx;
+}

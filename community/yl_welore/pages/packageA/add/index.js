@@ -235,11 +235,44 @@ Page({
         });
     },
     select_qq_id: function(t) {
+        let {catch_status,index}=t.currentTarget.dataset;
         this.setData({
             title: "发布到" + t.currentTarget.dataset.name,
             showLeft: !this.data.showLeft,
             fa_class: t.currentTarget.dataset.id,
             get_hidden: !this.data.get_hidden
+        });
+        if(catch_status==2){
+            this._traiindex=this.data.navRightItems[index].id;
+            this.add_trailing();
+            this.setData({
+                [`navRightItems[${index}].catch_status`]:1
+            });
+        }
+    },
+    //加入圈子
+    add_trailing: function() {
+        var a = this, t = app.getCache("userinfo"), e = new Object();
+        if (e.token = t.token, e.openid = t.openid, e.uid = t.uid, e.much_id = app.siteInfo.uniacid, 
+        e.tory_id = this._traiindex, e.is_trailing = 0, e.trailing_type = 0, 
+        e.trailing_text = "", 
+        1 != a.data.guanzhu || e.trailing_text) {
+            var n = app.api_root + "User/set_user_trailing";
+            http.POST(n, {
+                params: e,
+                success: function(t) {
+                },
+                fail: function() {
+                    wx.showModal({
+                        title: "提示",
+                        content: "网络繁忙，请稍候重试！",
+                        showCancel: !1,
+                        success: function(t) {}
+                    });
+                }
+            });
+        } else $Toast({
+            content: "内容不能为空"
         });
     },
     toggleLeft: function() {
@@ -288,6 +321,10 @@ Page({
             params: e,
             success: function(t) {
                 if (console.log(t), "success" == t.data.status) {
+                    if(t.data.info.length<=0) $Toast({
+                        content: `去关注更多${a.data.design.landgrave}吧！`,
+                        mask:false
+                    });
                     for (var e = 0; e < t.data.info.length; e++) o.push(t.data.info[e]);
                     a.setData({
                         navRightItems: o
@@ -607,40 +644,81 @@ Page({
                     title: "上传中...",
                     mask: !0
                 });
-                var e = t.tempFilePaths;
+                var e = t.tempFilePaths,arr=[];
                 o.setData({
                     img_length: o.data.img_length - e.length
                 }), o.data.img_length <= 0 && o.setData({
                     img_botton: !1
                 });
-                for (var a = 0, i = e.length; a < i; a++) wx.uploadFile({
-                    url: n,
-                    filePath: e[a],
-                    name: "sngpic",
-                    formData: {
-                        token: s.token,
-                        openid: s.openid,
-                        much_id: app.siteInfo.uniacid
-                    },
-                    header: {
-                        "Content-Type": "multipart/form-data"
-                    },
-                    success: function(t) {
-                        console.log(t);
-                        var e = JSON.parse(t.data);
-                        console.log(e), "error" == e.status ? $Toast({
-                            content: e.msg
-                        }) : (o.setData({
-                            img_arr: o.data.img_arr.concat(e.url)
-                        }), wx.hideLoading());
-                    },
-                    fail: function(t) {
-                        $Toast({
-                            content: "上传错误！",
-                            type: "error"
-                        });
+                e.map((t)=>{
+                    var fn=()=>{
+                        return new Promise((resolve,reject)=>{
+                            wx.uploadFile({
+                                url: n,
+                                filePath: t,
+                                name: "sngpic",
+                                formData: {
+                                    token: s.token,
+                                    openid: s.openid,
+                                    much_id: app.siteInfo.uniacid
+                                },
+                                header: {
+                                    "Content-Type": "multipart/form-data"
+                                },
+                                success: function(t) {
+                                    var e = JSON.parse(t.data);
+                                    resolve(e)
+                                },
+                                fail: function(t) {
+                                    $Toast({
+                                        content: "上传错误！",
+                                        type: "error"
+                                    });
+                                }
+                            });
+                        })
                     }
+                    arr.push(
+                        fn()
+                    )
                 });
+                Promise.all(arr).then(res=>{
+                    res.map(t=>{
+                        "error" == e.status ? $Toast({
+                            content: t.msg
+                        }) : (o.setData({
+                                img_arr: o.data.img_arr.concat(t.url)
+                        }), wx.hideLoading());
+                    });
+                })
+                // for (var a = 0, i = e.length; a < i; a++) wx.uploadFile({
+                //     url: n,
+                //     filePath: e[a],
+                //     name: "sngpic",
+                //     formData: {
+                //         token: s.token,
+                //         openid: s.openid,
+                //         much_id: app.siteInfo.uniacid
+                //     },
+                //     header: {
+                //         "Content-Type": "multipart/form-data"
+                //     },
+                //     success: function(t) {
+                //         console.log(t);
+                //         var e = JSON.parse(t.data);
+                //         console.log(e), "error" == e.status ? $Toast({
+                //             content: e.msg
+                //         }) : (o.setData({
+                //             img_arr: o.data.img_arr.concat(e.url)
+                //         }), wx.hideLoading());
+                //     },
+                //     fail: function(t) {
+                //         $Toast({
+                //             content: "上传错误！",
+                //             type: "error"
+                //         });
+                //     }
+                // });
             }
         });
     },

@@ -11,7 +11,8 @@ Page({
         delBtnWidth: 180,
         list: [],
         page: 1,
-        di_msg: !1
+        di_msg: !1,
+        empty:false
     },
     onLoad: function(t) {
         var a = app.getCache("userinfo");
@@ -64,7 +65,8 @@ Page({
                     });
                     for (var a = 0; a < t.data.info.length; a++) i.push(t.data.info[a]);
                     e.setData({
-                        list: i
+                        list: i,
+                        empty:true
                     });
                 } else $Toast({
                     content: t.data.msg

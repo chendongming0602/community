@@ -22,7 +22,7 @@
 </view>
 <scroll-view bindscrolltolower="nex_my_qq" scrollX="true" style="white-space: nowrap;width: 100%;">
     <view class="classify" wx:for="{{info}}" wx:key="i_key">
-        <navigator hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.id}}">
+        <navigator  hoverClass="none" url="/yl_welore/pages/packageA/circle_info/index?id={{item.id}}">
             <view class="class_border">
                 <image class="class_img" mode="aspectFill" src="{{item.realm_icon}}"></image>
             </view>
@@ -33,7 +33,12 @@
             <view class="bod_qu">去{{design.landgrave}}</view>
         </navigator>
     </view>
-    <view class="classify" style="left:34%;" wx:if="{{!info}}">
+    <navigator hoverClass="none" url="/yl_welore/pages/square/index" class="classify mores" wx:if="{{info.length>4}}">
+        <view>更</view>
+        <view>多</view>
+        <view wx:for="{{design.landgrave}}">{{item}}</view>
+    </navigator>
+    <view class="classify" style="left:34%;" wx:if="{{!info.length}}">
         <view class="class_border" style="border:0rpx;">
             <image class="class_img" src="../../style/icon/zanwu.png"></image>
         </view>

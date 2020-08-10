@@ -192,4 +192,5 @@ input-holder {
 .mall-box view{
     text-align: center;
     font-size: 30rpx;
+    color: #ddd;
 }

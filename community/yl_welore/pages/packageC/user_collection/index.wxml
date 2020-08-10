@@ -240,7 +240,7 @@
     </view>
 </view>
 <i-toast id="toast"></i-toast>
-<view class="classify" style="left:35%;" wx:if="{{list.length==0}}">
+<view class="classify" style="left:35%;" wx:if="{{list.length==0&&empty}}">
     <view class="class_border" style="border:0rpx;">
         <image class="class_img" src="../../../style/icon/zanwu.png"></image>
     </view>

@@ -65,14 +65,11 @@ Page({
         });
     },
     up_user_smail: function(t) {
-        if( t.currentTarget.dataset.status==1) {
-            let {paper_id,type}=t.currentTarget.dataset;
-            if(paper_id===0) return;
-            wx.navigateTo({
-              url: `/yl_welore/pages/packageA/article/index?id=${paper_id}&type=${type}`,
-            });
-            return;
-        };
+        let {paper_id,type,status,index}=t.currentTarget.dataset;
+        if(status==1&&paper_id!=0) return  wx.navigateTo({
+            url: `/yl_welore/pages/packageA/article/index?id=${paper_id}&type=${type}`,
+        });
+        if(status==1&&paper_id==0) return;
         var e = this, a = app.getCache("userinfo"), n = new Object();
         n.token = a.token, n.openid = a.openid, n.much_id = app.siteInfo.uniacid, n.id = t.currentTarget.dataset.id;
         var s = app.api_root + "User/up_user_smail";
@@ -81,6 +78,9 @@ Page({
             success: function(t) {
                 console.log(t), "success" == t.data.status ? e.get_my_rec() : $Toast({
                     content: t.data.msg
+                });
+                e.setData({
+                    [`my_list[${index}].status`]:1
                 });
             },
             fail: function() {
@@ -92,10 +92,9 @@ Page({
                 });
             }
         });
-        let {paper_id,type}=t.currentTarget.dataset;
-        if(paper_id===0) return;
+        if(paper_id==0) return;
         wx.navigateTo({
-          url: `/yl_welore/pages/packageA/article/index?id=${paper_id}&type=${type}`,
+            url: `/yl_welore/pages/packageA/article/index?id=${paper_id}&type=${type}`,
         });
     },
     del_do: function() {

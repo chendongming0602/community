@@ -245,3 +245,15 @@ input-holder {
     border-top: 4rpx solid #fff;
     padding: 0rpx 20rpx 20rpx;
 }
+.mores{
+    margin: 0;
+    padding: 40rpx 20rpx;
+    height: 100%;
+    position: relative;
+    top: -50rpx;
+    background: var(--shallow);
+    border-radius: 10rpx;
+    font-size: 22rpx;
+    color: #999;
+    margin:0 25rpx;
+}

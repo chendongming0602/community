@@ -1510,7 +1510,7 @@ Page({
                 });
             }
         } : {
-            title: this.data.info.study_title,
+            title: "我发布了一条关于你的动态，快来看看吧！",
             path: "/yl_welore/pages/index/index?detail=1&id=" + this.data.id + "&type=" + this.data.info_type,
             success: function(t) {
                 $Toast({
@@ -1542,7 +1542,7 @@ Page({
                 });
             }
         } : {
-            title: this.data.info.study_title,
+            title: "我发布了一条关于你的动态，快来看看吧！",
             query: "/yl_welore/pages/index/index?detail=1&id=" + this.data.id + "&type=" + this.data.info_type,
             success: function(t) {
                 $Toast({

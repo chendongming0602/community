@@ -12,7 +12,7 @@
     <view bindtap="get_all_mod" style="float:right;margin-right:20px;margin-top:10px;color:#fff;font-size:12px;padding:5px 10px;border-radius:17px;" class="bgs">全部标为已读</view>
     <view style="clear:both;height:0"></view>
     <!-- 循环 -->
-    <view style="padding:10px 20px 5px 15px" wx:for="{{my_list}}" wx:key="m_key" class="lists" bindtap="up_user_smail" data-id="{{item.id}}" data-status="{{item.status}}" data-paper_id="{{item.paper_id}}" data-type="{{item.paper_type}}">
+    <view style="padding:10px 20px 5px 15px" wx:for="{{my_list}}" wx:key="m_key" class="lists" bindtap="up_user_smail" data-id="{{item.id}}" data-status="{{item.status}}" data-paper_id="{{item.paper_id}}" data-type="{{item.paper_type}}" data-index="{{index}}">
         <view style=";line-height:20px;position: relative;" >
             <image src="../../../style/icon/admin2.png" style="width:40px;height:40px;border-radius:50%;float:left;margin-right:10px;" class="admins {{item.paper_id===0?'regPic':''}}"></image>
             <view style="font-size:14px;" class="colors {{item.paper_id===0?'regs':''}}">系统消息</view>

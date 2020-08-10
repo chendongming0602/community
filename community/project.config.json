@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -195,6 +195,13 @@
 					"name": "tab我的",
 					"pathName": "yl_welore/pages/user/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布（没选圈子）",
+					"pathName": "yl_welore/pages/packageA/add/index",
+					"query": "type=0&fa_class=0&name=",
 					"scene": null
 				}
 			]
