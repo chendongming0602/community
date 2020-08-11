@@ -806,6 +806,7 @@ Page({
         "h3" == a.key && (show_type = "my"), this.hui_fu_page(1);
     },
     onLoad: function(t) {
+     
         var a = decodeURIComponent(t.scene);
         if ("undefined" == a) this.setData({
             id: t.id,
@@ -825,6 +826,15 @@ Page({
                 });
             }
         });
+        page = 1, show_type = "all";
+        var t = app.getCache("userinfo");
+        this.setData({
+            uid: t.uid,
+            design: app.globalData.design,
+            height: app.globalData.height,
+            huifu_list: []
+        }),  this.get_article_info(), 
+        $Toast.hide();
     },
     onShow: function() {
         if (0 != this.data.show) {
@@ -837,15 +847,7 @@ Page({
                 // });
                
             });
-            page = 1, show_type = "all";
-            var t = app.getCache("userinfo");
-            this.setData({
-                uid: t.uid,
-                design: app.globalData.design,
-                height: app.globalData.height,
-                huifu_list: []
-            }), this.get_ad(), this.get_liwu_all(), this.get_article_info(), this.get_diy(), 
-            $Toast.hide();
+            this.get_ad(), this.get_liwu_all(),this.get_diy();
             
         }
     },

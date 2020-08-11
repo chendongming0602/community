@@ -200,7 +200,7 @@ input-holder {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(1, 1, 1, 0.6);
+    background: rgba(1, 1, 1, 0.4);
     font-weight: bold;
     border-radius: 10rpx;
 }
