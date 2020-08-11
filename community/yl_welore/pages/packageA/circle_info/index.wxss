@@ -283,3 +283,35 @@ input-holder {
     box-sizing: border-box;
     padding: 20rpx;
 }
+.screenshot{
+    position: fixed;
+    bottom: 10%;
+    right: 30rpx;
+    z-index: 9;
+}
+@keyframes screen{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.screenshot image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    margin: 0 auto;
+    display: block;
+    animation: screen 1.5s infinite;
+}
+
+.screenshot view{
+    text-align: center;
+    font-size: 22rpx;
+    color: var(--color);
+    margin-top: 5rpx;
+}
