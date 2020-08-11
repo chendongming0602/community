@@ -1,22 +1,56 @@
-<view class="a-box">
-    <image class="a-pic pic-vip" src="https://lovers-1300783623.cos.ap-shanghai.myqcloud.com/pic/lovers-08148677405921898.jpg"></image>
+<navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{is!=4?item.user_id:item.id}}" class="a-box">
+    <image mode="aspectFill" class="a-pic {{item.user_vip==1?'pic-vip':''}} {{is==4?'like-bor':''}} {{is==3?'three-pic':''}}" src="{{item.user_head_sculpture}}"></image>
+    <!-- 评论 -->
+   
     <view class="a-names">
         <view class="a-top">
-            <view class="a-name">我是，名字</view>
+            <view class="a-name {{is==3?'thress-name':''}} {{item.user_vip==1?'name-vip':''}}">{{item.user_nick_name}}</view>
             <!-- 男 -->
-            <image class="a-sex" src="../../style/icon/man.png"></image>
+            <image wx:if="{{item.gender==1||item.gender==0}}" class="a-sex-n" src="../../style/icon/man.png"></image>
             <!-- 女 -->
-            <image class="a-sex" src="../../style/icon/wuman.png"></image>
+            <image wx:if="{{item.gender==2}}" class="a-sex" src="../../style/icon/wuman.png"></image>
+            
             <!-- VIP -->
-            <image class="a-vip" src="../../style/icon/vip.png"></image>
+            <image wx:if="{{item.user_vip==1}}" class="a-vip" src="../../style/icon/vip.png"></image>
+            <!-- 楼主 -->
+            <image src="../../style/icon/louzhu.png" style="width:26px;height:15px;;vertical-align:sub;margin-left:5px;" wx:if="{{item.is_paper_user==item.user_id&&is==3}}"></image>
             <!-- 圈主 -->
-            <image class="a-master" src="../../style/icon/pp_qz_feed_master.png"></image>
+            <!-- <image wx:if="{{is!=0&&item.check_qq=='da'}}" class="a-master" src="../../style/icon/pp_qz_feed_master.png"></image> -->
+            <view class="a-master" wx:if="{{is!=0&&(item.check_qq=='da'||item.is_qq=='da')}}">{{name}}主</view>
             <!-- 管理员 -->
-            <image class="a-admin" src="../../style/icon/pp_circle_admin.png"></image>
+            <image wx:if="{{is!=0&&(item.check_qq=='xiao'||item.is_qq=='xiao')}}" class="a-admin" src="../../style/icon/pp_circle_admin.png"></image>
             <!-- <view class="a-lists">
                 <image src="https://lovers-1300783623.cos.ap-shanghai.myqcloud.com/pic/lovers-08148677405921898.jpg"></image>
             </view>  -->
         </view>
-        <view class="a-time">10个小时前</view>
+
+        <!-- 首页时间 -->
+        <block wx:if="{{is==0||is==1}}">
+            <view wx:if="{{!item.top_time&&actions_name=='按发帖时间'}}" class="a-time">{{item.adapter_time}}</view>
+            <view wx:if="{{item.top_time}}" class="a-time">{{item.adapter_time}}</view>
+            <view class="a-time" wx:if="{{!item.top_time&&actions_name=='按最后回帖时间'&&item.huifu_time!=null}}">回复于{{item.huifu_time}}</view>
+        </block>
+
+        <!-- 详情顶部 -->
+        <block wx:if="{{is==2}}">
+            <view class="a-time">{{item.realm_name}}　|　{{item.adapter_time}}</view>
+        </block>
+        <!-- 详情评论 -->
+        <block wx:if="{{is==3}}">
+            <view class="a-time" style="padding-top:0">{{item.phase}}楼</view>
+        </block>
+        <!-- 关注 -->
+        <block wx:if="{{is==4}}" >
+            <view class="a-time" style="padding-top:0">{{item.autograph||"ta啥都没留下..."}}</view>
+        </block>
     </view>
-</view>
+
+    <!-- 首页置顶 -->
+    <block wx:if="{{is==0}}">
+        <image wx:if="{{item.top_time}}" class="a-up" src="../../style/icon/home_zhang.png"></image>
+    </block>
+    <!-- 福利 -->
+    <image class="a-atk" wx:if="{{item.red==1&&check}}" src="../../style/icon/atk.png"></image>
+    <!-- 付费 -->
+    <image wx:if="{{item.is_buy==1&&check}}" class="a-atk three-atk" src="../../style/icon/ff.png"></image>
+</navigator>

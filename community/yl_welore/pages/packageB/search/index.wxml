@@ -67,20 +67,11 @@
         <view>动态</view>
     </view>
     <block wx:for="{{new_list}}" wx:for-index="dataListindex" wx:key="index_key">
+        <view class="new-box">
+            <avatar check="{{check}}" is="{{2}}" actions_name="{{actions_name}}" item="{{item}}" ></avatar>
+        </view>
         <view class="weui-cells weui-cells_after-title" style="margin-bottom:10rpx;" wx:if="{{item.study_type==0}}">
-            <view class="weui-cell">
-                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                    <image src="{{item.user_head_sculpture}}" style="width: 35px; height: 35px; display: block;border-radius:50rpx;"></image>
-                </view>
-                <view class="weui-cell__bd">
-                    <view style="font-size:24rpx;">{{item.user_nick_name}}
-            <image src="../../../style/icon/vip.png" style="width:15px;height:15px;;vertical-align:sub;" wx:if="{{item.user_vip==1}}"></image>
-                        <image src="../../../style/icon/man.png" style="width:15px;height:15px;vertical-align:sub;" wx:if="{{item.gender==1||item.gender==0}}"></image>
-                        <image src="../../../style/icon/wuman.png" style="width:15rpx;height:15rpx;vertical-align:sub;" wx:if="{{item.gender==2}}"></image>
-                    </view>
-                    <view style="font-size: 13px;color: #888888;">{{item.realm_name}} | {{item.adapter_time}}</view>
-                </view>
-            </view>
+            
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=0">
                 <view class="weui-cell" style="padding:0rpx 20rpx 20rpx 20rpx;">
                     <view class="weui-cell__hd text_num" style="position: relative;margin-right: 10px;color:{{item.study_title_color}};">
@@ -117,19 +108,7 @@
             </view>
         </view>
         <view class="weui-cells weui-cells_after-title" style="margin-bottom:10rpx;" wx:if="{{item.study_type==1}}">
-            <view class="weui-cell">
-                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                    <image src="{{item.user_head_sculpture}}" style="width: 60rpx; height: 60rpx; display: block;border-radius:50rpx;"></image>
-                </view>
-                <view class="weui-cell__bd">
-                    <view style="font-size:24rpx;">{{item.user_nick_name}}
-            <image src="../../../style/icon/vip.png" style="width:15px;height:15px;;vertical-align:sub;" wx:if="{{item.user_vip==1}}"></image>
-                        <image src="../../../style/icon/man.png" style="width:15px;height:15px;vertical-align:sub;" wx:if="{{item.gender==1||item.gender==0}}"></image>
-                        <image src="../../../style/icon/wuman.png" style="width:15rpx;height:15rpx;vertical-align:sub;" wx:if="{{item.gender==2}}"></image>
-                    </view>
-                    <view style="font-size: 13px;color: #888888;">{{item.realm_name}} | {{item.adapter_time}}</view>
-                </view>
-            </view>
+            
             <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=1">
                 <view class="weui-cell" style="padding:0rpx 20rpx 20rpx 20rpx;">
                     <view class="weui-cell__hd text_num" style="position: relative;margin-right: 10px;color:{{item.study_title_color}};">
@@ -137,9 +116,9 @@
           </view>
                 </view>
             </navigator>
-            <view class="weui-cell" style="width:50%;margin:0 auto;border:1px solid #E6E9ED;background-color:#F7F9FA;">
+            <view  bindtap="play" data-key="{{dataListindex}}" data-vo="{{item.study_voice}}" class="weui-cell" style="width:50%;margin:0 auto;border:1px solid #E6E9ED;background-color:#F7F9FA;">
                 <view style="width:100%;">
-                    <image bindtap="play" data-key="{{dataListindex}}" data-vo="{{item.study_voice}}" mode="aspectFill" src="../../../style/icon/play.png" style="width:50rpx;height:50rpx;float:left;" wx:if="{{item.is_voice==false}}"></image>
+                    <image mode="aspectFill" src="../../../style/icon/play.png" style="width:50rpx;height:50rpx;float:left;" wx:if="{{item.is_voice==false}}"></image>
                     <image bindtap="stop" data-key="{{dataListindex}}" data-vo="{{item.study_voice}}" mode="aspectFill" src="../../../style/icon/stop.png" style="width:50rpx;height:50rpx;float:left;" wx:if="{{item.is_voice==true}}"></image>
                     <view style="float:left;margin-left:20rpx;font-size:14px;margin-top:10rpx;">一段语音</view>
                     <view style="float:right;font-size:14px;margin-top:10rpx;">{{item.study_voice_time}}"</view>
@@ -167,7 +146,70 @@
                 </view>
             </view>
         </view>
-        <view style="width:100%;height:4px;background-color:#F7F7FA;"></view>
+
+
+        <view class="weui-cells weui-cells_after-title" wx:if="{{item.study_type==2}}">
+            <view bindtap="purchase_paper" data-id="{{item.id}}" data-index="{{dataListindex}}" data-money="{{item.buy_price}}" wx:if="{{item.is_buy==1&&version==0&&item.purchase==0&&item.user_id!=uid&&this_da_qq!=1&&this_xiao_qq!=1&&admin==0}}">
+                <view class="weui-cell" style="padding:0rpx 10px 10px 20px;">
+                    <view class="weui-cell__hd text_num" style="word-break:break-all;position: relative;color:{{item.study_title_color}};font-size:16px;">
+            {{item.study_title}}
+          </view>
+                </view>
+                <!-- <view style="position:relative;margin:0 auto;width:80%;height:180px;z-index:100;overflow:hidden;border-radius:10px;font-size:16px;">
+                    <image mode="scaleToFill" src="../../../style/icon/a84.jpg" style="width:100%;height:100%;"></image>
+                    <view style="color:#fff;position:absolute;text-align: center;left: 0;right: 0;top:23%;">本帖被主人设置为付费帖</view>
+                    <view style="color:#fff;position:absolute;text-align: center;left: 0;right: 0;top:47%;">需要支付{{item.buy_price}}{{design.confer}}查看</view>
+                    <view style="color:#fff;position:absolute;text-align: center;left: 0;right: 0;bottom:8%;">
+                        <image src="../../../style/icon/suo.png" style="width:35px;height:35px;"></image>
+                    </view>
+                </view> -->
+            </view>
+            <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||this_da_qq==1||this_xiao_qq==1||admin==1}}">
+                <view class="weui-cell" style="padding:0rpx 20rpx 20rpx 20rpx;">
+                    <view class="weui-cell__hd text_num" style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
+            {{item.study_title==''?item.study_content:item.study_title}}
+          </view>
+                </view>
+            </navigator>
+            <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2" wx:if="{{item.is_buy!=1||item.purchase==1||item.user_id==uid||this_da_qq==1||this_xiao_qq==1||admin==1}}">
+                <view class="weui-cell" style="overflow:hidden;width:91%;margin:0 auto;">
+                    <image src="../../../style/icon/home_bf.png" style="width:50px;height:50px;position:absolute;left:44%;"></image>
+                    <image mode="aspectFill" src="{{item.image_part[0]}}" style="height:190px;margin:0 auto;border-radius:10px;" wx:if="{{item.image_part.length>0}}"></image>
+                    <image mode="aspectFill" src="../../../style/icon/a84.jpg" style="height:190px;margin:0 auto;border-radius:10px;" wx:if="{{item.image_part.length==null}}"></image>
+                </view>
+            </navigator>
+            <view style="padding-left:10px" wx:if="{{item.address_name!=null}}">
+                <view style="margin-left:10px;margin-top:10px;float:left;">
+                    <image src="../../../style/icon/pos.png" style="margin-left:7px;vertical-align:middle;width:25px;height:25px;border-radius:50px;"></image>
+                    <text style="font-size:13px;padding-left:5px;vertical-align:middle;color:#999;">{{item.address_name}}</text>
+                </view>
+            </view>
+            <view style="clear:both;height:0"></view>
+            <view class="weui-flex" style="padding-bottom:10px;padding-top:10px;">
+                <view class="weui-flex__item">
+                    <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2">
+                        <button hoverClass="none">
+                            <image src="../../../style/icon/kan.png" style="width: 30px; height: 30px;vertical-align:middle;"></image>
+                            <text class="index_nav_name" style="color:#999999;font-size:13px;margin-left:15rpx;vertical-align:middle;">{{item.study_heat}}</text>
+                        </button>
+                    </navigator>
+                </view>
+                <view class="weui-flex__item">
+                    <button bindtap="{{item.is_buy==1?'':'add_zan'}}" data-id="{{item.id}}" data-key="{{dataListindex}}" hoverClass="none" style="padding-top:2px;">
+                        <image animation="{{item.animationData_zan}}" src="../../../style/icon/xiao_no.png" style="width: 25px;height:25px;vertical-align:middle;" wx:if="{{item.is_info_zan==false}}"></image>
+                        <image animation="{{item.animationData_zan}}" src="../../../style/icon/xiao.png" style="width: 25px;height:25px;vertical-align:middle;" wx:if="{{item.is_info_zan==true}}"></image>
+                        <text class="index_nav_name" style="color:#999999;font-size:13px;margin-left:15rpx;vertical-align:middle;">{{item.info_zan_count_this>10000?item.info_zan_count:item.info_zan_count_this}}</text>
+                    </button>
+                </view>
+                <view class="weui-flex__item">
+                    <button bindtap="{{item.is_buy==1?'':'home_pl'}}" data-id="{{item.id}}" data-type="{{item.study_type}}" data-key="{{dataListindex}}" hoverClass="none" style="padding-top:2px;">
+                        <image src="../../../style/icon/info_pl.png" style="width: 25px;height:25px;vertical-align:middle;"></image>
+                        <text class="index_nav_name" style="color:#999999;font-size:13px;margin-left:15rpx;vertical-align:middle;">{{item.study_repount}}</text>
+                    </button>
+                </view>
+            </view>
+            <view style="width:100%;height:5px;background-color:#F7F7FA;"></view>
+        </view>
     </block>
     <i-load-more loading="{{false}}" tip="没有更多了" wx:if="{{di_msg}}"></i-load-more>
 </view>

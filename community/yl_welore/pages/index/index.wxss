@@ -246,3 +246,7 @@ input-holder {
     border-radius: 8rpx;
     color: #333 !important;
 }
+.new-box{
+    box-sizing: border-box;
+    padding: 30rpx 20rpx 10rpx;
+}

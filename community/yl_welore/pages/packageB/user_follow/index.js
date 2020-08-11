@@ -8,7 +8,8 @@ Page({
             height: 2 * app.globalData.height + 20
         },
         page: 1,
-        info: []
+        info: [],
+        empty:false
     },
     onLoad: function(t) {
         var a = app.getCache("userinfo");
@@ -33,12 +34,13 @@ Page({
             },
             msg: "一个粉丝也没有"
         });
-    },
-    onShow: function() {
         this.setData({
             page: 1,
             info: []
         }), this.get_follow_fansi();
+    },
+    onShow: function() {
+       
     },
     get_follow_fansi: function() {
         var e = this, t = app.getCache("userinfo"), a = new Object();
@@ -52,7 +54,8 @@ Page({
                     for (var a = 0; a < t.data.info.length; a++) o.push(t.data.info[a]);
                     e.setData({
                         info: o,
-                        num: t.data.num
+                        num: t.data.num,
+                        empty:true
                     });
                 } else $Toast({
                     content: t.data.msg

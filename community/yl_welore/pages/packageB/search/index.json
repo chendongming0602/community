@@ -1,5 +1,6 @@
 {
     "usingComponents": {
+        "avatar":"/yl_welore/components/avatar/avatar",
         "i-toast": "../../../dist/toast/index",
         "i-modal": "../../../dist/modal/index",
         "i-button": "../../../dist/button/index",

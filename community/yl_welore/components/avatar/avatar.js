@@ -4,7 +4,25 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    //用户信息
+    item:{
+      type:Object,
+      value:{}
+    },
+    //0首页；1圈子里面；2详情顶部；3详情评论；4关注
+    is:{
+      type:Number,
+      value:0
+    },
+    //发帖和回帖的切换
+    actions_name:String,
+    //判断审核
+    check:{
+      type:Boolean,
+      value:false
+    },
+    //圈主名字？
+    name:String
   },
 
   /**

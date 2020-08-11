@@ -14,23 +14,11 @@
     {{info.study_title}}
     </view>
     <view style="clear:both;height:0"></view>
-    <view class="weui-cell" style="padding:0px 15px;">
-        <view style="clear:both;height:0"></view>
-        <navigator hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{info.user_id}}">
-            <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                <image src="{{info.user_head_sculpture}}" style="width: 60rpx; height: 60rpx; display: block;border-radius:50rpx;"></image>
-            </view>
-        </navigator>
-        <view class="weui-cell__bd">
-            <view style="font-size:15px;">{{info.user_nick_name}}
-        <image src="../../../style/icon/man.png" style="width:23px;height:23px;vertical-align:bottom;" wx:if="{{info.gender==1||info.gender==0}}"></image>
-                <image src="../../../style/icon/wuman.png" style="width:23px;height:23px;vertical-align:bottom;" wx:if="{{info.gender==2}}"></image>
-                <image src="../../../style/icon/vip.png" style="width:20px;height:20px;;vertical-align:bottom;" wx:if="{{info.user_vip==1}}"></image>
-            </view>
-            <view style="font-size: 13px;color: #888888;">{{info.realm_name}}　|　{{info.adapter_time}}</view>
-        </view>
-        <image bindtap="handleCancel2" mode="widthFix" src="../../../style/icon/bqd.png" style="width:40px;"></image>
+    <view class="new-box">
+        <avatar name="{{design.qq_name}}" check="{{check}}" is="{{2}}" actions_name="{{actions_name}}" item="{{info}}" ></avatar>
+        <image style="right:{{(info.red||info.is_buy)?50:0}}rpx;width:40px;" class="dqb-img" bindtap="handleCancel2" mode="widthFix" src="../../../style/icon/bqd.png" ></image>
     </view>
+  
     <view  style="margin:35rpx 30rpx 0rpx 30rpx;word-break:break-all;font-size:14px;">
         <view selectable="true" class="contentText">{{info.study_content}}</view>
         <view style="margin:20px;">
@@ -172,7 +160,19 @@
             <ad unitId="{{ad_info.adunit_id}}"></ad>
         </view>
         <block wx:for="{{huifu_list}}" wx:for-index="hui_list_index" wx:for-item="hui" wx:key="hui_index">
-            <view class="weui-cell" style="margin-top:10px;">
+            <view class="new-box" style="border:none;padding-top:30rpx">
+                <avatar name="{{design.qq_name}}" check="{{check}}" is="{{3}}" actions_name="{{actions_name}}" item="{{hui}}" ></avatar>
+                <!-- 点赞 -->
+                <view class="pl-icon">
+                    <i-icon bindtap="get_huifu_zan" data-index="{{hui_list_index}}" data-kkk="{{hui.id}}" iClass="zan_style" size="25" type="praise" wx:if="{{hui.is_huifu_zan==false}}"></i-icon> 
+
+                    <i-icon bindtap="get_huifu_zan" color="#E5635E" data-index="{{hui_list_index}}" data-kkk="{{hui.id}}" iClass="zan_style" size="25" type="praise_fill" wx:if="{{hui.is_huifu_zan==true}}"></i-icon>
+                    <view class="zan_style_test">{{hui.is_huifu_zan_count}}</view>
+                 </view>
+
+                  <image class="pl-more" bindtap="handleCancel3" data-id="{{hui.id}}" data-key="{{hui_list_index}}" data-user_id="{{hui.user_id}}" mode="widthFix" src="../../../style/icon/bqd.png" style="width:40px;"></image>
+            </view>
+            <!-- <view class="weui-cell" style="margin-top:10px;">
                 <navigator hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{hui.user_id}}">
                     <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
                         <image src="{{hui.user_head_sculpture}}" style="width: 60rpx; height: 60rpx; display: block;border-radius:50rpx;"></image>
@@ -195,7 +195,7 @@
                 <i-icon bindtap="get_huifu_zan" color="#E5635E" data-index="{{hui_list_index}}" data-kkk="{{hui.id}}" iClass="zan_style" size="25" type="praise_fill" wx:if="{{hui.is_huifu_zan==true}}"></i-icon>
                 <view class="zan_style_test">{{hui.is_huifu_zan_count}}</view>
                 <image bindtap="handleCancel3" data-id="{{hui.id}}" data-key="{{hui_list_index}}" data-user_id="{{hui.user_id}}" mode="widthFix" src="../../../style/icon/bqd.png" style="width:40px;"></image>
-            </view>
+            </view> -->
             <view style="margin:0rpx 35rpx 0rpx 100rpx;position:relative;" wx:if="{{hui.reply_type==0}}">
                 <view style="word-break:break-all;font-size:14px;">{{hui.reply_content}}</view>
                 <image bindtap="previewHuiImage" data-index="{{hui_list_index}}" data-src="{{hui.image_part[0]}}" mode="widthFix" src="{{hui.image_part[0]}}" style="width:100px;" wx:if="{{hui.image_part[0]}}"></image>

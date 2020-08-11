@@ -299,3 +299,24 @@ input-holder {
     top: 25rpx;
     right: 25rpx;
 }
+.new-box{
+    padding: 20rpx;
+    border-top: 1px solid var(--shallow);
+    position: relative;
+}
+.dqb-img{
+    position: absolute;
+    top: -15rpx;
+}
+.pl-icon{
+    position: absolute;
+    top: 30rpx;
+    right: 70rpx;
+    display: flex;
+    align-items: center;
+}
+.pl-more{
+    position: absolute;
+    top:15rpx;
+    right: 0;
+}

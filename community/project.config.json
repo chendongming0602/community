@@ -75,14 +75,14 @@
 					"id": 1,
 					"name": "评论",
 					"pathName": "yl_welore/pages/packageA/article/index",
-					"query": "id=22&type=0",
+					"query": "id=7&type=0",
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "大学圈子",
 					"pathName": "yl_welore/pages/packageA/circle_info/index",
-					"query": "id=2",
+					"query": "id=16",
 					"scene": null
 				},
 				{

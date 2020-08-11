@@ -1,18 +1,32 @@
 .a-box{
     display: flex;
     align-items: center;
+    position: relative;
 }
 .a-pic{
-    width: 100rpx;
-    height: 100rpx;
+    width: 90rpx;
+    height: 90rpx;
     border-radius: 50%;
-    min-width: 100rpx;
-    min-height: 100rpx;
-    margin-right: 10rpx;
+    min-width: 90rpx;
+    min-height: 90rpx;
+    margin-right: 15rpx;
     box-sizing: border-box;
+    border: 4rpx solid var(--color);
+    box-shadow: 0 0 5px 0px var(--color);
+}
+.three-pic{
+    width: 70rpx;
+    height: 70rpx;
+    min-width: 70rpx;
+    min-height: 70rpx;
 }
 .pic-vip{
-    border: 4rpx solid #ffbb20;
+    border: 4rpx solid var(--vip);
+    box-shadow: 0 0 5px 0px var(--vip);
+}
+.like-bor{
+    border: 4rpx solid var(--utils);
+    box-shadow: 0 0 5px 0px var(--utils);
 }
 .a-top{
     display: flex;
@@ -30,11 +44,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.thress-name{
+    font-size: 26rpx;
+}
+.name-vip{
+    color: var(--vip);
+}
 .a-sex{
     width: 30rpx;
     height: 30rpx;
 }
-.a-vip{
+.a-vip,.a-sex-n{
     width: 35rpx;
     height: 35rpx;
 }
@@ -50,7 +70,14 @@
 .a-time{
     font-size: 20rpx;
     color: #999;
-    padding-top: 5rpx;
+    padding-top: 10rpx;
+    max-width: 500rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.three-atk{
+    padding-top: 0rpx;
 }
 .a-admin{
     width: 60rpx;
@@ -58,5 +85,25 @@
 }
 .a-master{
     width: 50rpx;
-    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 20rpx;
+    text-align: center;
+    background: linear-gradient(to right, #ff8008, #ffc837);
+    color: #fff;
+    border-radius: 5rpx;
+    margin-left: 8rpx;
+}
+.a-up{
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    top: 1%;
+    right: 7%;
+}
+.a-atk{
+    width: 70rpx;
+    height: 70rpx;
+    position: absolute;
+    top: 0;
+    right: -20rpx;
 }

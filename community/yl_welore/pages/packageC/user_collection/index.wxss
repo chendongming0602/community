@@ -189,3 +189,6 @@ view {
     vertical-align: middle;
     margin-right: 16rpx;
 }
+.new-box{
+    padding: 20rpx;
+}
