@@ -63,3 +63,7 @@
     display: inline-block;
     position: relative;
 }
+.pics{
+    border: 4rpx solid var(--utils);
+    box-shadow: 0 0 5px 0px var(--utils);
+}

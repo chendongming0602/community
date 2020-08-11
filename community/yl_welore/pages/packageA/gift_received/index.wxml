@@ -12,7 +12,7 @@
     <view style="margin:20px;font-size:13px;" wx:for="{{my_list}}" wx:key="m_key">
         <view style="float:left;text-align:center;">
             <navigator hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.con_user_id}}">
-                <image src="{{item.user_head_sculpture}}" style="width:45px;height:45px;border-radius:50%;"></image>
+                <image class="pics" src="{{item.user_head_sculpture}}" style="width:45px;height:45px;border-radius:50%;"></image>
             </navigator>
         </view>
         <view style="float:left;margin-left:11px;">{{item.user_nick_name}}</view>

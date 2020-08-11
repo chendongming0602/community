@@ -1,19 +1,19 @@
-<navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.user_id}}" class="a-box">
-    <image wx:if="{{is!=3}}" mode="aspectFill" class="a-pic {{item.user_vip==1?'pic-vip':''}} " src="{{item.user_head_sculpture}}"></image>
+<navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{is!=4?item.user_id:item.id}}" class="a-box">
+    <image mode="aspectFill" class="a-pic {{item.user_vip==1?'pic-vip':''}} {{is==4?'like-bor':''}} {{is==3?'three-pic':''}}" src="{{item.user_head_sculpture}}"></image>
     <!-- 评论 -->
-    <image wx:if="{{is==3}}" mode="aspectFill" class="a-pic three-pic {{item.user_vip==1?'pic-vip':''}} " src="{{item.user_head_sculpture}}"></image>
+   
     <view class="a-names">
         <view class="a-top">
             <view class="a-name {{is==3?'thress-name':''}} {{item.user_vip==1?'name-vip':''}}">{{item.user_nick_name}}</view>
             <!-- 男 -->
-            <image wx:if="{{item.gender==1||item.gender==0}}" class="a-sex" src="../../style/icon/man.png"></image>
+            <image wx:if="{{item.gender==1||item.gender==0}}" class="a-sex-n" src="../../style/icon/man.png"></image>
             <!-- 女 -->
             <image wx:if="{{item.gender==2}}" class="a-sex" src="../../style/icon/wuman.png"></image>
             
             <!-- VIP -->
             <image wx:if="{{item.user_vip==1}}" class="a-vip" src="../../style/icon/vip.png"></image>
             <!-- 楼主 -->
-            <image src="../../style/icon/louzhu.png" style="width:26px;height:15px;;vertical-align:sub;margin-left:5px;" wx:if="{{item.is_paper_user==item.user_id}}"></image>
+            <image src="../../style/icon/louzhu.png" style="width:26px;height:15px;;vertical-align:sub;margin-left:5px;" wx:if="{{item.is_paper_user==item.user_id&&is==3}}"></image>
             <!-- 圈主 -->
             <!-- <image wx:if="{{is!=0&&item.check_qq=='da'}}" class="a-master" src="../../style/icon/pp_qz_feed_master.png"></image> -->
             <view class="a-master" wx:if="{{is!=0&&(item.check_qq=='da'||item.is_qq=='da')}}">{{name}}主</view>
@@ -37,7 +37,11 @@
         </block>
         <!-- 详情评论 -->
         <block wx:if="{{is==3}}">
-            <view class="a-time">{{item.phase}}楼</view>
+            <view class="a-time" style="padding-top:0">{{item.phase}}楼</view>
+        </block>
+        <!-- 关注 -->
+        <block wx:if="{{is==4}}" >
+            <view class="a-time" style="padding-top:0">{{item.autograph||"ta啥都没留下..."}}</view>
         </block>
     </view>
 

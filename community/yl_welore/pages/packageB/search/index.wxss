@@ -70,3 +70,6 @@ button {
     box-sizing: border-box;
     padding: 0 80rpx 0 5rpx;
 }
+.new-box{
+    padding: 20rpx;
+}

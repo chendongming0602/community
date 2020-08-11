@@ -24,6 +24,10 @@
     border: 4rpx solid var(--vip);
     box-shadow: 0 0 5px 0px var(--vip);
 }
+.like-bor{
+    border: 4rpx solid var(--utils);
+    box-shadow: 0 0 5px 0px var(--utils);
+}
 .a-top{
     display: flex;
     align-items: center;
@@ -50,7 +54,7 @@
     width: 30rpx;
     height: 30rpx;
 }
-.a-vip{
+.a-vip,.a-sex-n{
     width: 35rpx;
     height: 35rpx;
 }
@@ -67,6 +71,10 @@
     font-size: 20rpx;
     color: #999;
     padding-top: 10rpx;
+    max-width: 500rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .three-atk{
     padding-top: 0rpx;

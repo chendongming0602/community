@@ -9,6 +9,7 @@ Component({
       type:Object,
       value:{}
     },
+    //0首页；1圈子里面；2详情顶部；3详情评论；4关注
     is:{
       type:Number,
       value:0

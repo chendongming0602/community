@@ -196,6 +196,13 @@
 					"pathName": "yl_welore/pages/user/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "关注",
+					"pathName": "yl_welore/pages/packageC/user_collection/index",
+					"query": "id=22&type=0",
+					"scene": null
 				}
 			]
 		}
