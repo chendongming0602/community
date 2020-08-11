@@ -951,7 +951,7 @@ Page({
                 if (console.log(t), "success" == t.data.status) {
                     wx.vibrateShort();
                     var a = i.data.huifu_list;
-                    a[e].is_huifu_zan = 0 == a[e].is_huifu_zan, a[e].is_huifu_zan_count = 0 == a[e].is_huifu_zan ? a[e].is_huifu_zan_count - 1 : a[e].is_huifu_zan_count + 1, 
+                    a[e].is_huifu_zan = 0 == a[e].is_huifu_zan, a[e].is_huifu_zan_count = 0 == a[e].is_huifu_zan ? Number(a[e].is_huifu_zan_count) - 1 : Number(a[e].is_huifu_zan_count) + 1, 
                     i.setData({
                         huifu_list: a
                     });

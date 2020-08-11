@@ -96,7 +96,7 @@
                 <image src="../../style/icon/mi.png" style="width:20px;height:20px;vertical-align:sub;" wx:if="{{item.attention==1}}"></image>
         {{item.realm_name}}
       </view>
-            <view class="course-name" style="font-size: 14px;color: #888888;">{{item.realm_synopsis}}</view>
+            <view class="course-name" style="font-size: 12px;color: #888888;padding-top:5rpx">{{item.realm_synopsis}}</view>
         </view>
     </view>
     <view>

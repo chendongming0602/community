@@ -69,6 +69,12 @@ Page({
         }), "add" == e.key && this.plus();
     },
     onLoad: function(t) {
+        $Toast({
+            duration: 0,
+            content: "加载中",
+            type: "loading",
+            mask: !1
+        });
         this.setData({
             height: app.globalData.height,
             design: app.globalData.design,
@@ -134,6 +140,7 @@ Page({
                     a.setData({
                         tj_list: n
                     });
+                    $Toast.hide();
                 } else $Toast({
                     content: t.data.msg
                 });
@@ -167,6 +174,7 @@ Page({
                     a.setData({
                         info: n
                     });
+                    $Toast.hide();
                 } else $Toast({
                     content: t.data.msg
                 });

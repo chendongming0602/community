@@ -109,21 +109,21 @@
         <view style="clear:both;height:0"></view>
         <navigator hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{liwu_ph[0].id}}">
             <view style="float:left;position:relative;margin:5px 20px 5px 20px;">
-                <image src="{{liwu_ph[0].user_head_sculpture}}" style="height:50px;width:50px;border-radius:50%" wx:if="{{liwu_ph[0]}}"></image>
+                <image mode="aspectFill" src="{{liwu_ph[0].user_head_sculpture}}" style="height:50px;width:50px;border-radius:50%" wx:if="{{liwu_ph[0]}}"></image>
                 <image src="../../../style/icon/xu.png" style="height:50px;width:50px;border-radius:50%" wx:if="{{!liwu_ph[0]}}"></image>
                 <image src="../../../style/icon/ic_renwu_no_1.png" style="height:18px;width:50px;position:absolute;left:0;bottom:0;"></image>
             </view>
         </navigator>
         <navigator hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{liwu_ph[1].id}}">
             <view style="float:left;position:relative;margin:5px 20px;">
-                <image src="{{liwu_ph[1].user_head_sculpture}}" style="height:50px;width:50px;border-radius:50%" wx:if="{{liwu_ph[1]}}"></image>
+                <image mode="aspectFill" src="{{liwu_ph[1].user_head_sculpture}}" style="height:50px;width:50px;border-radius:50%" wx:if="{{liwu_ph[1]}}"></image>
                 <image src="../../../style/icon/xu.png" style="height:50px;width:50px;border-radius:50%" wx:if="{{!liwu_ph[1]}}"></image>
                 <image src="../../../style/icon/ic_renwu_no_2.png" style="height:18px;width:50px;position:absolute;left:0;bottom:0;"></image>
             </view>
         </navigator>
         <navigator hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{liwu_ph[2].id}}">
             <view style="float:left;position:relative;margin:5px 20px;">
-                <image src="{{liwu_ph[2].user_head_sculpture}}" style="height:50px;width:50px;border-radius:50%" wx:if="{{liwu_ph[2]}}"></image>
+                <image mode="aspectFill" src="{{liwu_ph[2].user_head_sculpture}}" style="height:50px;width:50px;border-radius:50%" wx:if="{{liwu_ph[2]}}"></image>
                 <image src="../../../style/icon/xu.png" style="height:50px;width:50px;border-radius:50%" wx:if="{{!liwu_ph[2]}}"></image>
                 <image src="../../../style/icon/ic_renwu_no_3.png" style="height:18px;width:50px;position:absolute;left:0;bottom:0;"></image>
             </view>
@@ -328,7 +328,7 @@
             <view class="weui-cell">
                 <navigator hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{get_reply_and_info.user_id}}">
                     <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                        <image src="{{get_reply_and_info.user_head_sculpture}}" style="width: 60rpx; height: 60rpx; display: block;border-radius:50rpx;"></image>
+                        <image mode="aspectFill" src="{{get_reply_and_info.user_head_sculpture}}" style="width: 60rpx; height: 60rpx; display: block;border-radius:50rpx;"></image>
                     </view>
                 </navigator>
                 <view class="weui-cell__bd">
@@ -348,7 +348,7 @@
                         <view class="weui-cell">
                             <navigator hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{item.user_id}}">
                                 <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                                    <image src="{{item.user_head_sculpture}}" style="width: 60rpx; height: 60rpx; display: block;border-radius:50rpx;"></image>
+                                    <image mode="aspectFill" src="{{item.user_head_sculpture}}" style="width: 60rpx; height: 60rpx; display: block;border-radius:50rpx;"></image>
                                 </view>
                             </navigator>
                             <view class="weui-cell__bd">

@@ -94,6 +94,7 @@ App({
             } ]
         } 
     },
+    // 旧判断，勿修改
     version: "1.0.39",
     api_root: "",
     http_root: "",

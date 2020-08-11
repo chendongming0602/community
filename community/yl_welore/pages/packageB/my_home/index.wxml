@@ -7,11 +7,11 @@
         </view>
     </view>
     <view style="text-align:center;">
-        <image class="avatar" src="{{user_info.user_head_sculpture}}" style="width:120rpx;height:120rpx;border-radius:50%;"></image>
-        <view style="color:#ffffff;font-size:34rpx;">{{user_info.user_nick_name}}
-      <image src="../../../style/icon/vip.png" style="width:35rpx;height:35rpx;vertical-align:sub;" wx:if="{{user_info.is_vip==1}}"></image>
+        <image class="avatar {{user_info.is_vip==1?'pic-vip':''}}" src="{{user_info.user_head_sculpture}}" style="width:120rpx;height:120rpx;border-radius:50%;"></image>
+        <view style="color:#ffffff;font-size:34rpx;" class="{{user_info.is_vip==1?'name-vip':''}}">{{user_info.user_nick_name}}
             <image src="../../../style/icon/man.png" style="width:35rpx;height:35rpx;vertical-align:sub;" wx:if="{{user_info.gender==1||user_info.gender==0}}"></image>
             <image src="../../../style/icon/wuman.png" style="width:35rpx;height:35rpx;vertical-align:sub;" wx:if="{{user_info.gender==2}}"></image>
+            <image src="../../../style/icon/vip.png" style="width:35rpx;height:35rpx;vertical-align:sub;" wx:if="{{user_info.is_vip==1}}"></image>
         </view>
     </view>
     <view style="text-align:center;margin-top:20px;">

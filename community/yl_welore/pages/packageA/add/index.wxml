@@ -38,7 +38,8 @@
         </view>
     </view>
     <view style="clear:both;height:0"></view>
-    <view class="weui-cells" wx:if="{{fa_type==2&&open_file==0||open_file==3}}">
+    <!-- &&open_file==0||open_file==3 -->
+    <view class="weui-cells" wx:if="{{fa_type==2}}">
         <view class="weui-cell" style="padding:10px 0px 15px 0px;">
             <view class="weui-cell__bd">
                 <view class="weui-uploader">

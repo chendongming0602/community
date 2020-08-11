@@ -359,6 +359,12 @@ Page({
     onLoad: function(t) {
         let {detail,id,type}=t;
         var e;
+        $Toast({
+            duration: 0,
+            content: "加载中",
+            type: "loading",
+            mask: !1
+        });
         (this.setData({
             height: app.globalData.height,
             design: app.globalData.design

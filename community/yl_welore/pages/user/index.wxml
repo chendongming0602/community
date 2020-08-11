@@ -18,11 +18,11 @@
             <view class="placeholder">
                 <navigator hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{user_info.id}}">
                     <view style="float:left;width:220px;text-align:left;position:relative;left:33px;top:13px;">
-                        <image src="{{user_info.user_head_sculpture}}" style="width:60px;height:60px;border-radius:100rpx;float:left;"></image>
+                        <image class="my-pic {{user_info.is_vip==1?'pic-vip':''}}" mode="aspectFill" src="{{user_info.user_head_sculpture}}" style="width:60px;height:60px;border-radius:100rpx;float:left;"></image>
                         <image src="../../style/icon/icon_call_group.png" style="width:60px;height:24px;position:absolute;left:0px;bottom:5px;" wx:if="{{admin==1}}"></image>
-                        <view class="course-name" style="color:#000000;position:relative;top:0rpx;left:15px;font-size:34rpx;">{{user_info.user_nick_name}}
-              <image mode="widthFix" src="../../style/icon/man.png" style="width:25px;height:25px;vertical-align:sub;" wx:if="{{user_info.gender==1||user_info.gender==0}}"></image>
-                            <image mode="widthFix" src="../../style/icon/wuman.png" style="width:25px;height:25px;vertical-align:sub;" wx:if="{{user_info.gender==2}}"></image>
+                        <view class="course-name {{user_info.is_vip==1?'name-vip':''}}" style="position:relative;top:0rpx;left:15px;font-size:34rpx;">{{user_info.user_nick_name}}
+              <image mode="widthFix" src="../../style/icon/man.png" style="width:20px;height:20px;vertical-align:sub;" wx:if="{{user_info.gender==1||user_info.gender==0}}"></image>
+                            <image mode="widthFix" src="../../style/icon/wuman.png" style="width:20px;height:20px;vertical-align:sub;" wx:if="{{user_info.gender==2}}"></image>
                             <image mode="widthFix" src="../../style/icon/vip.png" style="width:35rpx;height:35rpx;vertical-align:sub;" wx:if="{{user_info.is_vip==1}}"></image>
                         </view>
                         <view style="color:#666666;position:relative;top:0rpx;left:15px;font-size:24rpx;">查看个人主页</view>

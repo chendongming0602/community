@@ -17,8 +17,9 @@
             <view class="weui-cells weui-cells_after-title" style="margin-bottom:10rpx;" wx:if="{{item.study_type==0}}">
                 <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=0">
                     <view class="weui-cell" style="padding:0rpx 20rpx 20rpx 20rpx;">
-                        <view class="weui-cell__hd text_num" style="font-size:16px;font-weight:700;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
-            {{item.study_title==''?item.study_content:item.study_title}}
+                        <view class="weui-cell__hd " style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
+                        <view class="text_num"> {{item.study_title==''?item.study_content:item.study_title}}</view>
+            
           </view>
                     </view>
                     <view style="overflow:hidden">
@@ -89,8 +90,9 @@
                 
                 <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=1">
                     <view class="weui-cell" style="padding:0rpx 20rpx 20rpx 20rpx;">
-                        <view class="weui-cell__hd text_num" style="font-size:16px;font-weight:700;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
-            {{item.study_title==''?item.study_content:item.study_title}}
+                        <view class="weui-cell__hd " style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
+                        <view class="text_num">{{item.study_title==''?item.study_content:item.study_title}}</view>
+            
           </view>
                     </view>
                 </navigator>
@@ -136,8 +138,9 @@
                 
                 <navigator hoverClass="none" url="/yl_welore/pages/packageA/article/index?id={{item.id}}&type=2">
                     <view class="weui-cell" style="padding:0rpx 20rpx 20rpx 20rpx;">
-                        <view class="weui-cell__hd text_num" style="font-size:16px;font-weight:700;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
-            {{item.study_title==''?item.study_content:item.study_title}}
+                        <view class="weui-cell__hd " style="font-size:16px;position: relative;margin-right: 10px;color:{{item.study_title_color}};">
+                        <view class="text_num">{{item.study_title==''?item.study_content:item.study_title}}</view>
+            
           </view>
                     </view>
                 </navigator>

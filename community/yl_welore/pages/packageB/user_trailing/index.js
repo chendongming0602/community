@@ -38,7 +38,10 @@ Page({
             success: function(t) {
                 if(t.data.info.length===0) e.setData({empty:true})
                 if (console.log(t), "success" == t.data.status) {
-                    for (var a = 0; a < t.data.info.length; a++) n.push(t.data.info[a]);
+                    for (var a = 0; a < t.data.info.length; a++){
+                        if(t.data.info[a].catch_status!=2)
+                        n.push(t.data.info[a]);
+                    } 
                     e.setData({
                         info: n
                     });

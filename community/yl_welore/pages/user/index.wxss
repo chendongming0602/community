@@ -197,3 +197,17 @@ input-holder {
     color: #CC3333;
     text-align: center;
 }
+
+.my-pic{
+    border: 4rpx solid var(--color);
+    box-shadow: 0 0 5px 0px var(--color);
+}
+.pic-vip{
+    border: 4rpx solid var(--vip);
+    box-shadow: 0 0 5px 0px var(--vip);
+}
+.name-vip{
+    color: var(--vip);
+    font-weight: bold;
+    letter-spacing: 2px;
+}

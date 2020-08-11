@@ -34,9 +34,10 @@ Page({
             success: function(t) {
                 "success" == t.data.status ? ($Toast({
                     content: t.data.msg
-                }), a.get_user_info()) : $Toast({
+                }), a.get_user_info(),setTimeout(()=>{wx.navigateBack()},1000)) : $Toast({
                     content: t.data.msg
                 });
+                
             },
             fail: function() {
                 wx.showModal({

@@ -667,6 +667,7 @@ Page({
                                 },
                                 success: function(t) {
                                     var e = JSON.parse(t.data);
+                                    console.log(e,"上传的图片返回的数据")
                                     resolve(e)
                                 },
                                 fail: function(t) {
@@ -684,6 +685,7 @@ Page({
                 });
                 Promise.all(arr).then(res=>{
                     res.map(t=>{
+                        
                         "error" == e.status ? $Toast({
                             content: t.msg
                         }) : (o.setData({
