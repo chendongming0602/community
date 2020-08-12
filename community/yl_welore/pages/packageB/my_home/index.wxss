@@ -84,6 +84,7 @@ button {
     padding: 10rpx;
     border-radius: 8rpx;
     background: var(--shallow);
+    margin: 10rpx 0 15rpx;
 }
 
 .liwu_col {

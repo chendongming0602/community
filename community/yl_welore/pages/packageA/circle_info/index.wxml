@@ -496,7 +496,7 @@
     </view>
 </view>
 <!-- <image catchtap="canvasEvent" class="canvas" src="https://sl.tpapi.cn/addons/yl_welore/web/static/wechat/release.png"></image> -->
-<view class="screenshot">
-    <image src="{{screenshot.icon}}"></image>
+<view wx:if="{{screenshot.btn_show&&check}}" class="screenshot" catchtap="canvasEvent">
+    <image mode="aspectFill" src="{{screenshot.icon}}"></image>
     <view>{{screenshot.name}}</view>
 </view>

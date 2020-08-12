@@ -314,4 +314,5 @@ input-holder {
     font-size: 22rpx;
     color: var(--color);
     margin-top: 5rpx;
+    font-weight: bold;
 }

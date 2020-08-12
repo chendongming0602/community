@@ -62,11 +62,6 @@ Page({
         },
         admin: 0
     },
-    canvasEvent(){
-        wx.navigateTo({
-          url: '/yl_welore/pages/canvas/school/school',
-        })
-    },
     onLoad: function(t) {
         var a;
         (this.setData({
@@ -516,22 +511,33 @@ Page({
         var a = this, t = app.getCache("userinfo"), e = new Object();
         e.token = t.token, e.openid = t.openid, e.uid = t.uid, e.much_id = app.siteInfo.uniacid,e.needle_id = a._needle_id;
         var i = app.api_root + "user/get_screenshot_status";
+        
         http.POST(i,{
             params:e,
             success(res){
                 if(res.statusCode!==200) return;
-                let data=res.data;
-                console.log(data)
+                a._canvas=res.data;
+                a._canvas.needle_id=a._needle_id;
+                a._canvas.circle=a.data.getInfo.realm_name;
+                a._canvas.circleImg=a.data.getInfo.realm_icon;
+                a._canvas.username=a.data.user_info.user_nick_name;
+                a._canvas.userpic=a.data.user_info.user_head_sculpture;
                 a.setData({
                     screenshot:{
-                        btn_show:data.btn_show,
-                        icon:data.icon,
-                        name:data.name,
+                        btn_show:a._canvas.btn_show,
+                        icon:a._canvas.icon,
+                        name:a._canvas.name,
                     }
                 });
             }
         },)
 
+    },
+    canvasEvent(){
+        console.log(this._canvas)
+        wx.navigateTo({
+          url: `/yl_welore/pages/canvas/school/school?canvas=${JSON.stringify(this._canvas)}`,
+        });
     },
     plus: function() {
         var t = this;

@@ -3,41 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>长按分享</title>
-    <link rel="stylesheet" href="../css/school.css">
+    <title>长按保存</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            display: block;
+        }
+        div{
+            box-sizing: border-box;
+        }
+        .s-box{
+            width: 375px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+            position: relative;
+            left: 50%;
+            margin-left: -187.5px;
+        }
+        .u-name{
+            position: absolute;
+            color: #61c7ff;
+            top: 170px;
+            left: 60px;
+            font-size: 13px;
+            font-weight: bold;
+            max-width: 80px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .s-name{
+            position: absolute;
+            /* color: rgb(252, 87, 65); */
+            font-size: 14px;
+            top: 193px;
+            right: 105px;
+            letter-spacing: 3px;
+            color: #000;
+            font-weight: bold;
+        }
+        .s-cord{
+            position: absolute;
+            /* color: rgb(252, 87, 65); */
+            font-size: 12px;
+            top: 172px;
+            right: 65px;
+            letter-spacing: 3px;
+            color: #000;
+            font-weight: bold;
+        }
+        .s-cord span{
+            color: rgb(252, 87, 65);
+            margin-right: 5px;
+        }
+        .s-dao{
+            position: absolute;
+            bottom: 40px;
+            left: 55px;
+        }
+        .s-dao div:nth-child(1){
+            font-size: 12px;
+            transform: scale(0.8);
+            font-weight: bold;
+            text-align: center;
+
+        }
+        .s-dao img{
+            width: 70px;
+            height: 100px;
+            margin: 3px 0 5px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .s-ewm{
+            position: absolute;
+            bottom: 40px;
+            right: 30px;
+            text-align: center;
+        }
+        .s-ewm img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 5px;
+        }
+        .s-ewm div{
+            font-size: 12px;
+            color: #666;
+            transform: scale(0.7);
+            margin-top: -5px;
+
+        }
+
+        .img-all{
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom:0;
+            right: 0;
+            background: #fff;
+            z-index: 9;
+        }
+        .s-but-box{
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            border-top: 1px solid #ddd;
+            padding: 5px 30px 10px;
+            background: #fff;
+            z-index: 8;
+        }
+        .s-sub{
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+        .s-but{
+            width: 100%;
+            line-height: 34px;
+            text-align: center;
+            font-size: 12px;
+            background: #61c7ff;
+            border-radius: 17px;
+            color: #fff;
+        }
+        .empty{
+            width: 100%;
+            height: 100vh;
+            background: #fff;
+            padding: 100px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            z-index: 99;
+            position: fixed;
+            top: 0;
+            letter-spacing: 3px;
+        }
+        .scroll{
+            width: 100%;
+            height: 410px;
+            overflow:auto;
+        }
+        .hecheng{
+            width: 100%;
+        }
+        .s-time{
+            position: absolute;
+            bottom: 200px;
+            right: 40px;
+        
+        }
+        .s-time div{
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            transform: scale(0.8);
+        }
+        .s-time img{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: -10px;
+            border-radius: 50%;
+            left: 50%;
+            margin-left: -25px;
+        }
+
+    </style>
 </head>
 <body>
     <div id="app">
         <div>
             <!-- 合成部分 -->
-            <div ref="box" class="box" :style="{backgroundImage:'url(' + list.bg+'?id='+count +'&name=头像'+')',height:height+'px'}">
-                <div>
-                    <div class="u-name">我小地方</div>
-                    <div class="s-name">时代峰峻殴打</div>
-                    <div class="s-dao">
-                        <div>你的导师：</div>
-                        <img crossorigin="anonymous" :src="list.imgDao+'?id='+count" alt="导师">
-                    </div>
-                    <div class="s-ewm">
-                        <img crossorigin="anonymous" src="../wx.jpg" alt="二维码">
-                        <div>长按识别二维码</div>
-                        <div>领取你的录取通知书</div>
-                    </div>
+            <div ref="box" v-if="list.needle_id==2" class="s-box" :style="{backgroundImage:'url(' + list.jp.background_img+'?id='+count +'&name=头像'+')',height:height+'px'}">
+                <div class="u-name">{{list.username}}</div>
+                <div class="s-name">{{list.circle}}</div>
+                <div class="s-cord">(<span>{{list.jp.cord}}</span>分优异成绩)</div>
+                <div class="s-time">
+                    <div>{{list.circle}}</div>
+                    <div>{{list.times}}</div>
+                    <img crossorigin="anonymous" :src="list.jp.school_logo+'?id='+count" alt="章">
                 </div>
-            </div>
-           
-            
-
-           <div class="img-all">
-                <img class="hecheng" :src="canvasImg" alt="合成">
-                <div style="height: 90px;"></div>
+                <div class="s-dao">
+                    <div>你的导师</div>
+                    <img crossorigin="anonymous" :src="list.jp.img_name+'?id='+count" alt="导师">
+                </div>
+                <div class="s-ewm">
+                    <img crossorigin="anonymous" :src="list.jp.q_code+'?id='+count" alt="二维码">
+                    <div>长按识别二维码</div>
+                    <div>领取你的{{list.name}}</div>
+                </div>
+            </div>  
+                  
+            <div class="img-all">
+                <div class="scroll" :style="{height:domHeight-90+'px'}">
+                    <img class="hecheng" :src="canvasImg" alt="合成">
+                </div>
                 <div class="s-but-box">
                     <div class="s-sub">长按即可保存。快分享给朋友吧！</div>
-                    <div class="s-but">返回</div>
+                    <div class="s-but" @click="returnEvent">返 回</div>
                 </div>
-           </div>
-
+            </div>
             <div class="empty" v-if="show">正在生成分享图...</div>
+            
         </div>
     </div>
     <script src="../js/vue.min.js"></script>
@@ -45,53 +220,73 @@
     <script src="../js/html2.js"></script>
     <script src="../js/jweixin.js"></script>
     <script>
-        // let url=window.location.href;
-        // let start=url.search("=");//查找第一个=号
-        // let list=url.substr(start+1);//截取参数
-        // list= decodeURIComponent(list);    //解决乱码问题
-        // list=JSON.parse(list);
-        // console.log(list) 
+        
+        try{
+            let url=window.location.href;
+            let start=url.search("=");//查找第一个=号
+            var list=url.substr(start+1);//截取参数
+            list= decodeURIComponent(list);    //解决乱码问题
+            list=JSON.parse(list);
+            let dates=new Date(),
+            times=`${dates.getFullYear()}年${dates.getMonth()+1}月${dates.getDate()}日`;
+            list.times=times
+            console.log(list) 
+        }catch(err){wx.miniProgram.navigateBack();}
         let app=new Vue({
             el: '#app',
             data:{
                 show:true,
+                //图片高度
                 height:500,
                 count:Math.random(),
-                list:{
-                    bg:"https://web-1300783623.cos.ap-shanghai.myqcloud.com/canvas/canvas.png",
-                    imgDao:"https://lovers-1300783623.cos.ap-shanghai.myqcloud.com/avatar/avatar.jpg"
-                },
-                canvasImg:""
+                list,
+                canvasImg:"",
+                //屏幕高度
+                domHeight:500
+            },
+            methods:{
+                returnEvent(){
+                    wx.miniProgram.navigateBack();
+                }
             },
             mounted(){
-                let box=this.$refs.box,that=this;
-                setTimeout(()=>{
-                    html2canvas(
-                    box,
-                    {
-                        useCORS: true, // 【重要】开启跨域配置
-                        //allowTaint: false,//允许跨域图片 
-                        taintTest:false,
-                        logging:true,
-                        width:window.screen.availWidth,//显示窗口canvas的宽度
-                        // height:window.screen.availHeight,//显示canvas窗口高度
-                        windowWhidth:document.body.scrollWidth,//获取x方向滚动条内容
-                        windowHeight:box.offsetHeight,//获取y方向滚动条内容
-                        x:0,//页面滚动
-                        y:window.pageYOffset////页面滚动
-                    }
-                    
-                    ).then(function(canvas) {
-                        let imgUrl1 = canvas.toDataURL('image/png');
-                        that.canvasImg=imgUrl1;
-                        that.show=false;
-                        //打开返回微信
-                        // wx.miniProgram.navigateBack();
-                        // console.log(imgUrl1)
-                    }); 
-                },300);
+                
+                    this.$nextTick(()=>{
+                        setTimeout(()=>{
+                            try{
+                                this.domHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                                let box=this.$refs.box,that=this;
+                                html2canvas(
+                                box,
+                                {
+                                    useCORS: true, // 【重要】开启跨域配置
+                                    //allowTaint: false,//允许跨域图片 
+                                    taintTest:false,
+                                    logging:true,
+                                    width:window.screen.availWidth,//显示窗口canvas的宽度
+                                    // height:window.screen.availHeight,//显示canvas窗口高度
+                                    windowWhidth:document.body.scrollWidth,//获取x方向滚动条内容
+                                    windowHeight:box.offsetHeight,//获取y方向滚动条内容
+                                    x:0,//页面滚动
+                                    y:window.pageYOffset////页面滚动
+                                }
+                                
+                                ).then(function(canvas) {
+                                    let imgUrl1 = canvas.toDataURL('image/png');
+                                    that.canvasImg=imgUrl1;
+                                    that.show=false;
+                                    //打开返回微信
+                                    // wx.miniProgram.navigateBack();
+                                    // console.log(imgUrl1)
+                                });  
+                            }catch(err){wx.miniProgram.navigateBack();}
+                        },1000);
+                   
+                    });
+                
             }
         });
+       
 
     </script>
 </body>

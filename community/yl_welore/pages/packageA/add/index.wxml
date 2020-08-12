@@ -11,7 +11,7 @@
 <view style="margin-top:{{height*2+20}}px"></view>
 <view style="padding:30rpx;">
     <view class="weui-cell__bd" wx:if="{{copyright.title_input_arbor==1}}">
-        <input bindinput="set_title_value" class="weui-input" maxlength="20" placeholder="标题" style="color:{{title_color}};font-size:18px;font-weight:600;width:85%;float:left;"></input>
+        <input bindinput="set_title_value" class="weui-input" maxlength="20" placeholder="标题 (最多可输入20位)" style="color:{{title_color}};font-size:18px;font-weight:600;width:85%;float:left;"></input>
         <image bindtap="color_select" mode="aspectFill" src="../../../style/icon/ic_category_t5.png" style="width:70rpx;height:70rpx;float:left;margin-left:20rpx;margin-top:20rpx;" wx:if="{{is_vip==1}}"></image>
     </view>
     <view style="clear:both;height:0"></view>
