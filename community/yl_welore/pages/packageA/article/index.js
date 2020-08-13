@@ -833,21 +833,24 @@ Page({
             design: app.globalData.design,
             height: app.globalData.height,
             huifu_list: []
-        }),  this.get_article_info(), 
+        }),
         $Toast.hide();
     },
     onShow: function() {
+        //审核判断
+        app.checkEvent().then(res=>{
+            let {check,is}=res;
+            this.setData({check});
+            // if(is===2) return  wx.navigateTo({
+            //     url: '/yl_welore/pages/author/index?detail=1&type=0',
+            // });
+           
+        });
+        this.get_ad(), this.get_liwu_all(),this.get_diy(),this.get_article_info();
+        if(!this._luwu)this.hui_fu_page();
         if (0 != this.data.show) {
-            //审核判断
-            app.checkEvent().then(res=>{
-                let {check,is}=res;
-                this.setData({check});
-                // if(is===2) return  wx.navigateTo({
-                //     url: '/yl_welore/pages/author/index?detail=1&type=0',
-                // });
-               
-            });
-            this.get_ad(), this.get_liwu_all(),this.get_diy();
+            
+            
             
         }
     },
@@ -1179,7 +1182,7 @@ Page({
             success: function(t) {
                 console.log(t), "success" == t.data.status ? (e.setData({
                     info: t.data.info
-                }), 0 != t.data.info.is_open && 1 != t.data.info.is_buy || wx.hideShareMenu(), e.hui_fu_page(a), 
+                }), 0 != t.data.info.is_open && 1 != t.data.info.is_buy || wx.hideShareMenu(), 
                 e.get_liwu_ph()) : ($Toast({
                     content: t.data.msg,
                     duration: 0
@@ -1209,6 +1212,7 @@ Page({
         http.POST(a, {
             params: n,
             success: function(t) {
+                if("success" == t.data.status)e._luwu=true;               
                 if (console.log(t), "success" == t.data.status) if (0 == t.data.huifu.length) e.setData({
                     di_msg: !0
                 }); else {
