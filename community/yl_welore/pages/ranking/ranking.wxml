@@ -1,0 +1,23 @@
+<view class="ran-top">
+    <image class="ran-bg" src="https://sxll-1251682606.cos.ap-guangzhou.myqcloud.com/web/carouselBg.png"></image>
+    <image mode="aspectFill" class="ran-bar" src="https://lovers-1300783623.cos.ap-shanghai.myqcloud.com/index/lovers-022746657035097861.jpg"></image>
+</view>
+<view class="list-box">
+    <view wx:for="{{10}}" wx:key="index" class="item-box {{'active-'+(index+1)}}" >
+        <avatar item="{{user}}" is="{{4}}"></avatar>
+        <view class="ran-title">第三方空的首付款第三方</view>
+        <view class="list-bot">
+            <view>
+                <image src="https://sxll-1251682606.cos.ap-guangzhou.myqcloud.com/web/time.png"></image>
+                12月:10:好
+            </view>
+            <view class="ran-xiao">
+                <image  src="/yl_welore/style/icon/xiao.png"></image>
+                3333
+            </view>
+            <view>
+                <view class="ran-count">{{index+1}}</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "排行榜",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor":"#61c7ff",
+  "navigationStyle": "default",
+  "usingComponents": {
+    "avatar":"/yl_welore/components/avatar/avatar"
+  }
+}

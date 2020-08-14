@@ -1,6 +1,5 @@
 <navigator class="weui-cell" hoverClass="none" url="/yl_welore/pages/packageB/my_home/index?id={{is!=4?item.user_id:item.id}}" class="a-box">
     <image mode="aspectFill" class="a-pic {{item.user_vip==1?'pic-vip':''}} {{is==4?'like-bor':''}} {{is==3?'three-pic':''}}" src="{{item.user_head_sculpture}}"></image>
-    <!-- 评论 -->
    
     <view class="a-names">
         <view class="a-top">
