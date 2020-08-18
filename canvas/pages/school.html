@@ -20,9 +20,20 @@
             background-repeat: no-repeat;
             background-size: 100% 100%;
             position: relative;
-            position: relative;
             left: 50%;
             margin-left: -187.5px;
+            overflow: hidden;
+            height: 500px;
+        }
+        .img-bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 375px;
+            height: 500px;
+            z-index: -1;
         }
         .u-name{
             position: absolute;
@@ -41,7 +52,7 @@
             /* color: rgb(252, 87, 65); */
             font-size: 14px;
             top: 193px;
-            right: 105px;
+            right: 70px;
             letter-spacing: 3px;
             color: #000;
             font-weight: bold;
@@ -182,7 +193,9 @@
     <div id="app">
         <div>
             <!-- 合成部分 -->
-            <div ref="box" v-if="list.needle_id==2" class="s-box" :style="{backgroundImage:'url(' + list.jp.background_img+'?id='+count +'&name=头像'+')',height:height+'px'}">
+            <div ref="box" v-if="list.needle_id==2" class="s-box">
+            <!-- <div ref="box" v-if="list.needle_id==2" class="s-box" :style="{backgroundImage:'url('+list.jp.background_img+'?id='+count+'&name=背景'+')',height:height+'px'}"> -->
+                <img class="img-bg" :src="list.jp.background_img+'?id='+count" alt="背景">
                 <div class="u-name">{{list.username}}</div>
                 <div class="s-name">{{list.circle}}</div>
                 <div class="s-cord">(<span>{{list.jp.cord}}</span>分优异成绩)</div>
