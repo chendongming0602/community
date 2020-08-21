@@ -53,6 +53,7 @@
     font-size: 20rpx;
     justify-content: center;
     color: #666;
+    position: relative;
 }
 .list-bot image{
     width: 30rpx;
@@ -66,7 +67,12 @@
 .list-bot .ran-xiao{
     font-size: 22rpx;
 }
+
 .ran-count{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -30rpx 0 0 -30rpx;
     width: 60rpx;
     line-height: 60rpx;
     text-align: center;
@@ -80,17 +86,50 @@
 .active-1{
     box-shadow: 0 5px 8px -1px rgba(255,187,32,0.5);
 }
-.active-1 .ran-count{
-    color: var(--vip);
-    box-shadow: 0px 0px 8px 2px var(--vip) inset;
+@keyframes active-1 {
+    0%{
+        box-shadow: 0px 0px 15px 2px var(--vip) inset;
+    }
+    20%{
+        box-shadow: 0px 0px 0px 0px var(--vip) inset;
+    }
+    25%{
+        box-shadow: 0px 0px 0px 0px var(--vip);
+    }
+    60%{
+        box-shadow: 0px 0px 15px 2px var(--vip);
+    }
+    70%{
+        box-shadow: 0px 0px 0px 0px var(--vip);
+    }
+    75%{
+        box-shadow: 0px 0px 0px 0px var(--vip) inset;
+    }
+    100%{
+        box-shadow: 0px 0px 15px 2px var(--vip) inset;
+    }
 }
+.active-1 .ran-count{
+    margin: -40rpx 0 0 -40rpx;
+    width: 80rpx;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    color: var(--vip);
+    box-shadow: 0px 0px 12px 2px var(--vip) inset;
+    animation: active-1 3s infinite;
+}
+
 
 .active-2{
     box-shadow: 0 5px 8px -1px #d2d2d2;
 }
 .active-2 .ran-count{
+    margin: -35rpx 0 0 -35rpx;
+    width: 70rpx;
+    line-height: 70rpx;
+    font-size: 32rpx;
     color: #d2d2d2;
-    box-shadow: 0px 0px 8px 2px #d2d2d2 inset;
+    box-shadow: 0px 0px 10px 2px #d2d2d2 inset;
 }
 
 .active-3{

@@ -249,3 +249,23 @@ input-holder {
     box-sizing: border-box;
     padding: 30rpx 20rpx 10rpx;
 }
+@keyframes ranking{
+    0%{
+        box-shadow: 0px 0px 1px 0px var(--color);
+    }
+    50%{
+        box-shadow: 0px 0px 10px 2px var(--color);
+    }
+    100%{
+        box-shadow: 0px 0px 1px 0px var(--color);
+    }
+}
+.ranking{
+    width: 100rpx;
+    height: 100rpx;
+    position: fixed;
+    bottom: 10%;
+    right: 50rpx;
+    border-radius: 50%;
+    animation: ranking 3s infinite;
+}

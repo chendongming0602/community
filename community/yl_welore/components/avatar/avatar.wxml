@@ -42,6 +42,10 @@
         <block wx:if="{{is==4}}" >
             <view class="a-time" style="padding-top:0">{{item.autograph||"ta啥都没留下..."}}</view>
         </block>
+        <!--排行榜 -->
+        <block wx:if="{{is==5}}" >
+            <view class="a-time" style="padding-top:0">来自：{{item.realm_name||"未知"}}</view>
+        </block>
     </view>
 
     <!-- 首页置顶 -->

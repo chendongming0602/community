@@ -743,3 +743,7 @@
 <i-action-sheet showCancel actions="{{actions}}" bind:cancel="handleCancel1" bind:click="handleClickItem1" is_home="is_home" visible="{{visible}}"></i-action-sheet>
 <tabbar bind:parentEvent="onParentEvent" tabbar="{{tabbar}}"></tabbar>
 <login id="login"></login>
+
+<navigator hover-class="none" url="/yl_welore/pages/ranking/ranking">
+    <image class="ranking" src="https://sxll-1251682606.cos.ap-guangzhou.myqcloud.com/web/ranking.png"></image>
+</navigator>
